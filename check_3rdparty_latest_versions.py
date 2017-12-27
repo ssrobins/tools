@@ -11,6 +11,7 @@ thirdparty_version = {
     'glew':            {'installed': '2.1.0'},
     'googletest':      {'installed': '1.8.0'},
     'libpng':          {'installed': '1.6.34'},
+    'Notepad++':       {'installed': '7.5.3'},
     'python':          {'installed': '3.6.4'},
     'SDL2':            {'installed': '2.0.7'},
     'SDL2_image':      {'installed': '2.0.2'},
@@ -90,6 +91,17 @@ def get_latest_version_libpng():
     libpng_text = soup.find('font', attrs={'size': '+1'}).text.strip()
     
     return libpng_text
+
+
+
+def get_latest_version_NotepadPlusPlus():
+    NotepadPlusPlus_page = 'https://notepad-plus-plus.org/download'
+    page = urlopen(NotepadPlusPlus_page)
+    soup = BeautifulSoup(page, 'html.parser')
+
+    NotepadPlusPlus_items = soup.find('h1').text.strip().split()
+    
+    return NotepadPlusPlus_items[-1]
 
 
 
@@ -206,6 +218,7 @@ def main():
     thirdparty_version['glew']['latest'] = get_latest_version_glew()
     thirdparty_version['googletest']['latest'] = get_latest_version_googletest()
     thirdparty_version['libpng']['latest'] = get_latest_version_libpng()
+    thirdparty_version['Notepad++']['latest'] = get_latest_version_NotepadPlusPlus()
     thirdparty_version['python']['latest'] = get_latest_version_python()
     thirdparty_version['SDL2']['latest'] = get_latest_version_SDL2()
     thirdparty_version['SDL2_image']['latest'] = get_latest_version_SDL2_image()
