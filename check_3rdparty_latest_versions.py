@@ -34,12 +34,12 @@ class VersionCheck:
 
 
     def compare_latest_to_current(self):
-        for lib in self.versions:
-            self.versions[lib]['latest'] = getattr(self, 'get_latest_version_' + lib)()
-            if(self.versions[lib]['latest'] == self.versions[lib]['installed']):
-                print(lib + ' ' + self.versions[lib]['installed'] + ' is up-to-date.')
+        for item in self.versions:
+            self.versions[item]['latest'] = getattr(self, 'get_latest_version_' + item)()
+            if(self.versions[item]['latest'] == self.versions[item]['installed']):
+                print(item + ' ' + self.versions[item]['installed'] + ' is up-to-date.')
             else:
-                print(lib + ' ' + self.versions[lib]['installed'] + ' can be upgraded to ' + self.versions[lib]['latest'] + '.')
+                print(item + ' ' + self.versions[item]['installed'] + ' can be upgraded to ' + self.versions[item]['latest'] + '.')
                 self.uptodate = False
 
         print()
