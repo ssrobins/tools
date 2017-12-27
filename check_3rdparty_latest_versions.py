@@ -4,7 +4,7 @@ import re
 
 
 thirdparty_version = {
-    'cmake': {'installed': '3.10.0', 'latest': ''},
+    'cmake': {'installed': '3.10.1', 'latest': ''},
     'freetype': {'installed': '2.8.1', 'latest': ''},
     'glew': {'installed': '2.1.0', 'latest': ''},
     'googletest': {'installed': '1.8.0', 'latest': ''},
