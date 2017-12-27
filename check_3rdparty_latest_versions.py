@@ -19,6 +19,7 @@ thirdparty_version = {
     'SDL2_ttf':        {'installed': '2.0.14'},
     'TortoiseGit':     {'installed': '2.5.0'},
     'VisualStudio':    {'installed': '15.5.2'},
+    'WinSCP':          {'installed': '5.11.3'},
     'zlib':            {'installed': '1.2.11'},
 }
 
@@ -200,6 +201,17 @@ def get_latest_version_VisualStudio():
 
 
 
+def get_latest_version_WinSCP():
+    WinSCP_page = 'https://winscp.net/eng/download.php'
+    page = urlopen(WinSCP_page)
+    soup = BeautifulSoup(page, 'html.parser')
+
+    WinSCP_items = soup.find('h3').text.strip().split()
+    
+    return WinSCP_items[-1]
+
+
+
 def get_latest_version_zlib():
     zlib_page = 'https://zlib.net/'
     page = urlopen(zlib_page)
@@ -226,6 +238,7 @@ def main():
     thirdparty_version['SDL2_ttf']['latest'] = get_latest_version_SDL2_ttf()
     thirdparty_version['TortoiseGit']['latest'] = get_latest_version_TortoiseGit()
     thirdparty_version['VisualStudio']['latest'] = get_latest_version_VisualStudio()
+    thirdparty_version['WinSCP']['latest'] = get_latest_version_WinSCP()
     thirdparty_version['zlib']['latest'] = get_latest_version_zlib()
     
     uptodate = True
