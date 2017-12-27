@@ -9,6 +9,7 @@ thirdparty_version = {
     'glew':            {'installed': '2.1.0'},
     'googletest':      {'installed': '1.8.0'},
     'libpng':          {'installed': '1.6.34'},
+    'python':          {'installed': '3.6.4'},
     'SDL2':            {'installed': '2.0.7'},
     'SDL2_image':      {'installed': '2.0.2'},
     'SDL2_mixer':      {'installed': '2.0.2'},
@@ -75,6 +76,17 @@ def get_latest_version_libpng():
     libpng_text = soup.find('font', attrs={'size': '+1'}).text.strip()
     
     return libpng_text
+
+
+
+def get_latest_version_python():
+    python_page = 'https://www.python.org/'
+    page = urllib.request.urlopen(python_page)
+    soup = BeautifulSoup(page, 'html.parser')
+
+    python_text_items = soup.find('a', attrs={'href': lambda L: L and L.startswith('/downloads/release/python-')}).text.strip().split()
+
+    return python_text_items[1]
 
 
 
@@ -168,6 +180,7 @@ def main():
     thirdparty_version['glew']['latest'] = get_latest_version_glew()
     thirdparty_version['googletest']['latest'] = get_latest_version_googletest()
     thirdparty_version['libpng']['latest'] = get_latest_version_libpng()
+    thirdparty_version['python']['latest'] = get_latest_version_python()
     thirdparty_version['SDL2']['latest'] = get_latest_version_SDL2()
     thirdparty_version['SDL2_image']['latest'] = get_latest_version_SDL2_image()
     thirdparty_version['SDL2_mixer']['latest'] = get_latest_version_SDL2_mixer()
