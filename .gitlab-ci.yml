@@ -1,11 +1,8 @@
 image: python:latest
 
 before_script:
+  - pip install BeautifulSoup4
   - python -V                                   # Print out python version for debugging
-
-#test:
-#  script:
-#  - python setup.py test
 
 run:
   script:
