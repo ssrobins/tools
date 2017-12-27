@@ -1,4 +1,4 @@
-import urllib2
+import urllib.request
 from bs4 import BeautifulSoup
 import re
 
@@ -21,7 +21,7 @@ thirdparty_version = {
 
 def get_latest_version_cmake():
     cmake_page = 'https://cmake.org/download/'
-    page = urllib2.urlopen(cmake_page)
+    page = urllib.request.urlopen(cmake_page)
     soup = BeautifulSoup(page, 'html.parser')
 
     cmake_items = soup.find('h3').text.strip().split()
@@ -34,7 +34,7 @@ def get_latest_version_cmake():
 
 def get_latest_version_freetype():
     freetype_page = 'https://sourceforge.net/projects/freetype/files/freetype2/'
-    page = urllib2.urlopen(freetype_page)
+    page = urllib.request.urlopen(freetype_page)
     soup = BeautifulSoup(page, 'html.parser')
 
     freetype_text = soup.find('a', attrs={'href': lambda L: L and L.startswith('/projects/freetype/files/freetype2/')}).text.strip()
@@ -45,7 +45,7 @@ def get_latest_version_freetype():
 
 def get_latest_version_glew():
     glew_page = 'http://glew.sourceforge.net/'
-    page = urllib2.urlopen(glew_page)
+    page = urllib.request.urlopen(glew_page)
     soup = BeautifulSoup(page, 'html.parser')
 
     glew_text = soup.find('a', attrs={'href': lambda L: L and L.startswith('https://sourceforge.net/projects/glew/files/glew/')}).text
@@ -56,7 +56,7 @@ def get_latest_version_glew():
 
 def get_latest_version_googletest():
     googletest_page = 'https://github.com/google/googletest/releases'
-    page = urllib2.urlopen(googletest_page)
+    page = urllib.request.urlopen(googletest_page)
     soup = BeautifulSoup(page, 'html.parser')
 
     googletest_text_raw = soup.find('span', attrs={'class': 'tag-name'}).text.strip()
@@ -69,7 +69,7 @@ def get_latest_version_googletest():
 
 def get_latest_version_libpng():
     libpng_page = 'http://www.libpng.org/pub/png/libpng.html'
-    page = urllib2.urlopen(libpng_page)
+    page = urllib.request.urlopen(libpng_page)
     soup = BeautifulSoup(page, 'html.parser')
 
     libpng_text = soup.find('font', attrs={'size': '+1'}).text.strip()
@@ -80,7 +80,7 @@ def get_latest_version_libpng():
 
 def get_latest_version_SDL2():
     sdl2_page = 'https://www.libsdl.org/download-2.0.php'
-    page = urllib2.urlopen(sdl2_page)
+    page = urllib.request.urlopen(sdl2_page)
     soup = BeautifulSoup(page, 'html.parser')
 
     header_items = soup.find('h1').text.strip().split()
@@ -100,7 +100,7 @@ def get_latest_version_SDL2():
 
 def get_latest_version_SDL2_image():
     sdl2_image_page = 'https://www.libsdl.org/projects/SDL_image/'
-    page = urllib2.urlopen(sdl2_image_page)
+    page = urllib.request.urlopen(sdl2_image_page)
     soup = BeautifulSoup(page, 'html.parser')
 
     sld2_image_text_raw = soup.find('a', attrs={'href': lambda L: L and L.startswith('release/SDL2_image-')}).text.strip()
@@ -114,7 +114,7 @@ def get_latest_version_SDL2_image():
 
 def get_latest_version_SDL2_mixer():
     sdl2_mixer_page = 'https://www.libsdl.org/projects/SDL_mixer/'
-    page = urllib2.urlopen(sdl2_mixer_page)
+    page = urllib.request.urlopen(sdl2_mixer_page)
     soup = BeautifulSoup(page, 'html.parser')
 
     sld2_mixer_text_raw = soup.find('a', attrs={'href': lambda L: L and L.startswith('release/SDL2_mixer-')}).text.strip()
@@ -128,7 +128,7 @@ def get_latest_version_SDL2_mixer():
 
 def get_latest_version_SDL2_ttf():
     sdl2_ttf_page = 'https://www.libsdl.org/projects/SDL_ttf/'
-    page = urllib2.urlopen(sdl2_ttf_page)
+    page = urllib.request.urlopen(sdl2_ttf_page)
     soup = BeautifulSoup(page, 'html.parser')
 
     sld2_ttf_text_raw = soup.find('a', attrs={'href': lambda L: L and L.startswith('release/SDL2_ttf-')}).text.strip()
@@ -142,7 +142,7 @@ def get_latest_version_SDL2_ttf():
 
 def get_latest_version_visualstudio():
     visualstudio_page = 'https://www.visualstudio.com/en-us/news/releasenotes/vs2017-relnotes'
-    page = urllib2.urlopen(visualstudio_page)
+    page = urllib.request.urlopen(visualstudio_page)
     soup = BeautifulSoup(page, 'html.parser')
 
     visualstudio_text_raw = soup.find('h2', attrs={'id': re.compile('^[0-9]+.[0-9]+.[0-9]$')}).text.strip().split()
@@ -153,7 +153,7 @@ def get_latest_version_visualstudio():
 
 def get_latest_version_zlib():
     zlib_page = 'https://zlib.net/'
-    page = urllib2.urlopen(zlib_page)
+    page = urllib.request.urlopen(zlib_page)
     soup = BeautifulSoup(page, 'html.parser')
 
     zlib_text_items = soup.find('font', attrs={'size': '+2'}).text.strip().split()
