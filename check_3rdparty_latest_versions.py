@@ -4,30 +4,48 @@ import re
 
 
 
-thirdparty_version = {
-    'cmake':           {'installed': '3.10.1'},
-    'freetype':        {'installed': '2.8.1'},
-    'git':             {'installed': '2.15.1'},
-    'glew':            {'installed': '2.1.0'},
-    'googletest':      {'installed': '1.8.0'},
-    'grepWin':         {'installed': '1.7.1'},
-    'libpng':          {'installed': '1.6.34'},
-    'NotepadPlusPlus': {'installed': '7.5.3'},
-    'python':          {'installed': '3.6.4'},
-    'SDL2':            {'installed': '2.0.7'},
-    'SDL2_image':      {'installed': '2.0.2'},
-    'SDL2_mixer':      {'installed': '2.0.2'},
-    'SDL2_ttf':        {'installed': '2.0.14'},
-    'TortoiseGit':     {'installed': '2.5.0'},
-    'VisualStudio':    {'installed': '15.5.2'},
-    'WinSCP':          {'installed': '5.11.3'},
-    'zlib':            {'installed': '1.2.11'},
-}
-
-
-
 class VersionCheck:
-    def get_latest_version_cmake():
+    def __init__(self):
+        self.versions = {
+            'cmake':           {'installed': '3.10.1'},
+            'freetype':        {'installed': '2.8.1'},
+            'git':             {'installed': '2.15.1'},
+            'glew':            {'installed': '2.1.0'},
+            'googletest':      {'installed': '1.8.0'},
+            'grepWin':         {'installed': '1.7.1'},
+            'libpng':          {'installed': '1.6.34'},
+            'NotepadPlusPlus': {'installed': '7.5.3'},
+            'python':          {'installed': '3.6.4'},
+            'SDL2':            {'installed': '2.0.7'},
+            'SDL2_image':      {'installed': '2.0.2'},
+            'SDL2_mixer':      {'installed': '2.0.2'},
+            'SDL2_ttf':        {'installed': '2.0.14'},
+            'TortoiseGit':     {'installed': '2.5.0'},
+            'VisualStudio':    {'installed': '15.5.2'},
+            'WinSCP':          {'installed': '5.11.3'},
+            'zlib':            {'installed': '1.2.11'},
+        }
+        
+        self.uptodate = True
+
+
+    def all_uptodate(self):
+        return self.uptodate
+
+
+    def compare_latest_to_current(self):
+        for lib in self.versions:
+            self.versions[lib]['latest'] = getattr(self, 'get_latest_version_' + lib)()
+            if(self.versions[lib]['latest'] == self.versions[lib]['installed']):
+                print(lib + ' ' + self.versions[lib]['installed'] + ' is up-to-date.')
+            else:
+                print(lib + ' ' + self.versions[lib]['installed'] + ' can be upgraded to ' + self.versions[lib]['latest'] + '.')
+                self.uptodate = False
+
+        print()
+
+
+    def get_latest_version_cmake(self):
         page = urlopen('https://cmake.org/download/')
         soup = BeautifulSoup(page, 'html.parser')
 
@@ -38,8 +56,7 @@ class VersionCheck:
         return version_text
 
 
-
-    def get_latest_version_freetype():
+    def get_latest_version_freetype(self):
         page = urlopen('https://sourceforge.net/projects/freetype/files/freetype2/')
         soup = BeautifulSoup(page, 'html.parser')
 
@@ -48,8 +65,7 @@ class VersionCheck:
         return str(version_text)
 
 
-
-    def get_latest_version_git():
+    def get_latest_version_git(self):
         req = Request('https://git-scm.com/download', headers={'User-Agent': 'Mozilla/5.0'})
         page = urlopen(req).read()
         soup = BeautifulSoup(page, 'html.parser')
@@ -59,8 +75,7 @@ class VersionCheck:
         return str(version_text)
 
 
-
-    def get_latest_version_glew():
+    def get_latest_version_glew(self):
         page = urlopen('http://glew.sourceforge.net/')
         soup = BeautifulSoup(page, 'html.parser')
 
@@ -69,8 +84,7 @@ class VersionCheck:
         return str(version_text)
 
 
-
-    def get_latest_version_googletest():
+    def get_latest_version_googletest(self):
         page = urlopen('https://github.com/google/googletest/releases')
         soup = BeautifulSoup(page, 'html.parser')
 
@@ -81,8 +95,7 @@ class VersionCheck:
         return version_text[1]
 
 
-
-    def get_latest_version_grepWin():
+    def get_latest_version_grepWin(self):
         page = urlopen('http://grepwin.sourceforge.net/')
         soup = BeautifulSoup(page, 'html.parser')
 
@@ -91,8 +104,7 @@ class VersionCheck:
         return version_items[1]
 
 
-
-    def get_latest_version_libpng():
+    def get_latest_version_libpng(self):
         page = urlopen('http://www.libpng.org/pub/png/libpng.html')
         soup = BeautifulSoup(page, 'html.parser')
 
@@ -101,8 +113,7 @@ class VersionCheck:
         return version_text
 
 
-
-    def get_latest_version_NotepadPlusPlus():
+    def get_latest_version_NotepadPlusPlus(self):
         page = urlopen('https://notepad-plus-plus.org/download')
         soup = BeautifulSoup(page, 'html.parser')
 
@@ -111,8 +122,7 @@ class VersionCheck:
         return version_items[-1]
 
 
-
-    def get_latest_version_python():
+    def get_latest_version_python(self):
         page = urlopen('https://www.python.org/')
         soup = BeautifulSoup(page, 'html.parser')
 
@@ -121,8 +131,7 @@ class VersionCheck:
         return version_items[1]
 
 
-
-    def get_latest_version_SDL2():
+    def get_latest_version_SDL2(self):
         page = urlopen('https://www.libsdl.org/download-2.0.php')
         soup = BeautifulSoup(page, 'html.parser')
 
@@ -131,8 +140,7 @@ class VersionCheck:
         return version_items[2]
 
 
-
-    def get_latest_version_SDL2_image():
+    def get_latest_version_SDL2_image(self):
         page = urlopen('https://www.libsdl.org/projects/SDL_image/')
         soup = BeautifulSoup(page, 'html.parser')
 
@@ -144,8 +152,7 @@ class VersionCheck:
         return version_text
 
 
-
-    def get_latest_version_SDL2_mixer():
+    def get_latest_version_SDL2_mixer(self):
         page = urlopen('https://www.libsdl.org/projects/SDL_mixer/')
         soup = BeautifulSoup(page, 'html.parser')
 
@@ -157,8 +164,7 @@ class VersionCheck:
         return version_text
 
 
-
-    def get_latest_version_SDL2_ttf():
+    def get_latest_version_SDL2_ttf(self):
         page = urlopen('https://www.libsdl.org/projects/SDL_ttf/')
         soup = BeautifulSoup(page, 'html.parser')
 
@@ -170,8 +176,7 @@ class VersionCheck:
         return version_text
 
 
-
-    def get_latest_version_TortoiseGit():
+    def get_latest_version_TortoiseGit(self):
         page = urlopen('https://tortoisegit.org/download/')
         soup = BeautifulSoup(page, 'html.parser')
 
@@ -180,8 +185,7 @@ class VersionCheck:
         return version_items[-1]
 
 
-
-    def get_latest_version_VisualStudio():
+    def get_latest_version_VisualStudio(self):
         page = urlopen('https://www.visualstudio.com/en-us/news/releasenotes/vs2017-relnotes')
         soup = BeautifulSoup(page, 'html.parser')
 
@@ -190,8 +194,7 @@ class VersionCheck:
         return version_items[-1]
 
 
-
-    def get_latest_version_WinSCP():
+    def get_latest_version_WinSCP(self):
         page = urlopen('https://winscp.net/eng/download.php')
         soup = BeautifulSoup(page, 'html.parser')
 
@@ -200,8 +203,7 @@ class VersionCheck:
         return version_items[-1]
 
 
-
-    def get_latest_version_zlib():
+    def get_latest_version_zlib(self):
         page = urlopen('https://zlib.net/')
         soup = BeautifulSoup(page, 'html.parser')
 
@@ -212,19 +214,11 @@ class VersionCheck:
 
 
 def main():
-    uptodate = True
+    version_check = VersionCheck()
     
-    for lib in thirdparty_version:
-        thirdparty_version[lib]['latest'] = getattr(VersionCheck, 'get_latest_version_' + lib)()
-        if(thirdparty_version[lib]['latest'] == thirdparty_version[lib]['installed']):
-            print(lib + ' ' + thirdparty_version[lib]['installed'] + ' is up-to-date.')
-        else:
-            print(lib + ' ' + thirdparty_version[lib]['installed'] + ' can be upgraded to ' + thirdparty_version[lib]['latest'] + '.')
-            uptodate = False
-    
-    print()
+    version_check.compare_latest_to_current()
 
-    if uptodate:
+    if version_check.all_uptodate():
         print('Everything listed above is up-to-date!')
         exit(0)
     else:
