@@ -4,17 +4,17 @@ import re
 
 
 thirdparty_version = {
-    'cmake': {'installed': '3.10.1', 'latest': ''},
-    'freetype': {'installed': '2.8.1', 'latest': ''},
-    'glew': {'installed': '2.1.0', 'latest': ''},
-    'googletest': {'installed': '1.8.0', 'latest': ''},
-    'libpng': {'installed': '1.6.34', 'latest': ''},
-    'SDL2': {'installed': '2.0.7', 'latest': ''},
-    'SDL2_image': {'installed': '2.0.2', 'latest': ''},
-    'SDL2_mixer': {'installed': '2.0.2', 'latest': ''},
-    'SDL2_ttf': {'installed': '2.0.14', 'latest': ''},
-    'visualstudio': {'installed': '15.5.2', 'latest': ''},
-    'zlib': {'installed': '1.2.11', 'latest': ''},
+    'cmake': {'installed': '3.10.1'},
+    'freetype': {'installed': '2.8.1'},
+    'glew': {'installed': '2.1.0'},
+    'googletest': {'installed': '1.8.0'},
+    'libpng': {'installed': '1.6.34'},
+    'SDL2': {'installed': '2.0.7'},
+    'SDL2_image': {'installed': '2.0.2'},
+    'SDL2_mixer': {'installed': '2.0.2'},
+    'SDL2_ttf': {'installed': '2.0.14'},
+    'visualstudio': {'installed': '15.5.2'},
+    'zlib': {'installed': '1.2.11'},
 }
 
 
