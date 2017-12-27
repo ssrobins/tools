@@ -1,4 +1,4 @@
-import urllib.request
+from urllib.request import Request, urlopen
 from bs4 import BeautifulSoup
 import re
 
@@ -6,6 +6,7 @@ import re
 thirdparty_version = {
     'cmake':           {'installed': '3.10.1'},
     'freetype':        {'installed': '2.8.1'},
+    'git':             {'installed': '2.15.1'},
     'glew':            {'installed': '2.1.0'},
     'googletest':      {'installed': '1.8.0'},
     'libpng':          {'installed': '1.6.34'},
@@ -22,7 +23,7 @@ thirdparty_version = {
 
 def get_latest_version_cmake():
     cmake_page = 'https://cmake.org/download/'
-    page = urllib.request.urlopen(cmake_page)
+    page = urlopen(cmake_page)
     soup = BeautifulSoup(page, 'html.parser')
 
     cmake_items = soup.find('h3').text.strip().split()
@@ -35,7 +36,7 @@ def get_latest_version_cmake():
 
 def get_latest_version_freetype():
     freetype_page = 'https://sourceforge.net/projects/freetype/files/freetype2/'
-    page = urllib.request.urlopen(freetype_page)
+    page = urlopen(freetype_page)
     soup = BeautifulSoup(page, 'html.parser')
 
     freetype_text = soup.find('a', attrs={'href': lambda L: L and L.startswith('/projects/freetype/files/freetype2/')}).text.strip()
@@ -44,9 +45,20 @@ def get_latest_version_freetype():
 
 
 
+def get_latest_version_git():
+    req = Request('https://git-scm.com/download', headers={'User-Agent': 'Mozilla/5.0'})
+    page = urlopen(req).read()
+    soup = BeautifulSoup(page, 'html.parser')
+
+    git_text = soup.find('span', attrs={'class': 'version'}).text.strip()
+
+    return str(git_text)
+
+
+
 def get_latest_version_glew():
     glew_page = 'http://glew.sourceforge.net/'
-    page = urllib.request.urlopen(glew_page)
+    page = urlopen(glew_page)
     soup = BeautifulSoup(page, 'html.parser')
 
     glew_text = soup.find('a', attrs={'href': lambda L: L and L.startswith('https://sourceforge.net/projects/glew/files/glew/')}).text
@@ -57,7 +69,7 @@ def get_latest_version_glew():
 
 def get_latest_version_googletest():
     googletest_page = 'https://github.com/google/googletest/releases'
-    page = urllib.request.urlopen(googletest_page)
+    page = urlopen(googletest_page)
     soup = BeautifulSoup(page, 'html.parser')
 
     googletest_text_raw = soup.find('span', attrs={'class': 'tag-name'}).text.strip()
@@ -70,7 +82,7 @@ def get_latest_version_googletest():
 
 def get_latest_version_libpng():
     libpng_page = 'http://www.libpng.org/pub/png/libpng.html'
-    page = urllib.request.urlopen(libpng_page)
+    page = urlopen(libpng_page)
     soup = BeautifulSoup(page, 'html.parser')
 
     libpng_text = soup.find('font', attrs={'size': '+1'}).text.strip()
@@ -81,7 +93,7 @@ def get_latest_version_libpng():
 
 def get_latest_version_python():
     python_page = 'https://www.python.org/'
-    page = urllib.request.urlopen(python_page)
+    page = urlopen(python_page)
     soup = BeautifulSoup(page, 'html.parser')
 
     python_text_items = soup.find('a', attrs={'href': lambda L: L and L.startswith('/downloads/release/python-')}).text.strip().split()
@@ -92,7 +104,7 @@ def get_latest_version_python():
 
 def get_latest_version_SDL2():
     sdl2_page = 'https://www.libsdl.org/download-2.0.php'
-    page = urllib.request.urlopen(sdl2_page)
+    page = urlopen(sdl2_page)
     soup = BeautifulSoup(page, 'html.parser')
 
     header_items = soup.find('h1').text.strip().split()
@@ -112,7 +124,7 @@ def get_latest_version_SDL2():
 
 def get_latest_version_SDL2_image():
     sdl2_image_page = 'https://www.libsdl.org/projects/SDL_image/'
-    page = urllib.request.urlopen(sdl2_image_page)
+    page = urlopen(sdl2_image_page)
     soup = BeautifulSoup(page, 'html.parser')
 
     sld2_image_text_raw = soup.find('a', attrs={'href': lambda L: L and L.startswith('release/SDL2_image-')}).text.strip()
@@ -126,7 +138,7 @@ def get_latest_version_SDL2_image():
 
 def get_latest_version_SDL2_mixer():
     sdl2_mixer_page = 'https://www.libsdl.org/projects/SDL_mixer/'
-    page = urllib.request.urlopen(sdl2_mixer_page)
+    page = urlopen(sdl2_mixer_page)
     soup = BeautifulSoup(page, 'html.parser')
 
     sld2_mixer_text_raw = soup.find('a', attrs={'href': lambda L: L and L.startswith('release/SDL2_mixer-')}).text.strip()
@@ -140,7 +152,7 @@ def get_latest_version_SDL2_mixer():
 
 def get_latest_version_SDL2_ttf():
     sdl2_ttf_page = 'https://www.libsdl.org/projects/SDL_ttf/'
-    page = urllib.request.urlopen(sdl2_ttf_page)
+    page = urlopen(sdl2_ttf_page)
     soup = BeautifulSoup(page, 'html.parser')
 
     sld2_ttf_text_raw = soup.find('a', attrs={'href': lambda L: L and L.startswith('release/SDL2_ttf-')}).text.strip()
@@ -154,7 +166,7 @@ def get_latest_version_SDL2_ttf():
 
 def get_latest_version_visualstudio():
     visualstudio_page = 'https://www.visualstudio.com/en-us/news/releasenotes/vs2017-relnotes'
-    page = urllib.request.urlopen(visualstudio_page)
+    page = urlopen(visualstudio_page)
     soup = BeautifulSoup(page, 'html.parser')
 
     visualstudio_text_raw = soup.find('h2', attrs={'id': re.compile('^[0-9]+.[0-9]+.[0-9]$')}).text.strip().split()
@@ -165,7 +177,7 @@ def get_latest_version_visualstudio():
 
 def get_latest_version_zlib():
     zlib_page = 'https://zlib.net/'
-    page = urllib.request.urlopen(zlib_page)
+    page = urlopen(zlib_page)
     soup = BeautifulSoup(page, 'html.parser')
 
     zlib_text_items = soup.find('font', attrs={'size': '+2'}).text.strip().split()
@@ -177,6 +189,7 @@ def get_latest_version_zlib():
 def main():
     thirdparty_version['cmake']['latest'] = get_latest_version_cmake()
     thirdparty_version['freetype']['latest'] = get_latest_version_freetype()
+    thirdparty_version['git']['latest'] = get_latest_version_git()
     thirdparty_version['glew']['latest'] = get_latest_version_glew()
     thirdparty_version['googletest']['latest'] = get_latest_version_googletest()
     thirdparty_version['libpng']['latest'] = get_latest_version_libpng()
