@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import re
 
 
+
 thirdparty_version = {
     'cmake':           {'installed': '3.10.1'},
     'freetype':        {'installed': '2.8.1'},
@@ -15,6 +16,7 @@ thirdparty_version = {
     'SDL2_image':      {'installed': '2.0.2'},
     'SDL2_mixer':      {'installed': '2.0.2'},
     'SDL2_ttf':        {'installed': '2.0.14'},
+    'TortoiseGit':     {'installed': '2.5.0'},
     'VisualStudio':    {'installed': '15.5.2'},
     'zlib':            {'installed': '1.2.11'},
 }
@@ -164,6 +166,17 @@ def get_latest_version_SDL2_ttf():
 
 
 
+def get_latest_version_TortoiseGit():
+    TortoiseGit_page = 'https://tortoisegit.org/download/'
+    page = urlopen(TortoiseGit_page)
+    soup = BeautifulSoup(page, 'html.parser')
+
+    TortoiseGit_items = soup.find('strong').text.strip().split()
+    
+    return TortoiseGit_items[-1]
+
+
+
 def get_latest_version_VisualStudio():
     VisualStudio_page = 'https://www.visualstudio.com/en-us/news/releasenotes/vs2017-relnotes'
     page = urlopen(VisualStudio_page)
@@ -198,6 +211,7 @@ def main():
     thirdparty_version['SDL2_image']['latest'] = get_latest_version_SDL2_image()
     thirdparty_version['SDL2_mixer']['latest'] = get_latest_version_SDL2_mixer()
     thirdparty_version['SDL2_ttf']['latest'] = get_latest_version_SDL2_ttf()
+    thirdparty_version['TortoiseGit']['latest'] = get_latest_version_TortoiseGit()
     thirdparty_version['VisualStudio']['latest'] = get_latest_version_VisualStudio()
     thirdparty_version['zlib']['latest'] = get_latest_version_zlib()
     
