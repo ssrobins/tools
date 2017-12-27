@@ -1,0 +1,12 @@
+image: python:latest
+
+before_script:
+  - python -V                                   # Print out python version for debugging
+
+#test:
+#  script:
+#  - python setup.py test
+
+run:
+  script:
+  - python check_3rdparty_latest_versions.py
