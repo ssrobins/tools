@@ -10,6 +10,7 @@ thirdparty_version = {
     'git':             {'installed': '2.15.1'},
     'glew':            {'installed': '2.1.0'},
     'googletest':      {'installed': '1.8.0'},
+    'grepWin':         {'installed': '1.7.1'},
     'libpng':          {'installed': '1.6.34'},
     'Notepad++':       {'installed': '7.5.3'},
     'python':          {'installed': '3.6.4'},
@@ -77,6 +78,16 @@ def get_latest_version_googletest():
     version_text = version_text_raw.split('-')
 
     return version_text[1]
+
+
+
+def get_latest_version_grepWin():
+    page = urlopen('http://grepwin.sourceforge.net/')
+    soup = BeautifulSoup(page, 'html.parser')
+
+    version_items = soup.find('small').text.strip().split('-')
+
+    return version_items[1]
 
 
 
@@ -205,6 +216,7 @@ def main():
     thirdparty_version['git']['latest'] = get_latest_version_git()
     thirdparty_version['glew']['latest'] = get_latest_version_glew()
     thirdparty_version['googletest']['latest'] = get_latest_version_googletest()
+    thirdparty_version['grepWin']['latest'] = get_latest_version_grepWin()
     thirdparty_version['libpng']['latest'] = get_latest_version_libpng()
     thirdparty_version['Notepad++']['latest'] = get_latest_version_NotepadPlusPlus()
     thirdparty_version['python']['latest'] = get_latest_version_python()
