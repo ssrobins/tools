@@ -15,7 +15,7 @@ thirdparty_version = {
     'SDL2_image':      {'installed': '2.0.2'},
     'SDL2_mixer':      {'installed': '2.0.2'},
     'SDL2_ttf':        {'installed': '2.0.14'},
-    'visualstudio':    {'installed': '15.5.2'},
+    'VisualStudio':    {'installed': '15.5.2'},
     'zlib':            {'installed': '1.2.11'},
 }
 
@@ -164,14 +164,14 @@ def get_latest_version_SDL2_ttf():
 
 
 
-def get_latest_version_visualstudio():
-    visualstudio_page = 'https://www.visualstudio.com/en-us/news/releasenotes/vs2017-relnotes'
-    page = urlopen(visualstudio_page)
+def get_latest_version_VisualStudio():
+    VisualStudio_page = 'https://www.visualstudio.com/en-us/news/releasenotes/vs2017-relnotes'
+    page = urlopen(VisualStudio_page)
     soup = BeautifulSoup(page, 'html.parser')
 
-    visualstudio_text_raw = soup.find('h2', attrs={'id': re.compile('^[0-9]+.[0-9]+.[0-9]$')}).text.strip().split()
+    VisualStudio_text_raw = soup.find('h2', attrs={'id': re.compile('^[0-9]+.[0-9]+.[0-9]$')}).text.strip().split()
     
-    return visualstudio_text_raw[-1]
+    return VisualStudio_text_raw[-1]
 
 
 
@@ -198,7 +198,7 @@ def main():
     thirdparty_version['SDL2_image']['latest'] = get_latest_version_SDL2_image()
     thirdparty_version['SDL2_mixer']['latest'] = get_latest_version_SDL2_mixer()
     thirdparty_version['SDL2_ttf']['latest'] = get_latest_version_SDL2_ttf()
-    thirdparty_version['visualstudio']['latest'] = get_latest_version_visualstudio()
+    thirdparty_version['VisualStudio']['latest'] = get_latest_version_VisualStudio()
     thirdparty_version['zlib']['latest'] = get_latest_version_zlib()
     
     uptodate = True
