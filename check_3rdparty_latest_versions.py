@@ -175,12 +175,23 @@ def main():
     thirdparty_version['visualstudio']['latest'] = get_latest_version_visualstudio()
     thirdparty_version['zlib']['latest'] = get_latest_version_zlib()
     
+    uptodate = True
+    
     for lib in thirdparty_version:
         if(thirdparty_version[lib]['latest'] == thirdparty_version[lib]['installed']):
             print(lib + ' ' + thirdparty_version[lib]['installed'] + ' is up-to-date.')
         else:
             print(lib + ' ' + thirdparty_version[lib]['installed'] + ' can be upgraded to ' + thirdparty_version[lib]['latest'] + '.')
+            uptodate = False
+    
+    print()
 
+    if uptodate:
+        print('Everything listed above is up-to-date!')
+        exit(0)
+    else:
+        print('One or more things listed above can be upgraded.  Do the upgrade and update the latest version at the top of this script.')
+        exit(1)
 
 
 if __name__ == "__main__":
