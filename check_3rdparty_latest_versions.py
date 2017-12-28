@@ -193,12 +193,12 @@ class VersionCheck:
 
 
     def get_latest_version_WinSCP(self):
-        page = urlopen('https://winscp.net/eng/download.php')
+        page = urlopen('https://sourceforge.net/projects/winscp/files/WinSCP/')
         soup = BeautifulSoup(page, 'html.parser')
 
-        version_items = soup.find('h3').text.strip().split()
+        version_text = soup.find('a', attrs={'href': re.compile('^/projects/winscp/files/WinSCP/[0-9]+.[0-9]+[.[0-9]+]*/$')}).text.strip()
         
-        return version_items[-1]
+        return version_text
 
 
     def get_latest_version_zlib(self):
