@@ -36,9 +36,7 @@ class VersionCheck:
     def compare_latest_to_current(self):
         for item in self.versions:
             self.versions[item]['latest'] = getattr(self, 'get_latest_version_' + item)()
-            if(self.versions[item]['latest'] == self.versions[item]['installed']):
-                print(item + ' ' + self.versions[item]['installed'] + ' is up-to-date.')
-            else:
+            if(self.versions[item]['latest'] != self.versions[item]['installed']):
                 print(item + ' ' + self.versions[item]['installed'] + ' can be upgraded to ' + self.versions[item]['latest'] + '.')
                 self.uptodate = False
 
@@ -219,7 +217,7 @@ def main():
     version_check.compare_latest_to_current()
 
     if version_check.all_uptodate():
-        print('Everything listed above is up-to-date!')
+        print('Everything is up-to-date!')
         exit(0)
     else:
         print('One or more things listed above can be upgraded.  Do the upgrade and update the latest version at the top of this script.')
