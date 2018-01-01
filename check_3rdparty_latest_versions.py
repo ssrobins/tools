@@ -14,7 +14,7 @@ class VersionCheck:
             'googletest':      {'installed': '1.8.0'},
             'grepWin':         {'installed': '1.7.1'},
             'libpng':          {'installed': '1.6.34'},
-            'NotepadPlusPlus': {'installed': '7.5.3'},
+            'NotepadPlusPlus': {'installed': '7.5.4'},
             'python':          {'installed': '3.6.4'},
             'SDL2':            {'installed': '2.0.7'},
             'SDL2_image':      {'installed': '2.0.2'},
