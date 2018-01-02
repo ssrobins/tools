@@ -20,6 +20,7 @@ class VersionCheck:
             'SDL2_image':      {'installed': '2.0.2'},
             'SDL2_mixer':      {'installed': '2.0.2'},
             'SDL2_ttf':        {'installed': '2.0.14'},
+            'SFML':            {'installed': '2.4.2'},
             'TortoiseGit':     {'installed': '2.5.0'},
             'VisualStudio':    {'installed': '15.5.2'},
             'WinSCP':          {'installed': '5.11.3'},
@@ -172,6 +173,15 @@ class VersionCheck:
         version_text = version_items[1] + '.' + version_items[2] + '.' + version_items[3]
 
         return version_text
+
+
+    def get_latest_version_SFML(self):
+        page = urlopen('https://www.sfml-dev.org/download.php')
+        soup = BeautifulSoup(page, 'html.parser')
+
+        version_items = soup.find('div', attrs={'class': 'title'}).text.strip().split()
+
+        return version_items[-1]
 
 
     def get_latest_version_TortoiseGit(self):
