@@ -230,7 +230,7 @@ def main():
         print('Everything is up-to-date!')
         exit(0)
     else:
-        print('One or more things listed above can be upgraded.  Do the upgrade and update the latest version at the top of this script.')
+        print('Do the upgrade(s) and update the latest version(s) at the top of this script.')
         exit(1)
 
 
