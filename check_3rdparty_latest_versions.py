@@ -13,6 +13,7 @@ class VersionCheck:
             'glew':            {'installed': '2.1.0'},
             'googletest':      {'installed': '1.8.0'},
             'grepWin':         {'installed': '1.7.1'},
+            'KeePass':         {'installed': '2.37'},
             'libpng':          {'installed': '1.6.34'},
             'NotepadPlusPlus': {'installed': '7.5.4'},
             'python':          {'installed': '3.6.4'},
@@ -101,6 +102,15 @@ class VersionCheck:
         version_items = soup.find('small').text.strip().split('-')
 
         return version_items[1]
+
+
+    def get_latest_version_KeePass(self):
+        page = urlopen('https://keepass.info/download.html')
+        soup = BeautifulSoup(page, 'html.parser')
+
+        version_items = soup.find('th', attrs={'colspan': '2'}).text.strip().split()
+
+        return version_items[-1]
 
 
     def get_latest_version_libpng(self):
