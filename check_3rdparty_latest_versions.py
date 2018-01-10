@@ -8,12 +8,12 @@ class VersionCheck:
     def __init__(self):
         self.versions = {
             'cmake':           {'installed': '3.10.1'},
-            'freetype':        {'installed': '2.8.1'},
+            'freetype':        {'installed': '2.9'},
             'git':             {'installed': '2.15.1'},
             'glew':            {'installed': '2.1.0'},
             'googletest':      {'installed': '1.8.0'},
             'grepWin':         {'installed': '1.7.1'},
-            'KeePass':         {'installed': '2.37'},
+            'KeePass':         {'installed': '2.38'},
             'libpng':          {'installed': '1.6.34'},
             'NotepadPlusPlus': {'installed': '7.5.4'},
             'python':          {'installed': '3.6.4'},
@@ -23,7 +23,7 @@ class VersionCheck:
             'SDL2_ttf':        {'installed': '2.0.14'},
             'SFML':            {'installed': '2.4.2'},
             'TortoiseGit':     {'installed': '2.5.0'},
-            'VisualStudio':    {'installed': '15.5.2'},
+            'VisualStudio':    {'installed': '15.5.3'},
             'WinSCP':          {'installed': '5.11.3'},
             'zlib':            {'installed': '1.2.11'},
         }
@@ -96,12 +96,12 @@ class VersionCheck:
 
 
     def get_latest_version_grepWin(self):
-        page = urlopen('http://grepwin.sourceforge.net/')
+        page = urlopen('https://sourceforge.net/projects/grepwin/files/')
         soup = BeautifulSoup(page, 'html.parser')
 
-        version_items = soup.find('small').text.strip().split('-')
+        version_text = soup.find('a', attrs={'href': re.compile('^/projects/grepwin/files/[0-9]+.[0-9]+[.[0-9]+]*/$')}).text.strip()
 
-        return version_items[1]
+        return version_text
 
 
     def get_latest_version_KeePass(self):
