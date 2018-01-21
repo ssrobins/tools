@@ -7,9 +7,9 @@ import re
 class VersionCheck:
     def __init__(self):
         self.versions = {
-            'cmake':           {'installed': '3.10.1'},
+            'cmake':           {'installed': '3.10.2'},
             'freetype':        {'installed': '2.9'},
-            'git':             {'installed': '2.15.1'},
+            'git':             {'installed': '2.16.0'},
             'glew':            {'installed': '2.1.0'},
             'googletest':      {'installed': '1.8.0'},
             'grepWin':         {'installed': '1.7.1'},
