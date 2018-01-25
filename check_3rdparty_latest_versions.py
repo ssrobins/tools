@@ -9,7 +9,7 @@ class VersionCheck:
         self.versions = {
             'cmake':           {'installed': '3.10.2'},
             'freetype':        {'installed': '2.9'},
-            'git':             {'installed': '2.16.0'},
+            'git':             {'installed': '2.16.1'},
             'glew':            {'installed': '2.1.0'},
             'googletest':      {'installed': '1.8.0'},
             'grepWin':         {'installed': '1.7.1'},
