@@ -7,7 +7,7 @@ import re
 class VersionCheck:
     def __init__(self):
         self.versions = {
-            'cmake':           {'installed': '3.10.2'},
+            'cmake':           {'installed': '3.11.0-rc1'},
             'freetype':        {'installed': '2.9'},
             'git':             {'installed': '2.16.1'},
             'glew':            {'installed': '2.1.0'},
@@ -28,7 +28,12 @@ class VersionCheck:
             'zlib':            {'installed': '1.2.11'},
         }
         
+        self.error = False
         self.uptodate = True
+
+
+    def has_error(self):
+        return self.error
 
 
     def all_uptodate(self):
@@ -37,10 +42,14 @@ class VersionCheck:
 
     def compare_latest_to_current(self):
         for item in self.versions:
-            self.versions[item]['latest'] = getattr(self, 'get_latest_version_' + item)()
-            if(self.versions[item]['latest'] != self.versions[item]['installed']):
-                print(item + ' ' + self.versions[item]['installed'] + ' can be upgraded to ' + self.versions[item]['latest'] + '.')
-                self.uptodate = False
+            try:
+                self.versions[item]['latest'] = getattr(self, 'get_latest_version_' + item)()
+                if(self.versions[item]['latest'] != self.versions[item]['installed']):
+                    print(item + ' ' + self.versions[item]['installed'] + ' can be upgraded to ' + self.versions[item]['latest'] + '.')
+                    self.uptodate = False
+            except AttributeError:
+                print(item + ' version could not be found. Check the website.')
+                self.error = True
 
         print()
 
@@ -237,7 +246,8 @@ def main():
     version_check.compare_latest_to_current()
 
     if version_check.all_uptodate():
-        print('Everything is up-to-date!')
+        if version_check.has_error() == False:
+            print('Everything is up-to-date!')
         exit(0)
     else:
         print('Do the upgrade(s) and update the latest version(s) at the top of this script.')
