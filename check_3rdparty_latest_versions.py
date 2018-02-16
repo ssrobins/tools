@@ -248,7 +248,9 @@ def main():
     if version_check.all_uptodate():
         if version_check.has_error() == False:
             print('Everything is up-to-date!')
-        exit(0)
+            exit(0)
+        else:
+            exit(1)
     else:
         print('Do the upgrade(s) and update the latest version(s) at the top of this script.')
         exit(1)
