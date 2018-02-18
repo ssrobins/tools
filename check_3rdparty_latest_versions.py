@@ -10,7 +10,8 @@ class VersionCheck:
         self.versions = {
             'cmake':           {'installed': '3.11.0-rc1'},
             'freetype':        {'installed': '2.9'},
-            'git':             {'installed': '2.16.1'},
+            'git_mac':         {'installed': '2.15.1'},
+            'git_win':         {'installed': '2.16.1'},
             'glew':            {'installed': '2.1.0'},
             'googletest':      {'installed': '1.8.0'},
             'grepWin':         {'installed': '1.7.1'},
@@ -78,14 +79,24 @@ class VersionCheck:
         return str(version_text)
 
 
-    def get_latest_version_git(self):
+    def get_latest_version_git_mac(self):
         req = Request('https://git-scm.com/download', headers={'User-Agent': 'Mozilla/5.0'})
         page = urlopen(req).read()
         soup = BeautifulSoup(page, 'html.parser')
 
-        version_text = soup.find('span', attrs={'class': 'version'}).text.strip()
+        version_text_raw = soup.find('span', attrs={'id': 'installer-version'})
 
-        return str(version_text)
+        return version_text_raw['data-mac']
+
+
+    def get_latest_version_git_win(self):
+        req = Request('https://git-scm.com/download', headers={'User-Agent': 'Mozilla/5.0'})
+        page = urlopen(req).read()
+        soup = BeautifulSoup(page, 'html.parser')
+
+        version_text_raw = soup.find('span', attrs={'id': 'installer-version'})
+
+        return version_text_raw['data-win']
 
 
     def get_latest_version_glew(self):
