@@ -1,4 +1,5 @@
 from urllib.request import Request, urlopen
+from urllib.error import HTTPError
 from bs4 import BeautifulSoup
 import re
 
@@ -49,6 +50,9 @@ class VersionCheck:
                     self.uptodate = False
             except AttributeError:
                 print(item + ' version could not be found. Check the website.')
+                self.error = True
+            except HTTPError:
+                print(item + ' website couldn\'t be loaded.')
                 self.error = True
 
         print()
