@@ -23,7 +23,7 @@ class VersionCheck:
             'SDL2_mixer':      {'installed': '2.0.2'},
             'SDL2_ttf':        {'installed': '2.0.14'},
             'SFML':            {'installed': '2.4.2'},
-            'TortoiseGit':     {'installed': '2.5.0'},
+            'TortoiseGit':     {'installed': '2.6.0'},
             'VisualStudio':    {'installed': '15.5.6'},
             'WinSCP':          {'installed': '5.11.3'},
             'zlib':            {'installed': '1.2.11'},
