@@ -1,5 +1,6 @@
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError
+from urllib.error import URLError
 from bs4 import BeautifulSoup
 import re
 
@@ -10,7 +11,7 @@ class VersionCheck:
         self.versions = {
             'cmake':           {'installed': '3.11.0-rc1'},
             'freetype':        {'installed': '2.9'},
-            'git_mac':         {'installed': '2.15.1'},
+            'git_mac':         {'installed': '2.16.2'},
             'git_win':         {'installed': '2.16.2'},
             'glew':            {'installed': '2.1.0'},
             'googletest':      {'installed': '1.8.0'},
@@ -52,7 +53,7 @@ class VersionCheck:
             except AttributeError:
                 print(item + ' version could not be found. Check the website.')
                 self.error = True
-            except HTTPError:
+            except (HTTPError, URLError):
                 print(item + ' website couldn\'t be loaded.')
                 self.error = True
 
