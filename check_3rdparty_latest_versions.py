@@ -9,7 +9,7 @@ import re
 class VersionCheck:
     def __init__(self):
         self.versions = {
-            'cmake':           {'installed': '3.11.0-rc2'},
+            'cmake':           {'installed': '3.11.0-rc3'},
             'freetype':        {'installed': '2.9'},
             'git_mac':         {'installed': '2.16.2'},
             'git_win':         {'installed': '2.16.2'},
