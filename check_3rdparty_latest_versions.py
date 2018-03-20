@@ -9,7 +9,7 @@ import re
 class VersionCheck:
     def __init__(self):
         self.versions = {
-            'cmake':           {'installed': '3.11.0-rc3'},
+            'cmake':           {'installed': '3.11.0-rc4'},
             'freetype':        {'installed': '2.9'},
             'git_mac':         {'installed': '2.16.2'},
             'git_win':         {'installed': '2.16.2'},
@@ -18,7 +18,7 @@ class VersionCheck:
             'grepWin':         {'installed': '1.7.1'},
             'KeePass':         {'installed': '2.38'},
             'libpng':          {'installed': '1.6.34'},
-            'NotepadPlusPlus': {'installed': '7.5.5'},
+            'NotepadPlusPlus': {'installed': '7.5.6'},
             'python':          {'installed': '3.6.4'},
             'SDL2':            {'installed': '2.0.8'},
             'SDL2_image':      {'installed': '2.0.3'},
@@ -26,7 +26,7 @@ class VersionCheck:
             'SDL2_ttf':        {'installed': '2.0.14'},
             'SFML':            {'installed': '2.4.2'},
             'TortoiseGit':     {'installed': '2.6.0'},
-            'VisualStudio':    {'installed': '15.6.2'},
+            'VisualStudio':    {'installed': '15.6.3'},
             'WinSCP':          {'installed': '5.13'},
             'zlib':            {'installed': '1.2.11'},
         }
