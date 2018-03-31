@@ -11,7 +11,7 @@ class VersionCheck:
         self.versions = {
             'cmake':           {'installed': '3.11.0'},
             'freetype':        {'installed': '2.9'},
-            'git_mac':         {'installed': '2.16.2'},
+            'git_mac':         {'installed': '2.16.3'},
             'git_win':         {'installed': '2.16.2'},
             'glew':            {'installed': '2.1.0'},
             'googletest':      {'installed': '1.8.0'},
