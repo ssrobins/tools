@@ -26,7 +26,7 @@ class VersionCheck:
             'SDL2_ttf':        {'installed': '2.0.14'},
             'SFML':            {'installed': '2.4.2'},
             'TortoiseGit':     {'installed': '2.6.0'},
-            'VisualStudio':    {'installed': '15.6.4'},
+            'VisualStudio':    {'installed': '15.6.5'},
             'WinSCP':          {'installed': '5.13.1'},
             'zlib':            {'installed': '1.2.11'},
         }
@@ -232,7 +232,7 @@ class VersionCheck:
         page = urlopen('https://www.visualstudio.com/en-us/news/releasenotes/vs2017-relnotes')
         soup = BeautifulSoup(page, 'html.parser')
 
-        version_items = soup.find('h2', attrs={'id': re.compile('^[0-9]+.[0-9]*.[0-9]$')}).text.strip().split()
+        version_items = soup.find('a', attrs={'href': re.compile('^#[0-9]+.[0-9]*.[0-9]$')}).text.strip().split()
         
         return version_items[-1]
 
