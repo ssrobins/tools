@@ -12,7 +12,7 @@ class VersionCheck:
             'cmake':           {'installed': '3.11.1'},
             'freetype':        {'installed': '2.9'},
             'git_mac':         {'installed': '2.16.3'},
-            'git_win':         {'installed': '2.16.2'},
+            'git_win':         {'installed': '2.17.0'},
             'glew':            {'installed': '2.1.0'},
             'googletest':      {'installed': '1.8.0'},
             'grepWin':         {'installed': '1.7.1'},
@@ -26,7 +26,7 @@ class VersionCheck:
             'SDL2_ttf':        {'installed': '2.0.14'},
             'SFML':            {'installed': '2.4.2'},
             'TortoiseGit':     {'installed': '2.6.0'},
-            'VisualStudio':    {'installed': '15.6.6'},
+            'VisualStudio':    {'installed': '15.6.7'},
             'WinSCP':          {'installed': '5.13.1'},
             'zlib':            {'installed': '1.2.11'},
         }
@@ -97,7 +97,7 @@ class VersionCheck:
 
         version_text_raw = soup.find('span', attrs={'id': 'installer-version'})
 
-        return version_text_raw['data-win']
+        return version_text_raw['data-win'].split('-')[1]
 
 
     def get_latest_version_glew(self):
