@@ -10,7 +10,7 @@ class VersionCheck:
     def __init__(self):
         self.versions = {
             'cmake':           {'installed': '3.11.1'},
-            'freetype':        {'installed': '2.9'},
+            'freetype':        {'installed': '2.9.1'},
             'git_mac':         {'installed': '2.16.3'},
             'git_win':         {'installed': '2.17.0'},
             'glew':            {'installed': '2.1.0'},
