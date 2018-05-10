@@ -24,7 +24,7 @@ class VersionCheck:
             'SDL2_image':      {'installed': '2.0.3'},
             'SDL2_mixer':      {'installed': '2.0.2'},
             'SDL2_ttf':        {'installed': '2.0.14'},
-            'SFML':            {'installed': '2.4.2'},
+            'SFML':            {'installed': '2.5.0'},
             'TortoiseGit':     {'installed': '2.6.0'},
             'VisualStudio':    {'installed': '15.7.1'},
             'WinSCP':          {'installed': '5.13.1'},
