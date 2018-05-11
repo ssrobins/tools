@@ -27,7 +27,7 @@ class VersionCheck:
             'SFML':            {'installed': '2.5.0'},
             'TortoiseGit':     {'installed': '2.6.0'},
             'VisualStudio':    {'installed': '15.7.1'},
-            'WinSCP':          {'installed': '5.13.1'},
+            'WinSCP':          {'installed': '5.13.2'},
             'zlib':            {'installed': '1.2.11'},
         }
         
