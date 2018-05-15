@@ -97,7 +97,7 @@ class VersionCheck:
 
         version_text_raw = soup.find('span', attrs={'id': 'installer-version'})
 
-        return version_text_raw['data-win'].split('-')[1]
+        return version_text_raw['data-win']
 
 
     def get_latest_version_glew(self):
