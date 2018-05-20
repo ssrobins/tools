@@ -30,6 +30,7 @@ class VersionCheck:
             'TortoiseGit':     {'installed': '2.6.0'},
             'VisualStudio':    {'installed': '15.7.1'},
             'WinSCP':          {'installed': '5.13.2'},
+            'Xcode':           {'installed': '9.3.1'},
             'zlib':            {'installed': '1.2.11'},
         }
         
@@ -77,9 +78,9 @@ class VersionCheck:
         #page = urlopen('https://developer.android.com/studio/')
         soup = BeautifulSoup(page, 'html.parser')
 
-        version_text = soup.find('div', attrs={'class': 'dac-studio-version'}).text.split()
+        version_items = soup.find('div', attrs={'class': 'dac-studio-version'}).text.split()
 
-        return version_text[0]
+        return version_items[0]
 
 
     def get_latest_version_cmake(self):
@@ -266,6 +267,22 @@ class VersionCheck:
         version_text = soup.find('a', attrs={'href': re.compile('^/projects/winscp/files/WinSCP/[0-9]+.[0-9]+[.[0-9]+]*/$')}).text.strip()
         
         return version_text
+
+
+    def get_latest_version_Xcode(self):
+        page = urlopen('https://developer.apple.com/news/releases/')
+        soup = BeautifulSoup(page, 'html.parser')
+
+        h2_tag_contents = soup.findAll('h2')
+        version_text_raw = None
+        for h2_tag_content in h2_tag_contents:
+            if 'Xcode' in h2_tag_content.text:
+                version_text_raw = h2_tag_content.text
+
+        version_items = version_text_raw.split()
+
+        return version_items[1]
+
 
 
     def get_latest_version_zlib(self):
