@@ -9,6 +9,7 @@ import re
 class VersionCheck:
     def __init__(self):
         self.versions = {
+            'AndroidNDK':      {'installed': 'r17'},
             'AndroidStudio':   {'installed': '3.1.2'},
             'cmake':           {'installed': '3.11.2'},
             'freetype':        {'installed': '2.9.1'},
@@ -59,6 +60,15 @@ class VersionCheck:
                 self.error = True
 
         print()
+
+
+    def get_latest_version_AndroidNDK(self):
+        page = urlopen('https://developer.android.com/ndk/downloads/')
+        soup = BeautifulSoup(page, 'html.parser')
+
+        version_text = soup.find('h2', attrs={'id': 'stable-downloads'}).text.split()[-1].strip('()')
+
+        return version_text
 
 
     def get_latest_version_AndroidStudio(self):
