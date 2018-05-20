@@ -9,6 +9,7 @@ import re
 class VersionCheck:
     def __init__(self):
         self.versions = {
+            'AndroidStudio':   {'installed': '3.1.2'},
             'cmake':           {'installed': '3.11.2'},
             'freetype':        {'installed': '2.9.1'},
             'git_mac':         {'installed': '2.16.3'},
@@ -58,6 +59,17 @@ class VersionCheck:
                 self.error = True
 
         print()
+
+
+    def get_latest_version_AndroidStudio(self):
+        req = Request('https://developer.android.com/studio/', headers={'User-Agent': 'Mozilla/5.0 (X11; Linux i686)'})
+        page = urlopen(req).read()
+        #page = urlopen('https://developer.android.com/studio/')
+        soup = BeautifulSoup(page, 'html.parser')
+
+        version_text = soup.find('div', attrs={'class': 'dac-studio-version'}).text.split()
+
+        return version_text[0]
 
 
     def get_latest_version_cmake(self):
