@@ -28,7 +28,7 @@ class VersionCheck:
             'SDL2_ttf':        {'installed': '2.0.14'},
             'SFML':            {'installed': '2.5.0'},
             'TortoiseGit':     {'installed': '2.6.0'},
-            'VisualStudio':    {'installed': '15.7.1'},
+            'VisualStudio':    {'installed': '15.7.2'},
             'WinSCP':          {'installed': '5.13.2'},
             'Xcode':           {'installed': '9.3.1'},
             'zlib':            {'installed': '1.2.11'},
