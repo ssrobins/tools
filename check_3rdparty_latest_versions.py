@@ -20,6 +20,7 @@ class VersionCheck:
             'grepWin':         {'installed': '1.7.1'},
             'KeePass':         {'installed': '2.39.1'},
             'libpng':          {'installed': '1.6.34'},
+            'MuseScore':       {'installed': '2.2.1'},
             'NotepadPlusPlus': {'installed': '7.5.6'},
             'python':          {'installed': '3.6.5'},
             'SDL2':            {'installed': '2.0.8'},
@@ -166,8 +167,17 @@ class VersionCheck:
         soup = BeautifulSoup(page, 'html.parser')
 
         version_text = soup.find('font', attrs={'size': '+1'}).text.strip()
-        
+
         return version_text
+
+
+    def get_latest_version_MuseScore(self):
+        page = urlopen('https://musescore.org/en')
+        soup = BeautifulSoup(page, 'html.parser')
+
+        version_items = soup.find('span', attrs={'id': 'download-version'}).text.split()
+
+        return version_items[1]
 
 
     def get_latest_version_NotepadPlusPlus(self):
