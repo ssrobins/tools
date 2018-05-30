@@ -14,7 +14,7 @@ class VersionCheck:
             'cmake':           {'installed': '3.11.2'},
             'freetype':        {'installed': '2.9.1'},
             'git_mac':         {'installed': '2.17.0'},
-            'git_win':         {'installed': '2.17.0'},
+            'git_win':         {'installed': '2.17.1'},
             'glew':            {'installed': '2.1.0'},
             'googletest':      {'installed': '1.8.0'},
             'grepWin':         {'installed': '1.7.1'},
@@ -31,7 +31,7 @@ class VersionCheck:
             'TortoiseGit':     {'installed': '2.6.0'},
             'VisualStudio':    {'installed': '15.7.2'},
             'WinSCP':          {'installed': '5.13.2'},
-            'Xcode':           {'installed': '9.3.1'},
+            'Xcode':           {'installed': '9.4'},
             'zlib':            {'installed': '1.2.11'},
         }
         
