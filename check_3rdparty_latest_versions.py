@@ -13,7 +13,7 @@ class VersionCheck:
             'AndroidStudio':   {'installed': '3.1.2'},
             'cmake':           {'installed': '3.11.3'},
             'freetype':        {'installed': '2.9.1'},
-            'git_mac':         {'installed': '2.17.0'},
+            'git_mac':         {'installed': '2.17.1'},
             'git_win':         {'installed': '2.17.1'},
             'glew':            {'installed': '2.1.0'},
             'googletest':      {'installed': '1.8.0'},
