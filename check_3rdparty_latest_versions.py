@@ -31,7 +31,7 @@ class VersionCheck:
             'TortoiseGit':     {'installed': '2.6.0'},
             'VisualStudio':    {'installed': '15.7.3'},
             'WinSCP':          {'installed': '5.13.2'},
-            'Xcode':           {'installed': '9.4'},
+            'Xcode':           {'installed': '10 beta (10L176w)'},
             'zlib':            {'installed': '1.2.11'},
         }
         
@@ -290,9 +290,12 @@ class VersionCheck:
                 version_text_raw = h2_tag_content.text
 
         version_items = version_text_raw.split()
+        if len(version_items) >= 3 and version_items[2] == 'beta':
+            version_text = ' '.join(version_items[1:])
+        else:
+            version_text = version_items[1]
 
-        return version_items[1]
-
+        return version_text
 
 
     def get_latest_version_zlib(self):
