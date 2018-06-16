@@ -11,7 +11,7 @@ class VersionCheck:
         self.versions = {
             'AndroidNDK':      {'installed': 'r17b'},
             'AndroidStudio':   {'installed': '3.1.3'},
-            'cmake':           {'installed': '3.11.3'},
+            'cmake':           {'installed': '3.12.0-rc1'},
             'freetype':        {'installed': '2.9.1'},
             'git_mac':         {'installed': '2.17.1'},
             'git_win':         {'installed': '2.17.1'},
@@ -31,7 +31,7 @@ class VersionCheck:
             'TortoiseGit':     {'installed': '2.6.0'},
             'VisualStudio':    {'installed': '15.7.3'},
             'WinSCP':          {'installed': '5.13.2'},
-            'Xcode':           {'installed': '10 beta (10L176w)'},
+            'Xcode':           {'installed': '9.4.1'},
             'zlib':            {'installed': '1.2.11'},
         }
         
