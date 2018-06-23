@@ -14,7 +14,7 @@ class VersionCheck:
             'cmake':           {'installed': '3.12.0-rc1'},
             'freetype':        {'installed': '2.9.1'},
             'git_mac':         {'installed': '2.17.1'},
-            'git_win':         {'installed': '2.17.1'},
+            'git_win':         {'installed': '2.18.0'},
             'glew':            {'installed': '2.1.0'},
             'googletest':      {'installed': '1.8.0'},
             'grepWin':         {'installed': '1.7.1'},
