@@ -13,6 +13,7 @@ class VersionCheck:
             'AndroidStudio':   {'installed': '3.1.3'},
             'cmake':           {'installed': '3.12.0-rc2'},
             'freetype':        {'installed': '2.9.1'},
+            'GIMP':            {'installed': '2.10.2'},
             'git_mac':         {'installed': '2.17.1'},
             'git_win':         {'installed': '2.18.0'},
             'glew':            {'installed': '2.1.0'},
@@ -100,6 +101,15 @@ class VersionCheck:
         soup = BeautifulSoup(page, 'html.parser')
 
         version_text = soup.find('a', attrs={'href': lambda L: L and L.startswith('/projects/freetype/files/freetype2/')}).text.strip()
+
+        return str(version_text)
+
+
+    def get_latest_version_GIMP(self):
+        page = urlopen('https://www.gimp.org/')
+        soup = BeautifulSoup(page, 'html.parser')
+
+        version_text = soup.find('span', attrs={'id': 'ver'}).text
 
         return str(version_text)
 
