@@ -13,7 +13,7 @@ class VersionCheck:
             'AndroidStudio':   {'installed': '3.1.3'},
             'cmake':           {'installed': '3.12.0-rc2'},
             'freetype':        {'installed': '2.9.1'},
-            'GIMP':            {'installed': '2.10.2'},
+            'GIMP':            {'installed': '2.10.4'},
             'git_mac':         {'installed': '2.18.0'},
             'git_win':         {'installed': '2.18.0'},
             'glew':            {'installed': '2.1.0'},
