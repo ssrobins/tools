@@ -11,7 +11,7 @@ class VersionCheck:
         self.versions = {
             'AndroidNDK':      {'installed': 'r17b'},
             'AndroidStudio':   {'installed': '3.1.3'},
-            'cmake':           {'installed': '3.12.0-rc2'},
+            'cmake':           {'installed': '3.12.0-rc3'},
             'freetype':        {'installed': '2.9.1'},
             'GIMP':            {'installed': '2.10.4'},
             'git_mac':         {'installed': '2.18.0'},
