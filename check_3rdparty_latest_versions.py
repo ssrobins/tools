@@ -22,7 +22,7 @@ class VersionCheck:
             'KeePass':         {'installed': '2.39.1'},
             'libpng':          {'installed': '1.6.34'},
             'MuseScore':       {'installed': '2.3.1'},
-            'NotepadPlusPlus': {'installed': '7.5.7'},
+            'NotepadPlusPlus': {'installed': '7.5.8'},
             'python':          {'installed': '3.7.0'},
             'SDL2':            {'installed': '2.0.8'},
             'SDL2_image':      {'installed': '2.0.3'},
