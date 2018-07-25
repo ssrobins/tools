@@ -20,7 +20,7 @@ class VersionCheck:
             'googletest':      {'installed': '1.8.0'},
             'grepWin':         {'installed': '1.7.1'},
             'KeePass':         {'installed': '2.39.1'},
-            'libpng':          {'installed': '1.6.34'},
+            'libpng':          {'installed': '1.6.35'},
             'MuseScore':       {'installed': '2.3.1'},
             'NotepadPlusPlus': {'installed': '7.5.8'},
             'python':          {'installed': '3.7.0'},
