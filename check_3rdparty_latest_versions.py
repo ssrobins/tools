@@ -21,7 +21,7 @@ class VersionCheck:
             'grepWin':         {'installed': '1.7.1'},
             'KeePass':         {'installed': '2.39.1'},
             'libpng':          {'installed': '1.6.35'},
-            'MuseScore':       {'installed': '2.3.1'},
+            'MuseScore':       {'installed': '2.3.2'},
             'NotepadPlusPlus': {'installed': '7.5.8'},
             'python':          {'installed': '3.7.0'},
             'SDL2':            {'installed': '2.0.8'},
