@@ -10,6 +10,7 @@ class VersionCheck:
     def __init__(self):
         self.versions = {
             'AndroidNDK':      {'installed': 'r17b'},
+            'AndroidSDKTools': {'installed': '4333796'},
             'AndroidStudio':   {'installed': '3.1.4'},
             'bzip2':           {'installed': '1.0.6'},
             'cmake':           {'installed': '3.12.0'},
@@ -76,10 +77,19 @@ class VersionCheck:
         return version_text
 
 
+    def get_latest_version_AndroidSDKTools(self):
+        page = urlopen('https://developer.android.com/studio/')
+        soup = BeautifulSoup(page, 'html.parser')
+
+        version_items = soup.find('button', attrs={'data-modal-dialog-id': 'sdk_linux_download'}).text.split('-')
+        version_subitems = version_items[3].split('.')
+
+        return version_subitems[0]
+
+
     def get_latest_version_AndroidStudio(self):
         req = Request('https://developer.android.com/studio/', headers={'User-Agent': 'Mozilla/5.0 (X11; Linux i686)'})
         page = urlopen(req).read()
-        #page = urlopen('https://developer.android.com/studio/')
         soup = BeautifulSoup(page, 'html.parser')
 
         version_items = soup.find('div', attrs={'class': 'dac-studio-version'}).text.split()
