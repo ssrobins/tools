@@ -10,7 +10,7 @@ class VersionCheck:
     def __init__(self):
         self.versions = {
             'AndroidNDK':      {'installed': 'r17b'},
-            'AndroidStudio':   {'installed': '3.1.3'},
+            'AndroidStudio':   {'installed': '3.1.4'},
             'bzip2':           {'installed': '1.0.6'},
             'cmake':           {'installed': '3.12.0'},
             'freetype':        {'installed': '2.9.1'},
