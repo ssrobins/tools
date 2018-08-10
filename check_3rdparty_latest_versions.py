@@ -13,7 +13,7 @@ class VersionCheck:
             'AndroidSDKTools': {'installed': '4333796'},
             'AndroidStudio':   {'installed': '3.1.4'},
             'bzip2':           {'installed': '1.0.6'},
-            'cmake':           {'installed': '3.12.0'},
+            'cmake':           {'installed': '3.12.1'},
             'freetype':        {'installed': '2.9.1'},
             'gcc':             {'installed': '8.2'},
             'GIMP':            {'installed': '2.10.4'},
