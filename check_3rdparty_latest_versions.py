@@ -19,6 +19,7 @@ class VersionCheck:
             'GIMP':            {'installed': '2.10.4'},
             'git_mac':         {'installed': '2.18.0'},
             'git_win':         {'installed': '2.18.0'},
+            'GitLabRunner':    {'installed': '11.1.0'},
             'glew':            {'installed': '2.1.0'},
             'googletest':      {'installed': '1.8.0'},
             'grepWin':         {'installed': '1.7.1'},
@@ -162,6 +163,20 @@ class VersionCheck:
         version_text_raw = soup.find('span', attrs={'id': 'installer-version'})
 
         return version_text_raw['data-win']
+
+
+    def get_latest_version_GitLabRunner(self):
+        page = urlopen('https://gitlab.com/gitlab-org/gitlab-runner/raw/master/CHANGELOG.md')
+
+        version_text_raw = ''
+        for line in page.readlines():
+            line_str = line.decode("utf-8")
+            if line_str.startswith('v'):
+                version_text_raw = line_str.split()[1]
+                if 'rc' not in version_text_raw:
+                    break
+
+        return version_text_raw
 
 
     def get_latest_version_glew(self):
