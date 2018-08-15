@@ -34,7 +34,7 @@ class VersionCheck:
             'SDL2_ttf':        {'installed': '2.0.14'},
             'SFML':            {'installed': '2.5.0'},
             'TortoiseGit':     {'installed': '2.6.0'},
-            'VisualStudio':    {'installed': '15.7.6'},
+            'VisualStudio':    {'installed': '15.8'},
             'WinSCP':          {'installed': '5.13.3'},
             'Xcode':           {'installed': '9.4.1'},
             'zlib':            {'installed': '1.2.11'},
@@ -192,11 +192,9 @@ class VersionCheck:
         page = urlopen('https://github.com/google/googletest/releases')
         soup = BeautifulSoup(page, 'html.parser')
 
-        version_text_raw = soup.find('span', attrs={'class': 'tag-name'}).text.strip()
+        version_items = soup.find('a', attrs={'href': re.compile('^/google/googletest/releases/tag/release-[0-9]+.[0-9]+.[0-9]+$')}).text.strip().split('-')
 
-        version_text = version_text_raw.split('-')
-
-        return version_text[1]
+        return version_items[1]
 
 
     def get_latest_version_grepWin(self):
