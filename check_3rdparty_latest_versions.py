@@ -12,7 +12,8 @@ class VersionCheck:
             'AndroidNDK':      {'installed': 'r17b'},
             'AndroidSDKTools': {'installed': '4333796'},
             'AndroidStudio':   {'installed': '3.1.4'},
-            'bzip2':           {'installed': '1.0.6'},
+            'bzip2':           {'installed': 'cannot'},
+            'bzip2new':        {'installed': '1.0.6'},
             'cmake':           {'installed': '3.12.1'},
             'freetype':        {'installed': '2.9.1'},
             'gcc':             {'installed': '8.2'},
@@ -105,6 +106,15 @@ class VersionCheck:
         version_items = soup.find('h3').text.strip().split()
 
         return version_items[2]
+
+
+    def get_latest_version_bzip2new(self):
+        page = urlopen('https://github.com/nemequ/bzip2')
+        soup = BeautifulSoup(page, 'html.parser')
+
+        version_text = soup.find('a', attrs={'class': 'message'}).text
+
+        return version_text
 
 
     def get_latest_version_cmake(self):
