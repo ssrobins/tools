@@ -35,7 +35,7 @@ class VersionCheck:
             'SDL2_ttf':        {'installed': '2.0.14'},
             'SFML':            {'installed': '2.5.0'},
             'TortoiseGit':     {'installed': '2.6.0'},
-            'VisualStudio':    {'installed': '15.8'},
+            'VisualStudio':    {'installed': '15.8.1'},
             'WinSCP':          {'installed': '5.13.3'},
             'Xcode':           {'installed': '9.4.1'},
             'zlib':            {'installed': '1.2.11'},
@@ -328,9 +328,16 @@ class VersionCheck:
         page = urlopen('https://www.visualstudio.com/en-us/news/releasenotes/vs2017-relnotes')
         soup = BeautifulSoup(page, 'html.parser')
 
-        version_items = soup.find('a', attrs={'href': re.compile('^#[0-9]+.[0-9]*.[0-9]$')}).text.strip().split()
-        
-        return version_items[-1]
+        version_items = soup.find('a', attrs={'href': re.compile('^#(\d+\.){1,2}(\d+)$')}).text.strip().split()
+
+        version_text = ''
+        for word in version_items:
+            result = re.match('^(\d+\.){1,2}(\d+)$', word)
+            if result:
+                version_text = result.group()
+                break
+
+        return version_text
 
 
     def get_latest_version_WinSCP(self):
