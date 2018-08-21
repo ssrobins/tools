@@ -17,7 +17,8 @@ class VersionCheck:
             'cmake':           {'installed': '3.12.1'},
             'freetype':        {'installed': '2.9.1'},
             'gcc':             {'installed': '8.2'},
-            'GIMP':            {'installed': '2.10.4'},
+            'GIMP_mac':        {'installed': '2.10.4'},
+            'GIMP_win':        {'installed': '2.10.6'},
             'git_mac':         {'installed': '2.18.0'},
             'git_win':         {'installed': '2.18.0'},
             'GitLabRunner':    {'installed': '11.1.0'},
@@ -34,7 +35,7 @@ class VersionCheck:
             'SDL2_mixer':      {'installed': '2.0.2'},
             'SDL2_ttf':        {'installed': '2.0.14'},
             'SFML':            {'installed': '2.5.0'},
-            'TortoiseGit':     {'installed': '2.6.0'},
+            'TortoiseGit':     {'installed': '2.7.0'},
             'VisualStudio':    {'installed': '15.8.1'},
             'WinSCP':          {'installed': '5.13.3'},
             'Xcode':           {'installed': '9.4.1'},
@@ -146,13 +147,22 @@ class VersionCheck:
         return str(version_text[1])
 
 
-    def get_latest_version_GIMP(self):
-        page = urlopen('https://www.gimp.org/')
+    def get_latest_version_GIMP_mac(self):
+        page = urlopen('https://www.gimp.org/downloads/')
         soup = BeautifulSoup(page, 'html.parser')
 
-        version_text = soup.find('span', attrs={'id': 'ver'}).text
+        version_items = soup.find('a', attrs={'href': lambda L: 'osx' in L}).text.strip().split()
 
-        return str(version_text)
+        return str(version_items[2])
+
+
+    def get_latest_version_GIMP_win(self):
+        page = urlopen('https://www.gimp.org/downloads/')
+        soup = BeautifulSoup(page, 'html.parser')
+
+        version_items = soup.find('a', attrs={'href': lambda L: 'windows' in L}).text.strip().split()
+
+        return str(version_items[2])
 
 
     def get_latest_version_git_mac(self):
