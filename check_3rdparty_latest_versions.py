@@ -23,7 +23,7 @@ class VersionCheck:
             'git_win':         {'installed': '2.18.0'},
             'GitLabRunner':    {'installed': '11.2.0'},
             'glew':            {'installed': '2.1.0'},
-            'googletest':      {'installed': '1.8.0'},
+            'googletest':      {'installed': '1.8.1'},
             'grepWin':         {'installed': '1.7.1'},
             'KeePass':         {'installed': '2.39.1'},
             'libpng':          {'installed': '1.6.35'},
@@ -37,7 +37,7 @@ class VersionCheck:
             'SFML':            {'installed': '2.5.0'},
             'TortoiseGit':     {'installed': '2.7.0'},
             'VisualStudio':    {'installed': '15.8.2'},
-            'WinSCP':          {'installed': '5.13.3'},
+            'WinSCP':          {'installed': '5.13.4'},
             'Xcode':           {'installed': '9.4.1'},
             'zlib':            {'installed': '1.2.11'},
         }
@@ -212,9 +212,9 @@ class VersionCheck:
         page = urlopen('https://github.com/google/googletest/releases')
         soup = BeautifulSoup(page, 'html.parser')
 
-        version_items = soup.find('a', attrs={'href': re.compile('^/google/googletest/releases/tag/release-[0-9]+.[0-9]+.[0-9]+$')}).text.strip().split('-')
+        version_text = soup.find('a', attrs={'href': re.compile('^/google/googletest/releases/tag/release-[0-9]+.[0-9]+.[0-9]+$')}).text.lstrip('v')
 
-        return version_items[1]
+        return version_text
 
 
     def get_latest_version_grepWin(self):
