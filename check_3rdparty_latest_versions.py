@@ -110,10 +110,10 @@ class VersionCheck:
 
 
     def get_latest_version_bzip2new(self):
-        page = urlopen('https://github.com/nemequ/bzip2')
+        page = urlopen('https://github.com/nemequ/bzip2/releases')
         soup = BeautifulSoup(page, 'html.parser')
 
-        version_text = soup.find('a', attrs={'class': 'message'}).text
+        version_text = soup.find('a', attrs={'href': re.compile('^/nemequ/bzip2/releases/tag/v[0-9]+.[0-9]+.[0-9]+$')}).text
 
         return version_text
 
