@@ -113,7 +113,7 @@ class VersionCheck:
         page = urlopen('https://github.com/nemequ/bzip2/releases')
         soup = BeautifulSoup(page, 'html.parser')
 
-        version_text = soup.find('a', attrs={'href': re.compile('^/nemequ/bzip2/releases/tag/v[0-9]+.[0-9]+.[0-9]+$')}).text
+        version_text = soup.find('a', attrs={'href': re.compile('^/nemequ/bzip2/releases/tag/v[0-9]+\.[0-9]+\.[0-9]+$')}).text
 
         return version_text
 
@@ -212,7 +212,7 @@ class VersionCheck:
         page = urlopen('https://github.com/google/googletest/releases')
         soup = BeautifulSoup(page, 'html.parser')
 
-        version_text = soup.find('a', attrs={'href': re.compile('^/google/googletest/releases/tag/release-[0-9]+.[0-9]+.[0-9]+$')}).text.lstrip('v')
+        version_text = soup.find('a', attrs={'href': re.compile('^/google/googletest/releases/tag/release-[0-9]+\.[0-9]+\.[0-9]+$')}).text.lstrip('v')
 
         return version_text
 
@@ -221,7 +221,7 @@ class VersionCheck:
         page = urlopen('https://sourceforge.net/projects/grepwin/files/')
         soup = BeautifulSoup(page, 'html.parser')
 
-        version_text = soup.find('a', attrs={'href': re.compile('^/projects/grepwin/files/[0-9]+.[0-9]+[.[0-9]+]*/$')}).text.strip()
+        version_text = soup.find('a', attrs={'href': re.compile('^/projects/grepwin/files/[0-9]+\.[0-9]+[\.[0-9]+]*/$')}).text.strip()
 
         return version_text
 
@@ -354,7 +354,7 @@ class VersionCheck:
         page = urlopen('https://sourceforge.net/projects/winscp/files/WinSCP/')
         soup = BeautifulSoup(page, 'html.parser')
 
-        version_text = soup.find('a', attrs={'href': re.compile('^/projects/winscp/files/WinSCP/[0-9]+.[0-9]+[.[0-9]+]*/$')}).text.strip()
+        version_text = soup.find('a', attrs={'href': re.compile('^/projects/winscp/files/WinSCP/[0-9]+\.[0-9]+[\.[0-9]+]*/$')}).text.strip()
         
         return version_text
 
