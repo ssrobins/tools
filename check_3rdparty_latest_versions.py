@@ -25,7 +25,7 @@ class VersionCheck:
             'glew':            {'installed': '2.1.0'},
             'googletest':      {'installed': '1.8.1'},
             'grepWin':         {'installed': '1.7.1'},
-            'KeePass':         {'installed': '2.39.1'},
+            'KeePass':         {'installed': '2.40'},
             'libpng':          {'installed': '1.6.35'},
             'MuseScore':       {'installed': '2.3.2'},
             'NotepadPlusPlus': {'installed': '7.5.8'},
