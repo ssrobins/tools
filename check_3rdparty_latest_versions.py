@@ -20,7 +20,7 @@ class VersionCheck:
             'GIMP_mac':        {'installed': '2.10.6'},
             'GIMP_win':        {'installed': '2.10.6'},
             'git_mac':         {'installed': '2.18.0'},
-            'git_win':         {'installed': '2.18.0'},
+            'git_win':         {'installed': '2.19.0'},
             'GitLabRunner':    {'installed': '11.2.0'},
             'glew':            {'installed': '2.1.0'},
             'googletest':      {'installed': '1.8.1'},
@@ -335,7 +335,7 @@ class VersionCheck:
 
 
     def get_latest_version_VisualStudio(self):
-        page = urlopen('https://www.visualstudio.com/en-us/news/releasenotes/vs2017-relnotes')
+        page = urlopen('https://docs.microsoft.com/en-us/visualstudio/releasenotes/vs2017-relnotes')
         soup = BeautifulSoup(page, 'html.parser')
 
         version_items = soup.find('a', attrs={'href': re.compile('^#(\d+\.){1,2}(\d+)$')}).text.strip().split()
