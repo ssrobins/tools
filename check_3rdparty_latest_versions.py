@@ -38,7 +38,7 @@ class VersionCheck:
             'TortoiseGit':     {'installed': '2.7.0'},
             'VisualStudio':    {'installed': '15.8.4'},
             'WinSCP':          {'installed': '5.13.4'},
-            'Xcode':           {'installed': '9.4.1'},
+            'Xcode':           {'installed': '10'},
             'zlib':            {'installed': '1.2.11'},
         }
         
