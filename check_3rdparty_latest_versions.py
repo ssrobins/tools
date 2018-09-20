@@ -9,7 +9,7 @@ import re
 class VersionCheck:
     def __init__(self):
         self.versions = {
-            'AndroidNDK':      {'installed': 'r17c'},
+            'AndroidNDK':      {'installed': 'r18'},
             'AndroidSDKTools': {'installed': '4333796'},
             'AndroidStudio':   {'installed': '3.1.4'},
             'bzip2':           {'installed': 'cannot'},
