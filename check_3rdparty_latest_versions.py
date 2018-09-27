@@ -11,8 +11,8 @@ class VersionCheck:
         self.versions = {
             'AndroidNDK':      {'installed': 'r18'},
             'AndroidSDKTools': {'installed': '4333796'},
-            'AndroidStudio':   {'installed': '3.1.4'},
-            'bzip2':           {'installed': 'cannot'},
+            'AndroidStudio':   {'installed': '3.2'},
+            'bzip2':           {'installed': 'Find the latest version on SourceForge.'},
             'bzip2new':        {'installed': '1.0.6'},
             'cmake':           {'installed': '3.12.2'},
             'freetype':        {'installed': '2.9.1'},
@@ -104,9 +104,9 @@ class VersionCheck:
         page = urlopen('http://www.bzip.org/downloads.html')
         soup = BeautifulSoup(page, 'html.parser')
 
-        version_items = soup.find('h3').text.strip().split()
+        version_text = soup.find('div', attrs={'class': 'entry-content'}).text.strip()
 
-        return version_items[2]
+        return version_text
 
 
     def get_latest_version_bzip2new(self):
