@@ -15,6 +15,7 @@ class VersionCheck:
             'bzip2':           {'installed': 'Find the latest version on SourceForge.'},
             'bzip2new':        {'installed': '1.0.6'},
             'cmake':           {'installed': '3.13.0-rc1'},
+            'conan':           {'installed': '1.8.4'},
             'freetype':        {'installed': '2.9.1'},
             'gcc':             {'installed': '8.2'},
             'GIMP_mac':        {'installed': '2.10.6'},
@@ -126,6 +127,15 @@ class VersionCheck:
         
         version_text = version_items[2].strip('()')
         
+        return version_text
+
+
+    def get_latest_version_conan(self):
+        page = urlopen('https://conan.io/')
+        soup = BeautifulSoup(page, 'html.parser')
+
+        version_text = soup.find('span', attrs={'class': 'dl-version'}).text.strip()
+
         return version_text
 
 
