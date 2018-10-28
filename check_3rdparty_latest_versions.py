@@ -152,9 +152,14 @@ class VersionCheck:
         page = urlopen('https://gcc.gnu.org/releases.html')
         soup = BeautifulSoup(page, 'html.parser')
 
-        version_text = soup.find('a', attrs={'href': lambda L: L and L.startswith('gcc')}).text.strip().split()
+        version_list_raw = soup.findAll('a', attrs={'href': lambda L: L and L.startswith('gcc-')}, limit=10)
+        latest_version = 0
+        for version_raw in version_list_raw:
+            version = float(version_raw.text.split()[1])
+            if(version > latest_version):
+                latest_version = version
 
-        return str(version_text[1])
+        return str(latest_version)
 
 
     def get_latest_version_GIMP_mac(self):
