@@ -15,7 +15,7 @@ class VersionCheck:
             'bzip2':           {'installed': 'Find the latest version on SourceForge.'},
             'bzip2new':        {'installed': '1.0.6'},
             'cmake':           {'installed': '3.13.0-rc2'},
-            'conan':           {'installed': '1.8.4'},
+            'conan':           {'installed': '1.9.0'},
             'freetype':        {'installed': '2.9.1'},
             'gcc':             {'installed': '8.2'},
             'GIMP_mac':        {'installed': '2.10.6'},
@@ -39,7 +39,7 @@ class VersionCheck:
             'TortoiseGit':     {'installed': '2.7.0'},
             'VisualStudio':    {'installed': '15.8.8'},
             'WinSCP':          {'installed': '5.13.4'},
-            'Xcode':           {'installed': '10'},
+            'Xcode':           {'installed': '10.1'},
             'zlib':            {'installed': '1.2.11'},
         }
         
