@@ -15,10 +15,10 @@ class VersionCheck:
             'bzip2':           {'installed': 'Find the latest version on SourceForge.'},
             'bzip2new':        {'installed': '1.0.6'},
             'cmake':           {'installed': '3.13.0-rc3'},
-            'conan':           {'installed': '1.9.0'},
+            'conan':           {'installed': '1.9.1'},
             'freetype':        {'installed': '2.9.1'},
             'gcc':             {'installed': '8.2'},
-            'GIMP_mac':        {'installed': '2.10.6'},
+            'GIMP_mac':        {'installed': '2.10.8'},
             'GIMP_win':        {'installed': '2.10.6'},
             'git_mac':         {'installed': '2.19.0'},
             'git_win':         {'installed': '2.19.1'},
@@ -207,7 +207,7 @@ class VersionCheck:
         for line in page.readlines():
             line_str = line.decode("utf-8")
             if line_str.startswith('v'):
-                version_text_raw = line_str.split()[1]
+                version_text_raw = line_str.split('v')[1].split('(')[0].strip()
                 if 'rc' not in version_text_raw:
                     break
 
