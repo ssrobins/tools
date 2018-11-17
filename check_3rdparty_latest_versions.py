@@ -238,7 +238,7 @@ class VersionCheck:
         soup = BeautifulSoup(page, 'html.parser')
 
         version_items = soup.find('p').text.strip().split()
-        print(version_items)
+
         version_text = ''
         for word in version_items:
             result = re.match('^(\d+\.){1,2}(\d+)', word)
