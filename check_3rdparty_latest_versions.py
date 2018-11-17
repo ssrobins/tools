@@ -25,6 +25,7 @@ class VersionCheck:
             'GitLabRunner':    {'installed': '11.4.0'},
             'glew':            {'installed': '2.1.0'},
             'googletest':      {'installed': '1.8.1'},
+            'Gradle':          {'installed': '4.10.2'},
             'grepWin':         {'installed': '1.7.1'},
             'KeePass':         {'installed': '2.40'},
             'libpng':          {'installed': '1.6.35'},
@@ -228,6 +229,22 @@ class VersionCheck:
         soup = BeautifulSoup(page, 'html.parser')
 
         version_text = soup.find('a', attrs={'href': re.compile('^/google/googletest/releases/tag/release-[0-9]+\.[0-9]+\.[0-9]+$')}).text.lstrip('v')
+
+        return version_text
+
+
+    def get_latest_version_Gradle(self):
+        page = urlopen('https://gradle.org/install/')
+        soup = BeautifulSoup(page, 'html.parser')
+
+        version_items = soup.find('p').text.strip().split()
+        print(version_items)
+        version_text = ''
+        for word in version_items:
+            result = re.match('^(\d+\.){1,2}(\d+)', word)
+            if result:
+                version_text = result.group()
+                break
 
         return version_text
 
