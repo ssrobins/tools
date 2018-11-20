@@ -38,7 +38,7 @@ class VersionCheck:
             'SDL2_ttf':        {'installed': '2.0.14'},
             'SFML':            {'installed': '2.5.1'},
             'TortoiseGit':     {'installed': '2.7.0'},
-            'VisualStudio':    {'installed': '15.9.1'},
+            'VisualStudio':    {'installed': '15.9.2'},
             'WinSCP':          {'installed': '5.13.4'},
             'Xcode':           {'installed': '10.1'},
             'zlib':            {'installed': '1.2.11'},
@@ -225,10 +225,10 @@ class VersionCheck:
 
 
     def get_latest_version_googletest(self):
-        page = urlopen('https://github.com/google/googletest/releases')
+        page = urlopen('https://github.com/abseil/googletest/releases')
         soup = BeautifulSoup(page, 'html.parser')
 
-        version_text = soup.find('a', attrs={'href': re.compile('^/google/googletest/releases/tag/release-[0-9]+\.[0-9]+\.[0-9]+$')}).text.lstrip('v')
+        version_text = soup.find('a', attrs={'href': re.compile('^/abseil/googletest/releases/tag/release-[0-9]+\.[0-9]+\.[0-9]+$')}).text.lstrip('v')
 
         return version_text
 
