@@ -39,7 +39,7 @@ class VersionCheck:
             'SFML':            {'installed': '2.5.1'},
             'TortoiseGit':     {'installed': '2.7.0'},
             'VisualStudio':    {'installed': '15.9.2'},
-            'WinSCP':          {'installed': '5.13.4'},
+            'WinSCP':          {'installed': '5.13.5'},
             'Xcode':           {'installed': '10.1'},
             'zlib':            {'installed': '1.2.11'},
         }
