@@ -25,7 +25,7 @@ class VersionCheck:
             'GitLabRunner':    {'installed': '11.5.0'},
             'glew':            {'installed': '2.1.0'},
             'googletest':      {'installed': '1.8.1'},
-            'Gradle':          {'installed': '4.10.2'},
+            'Gradle':          {'installed': '5.0'},
             'grepWin':         {'installed': '1.7.1'},
             'KeePass':         {'installed': '2.40'},
             'libpng':          {'installed': '1.6.35'},
