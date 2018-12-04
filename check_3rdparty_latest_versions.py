@@ -28,7 +28,7 @@ class VersionCheck:
             'Gradle':          {'installed': '5.0'},
             'grepWin':         {'installed': '1.7.1'},
             'KeePass':         {'installed': '2.40'},
-            'libpng':          {'installed': '1.6.35'},
+            'libpng':          {'installed': '1.6.36'},
             'MuseScore':       {'installed': '2.3.2'},
             'NotepadPlusPlus': {'installed': '7.6'},
             'python':          {'installed': '3.7.1'},
