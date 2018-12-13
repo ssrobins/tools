@@ -30,7 +30,7 @@ class VersionCheck:
             'KeePass':         {'installed': '2.40'},
             'libpng':          {'installed': '1.6.36'},
             'MuseScore':       {'installed': '2.3.2'},
-            'NotepadPlusPlus': {'installed': '7.6'},
+            'NotepadPlusPlus': {'installed': '7.6.1'},
             'python':          {'installed': '3.7.1'},
             'SDL2':            {'installed': '2.0.9'},
             'SDL2_image':      {'installed': '2.0.4'},
@@ -39,7 +39,7 @@ class VersionCheck:
             'SFML':            {'installed': '2.5.1'},
             'TortoiseGit':     {'installed': '2.7.0'},
             'VisualStudio':    {'installed': '15.9.4'},
-            'WinSCP':          {'installed': '5.13.5'},
+            'WinSCP':          {'installed': '5.13.6'},
             'Xcode':           {'installed': '10.1'},
             'zlib':            {'installed': '1.2.11'},
         }
@@ -225,10 +225,10 @@ class VersionCheck:
 
 
     def get_latest_version_googletest(self):
-        page = urlopen('https://github.com/abseil/googletest/releases')
+        page = urlopen('https://github.com/google/googletest/releases')
         soup = BeautifulSoup(page, 'html.parser')
 
-        version_text = soup.find('a', attrs={'href': re.compile('^/abseil/googletest/releases/tag/release-[0-9]+\.[0-9]+\.[0-9]+$')}).text.lstrip('v')
+        version_text = soup.find('a', attrs={'href': re.compile('^/google/googletest/releases/tag/release-[0-9]+\.[0-9]+\.[0-9]+$')}).text.lstrip('v')
 
         return version_text
 
