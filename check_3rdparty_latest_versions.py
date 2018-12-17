@@ -21,7 +21,7 @@ class VersionCheck:
             'GIMP_mac':        {'installed': '2.10.8'},
             'GIMP_win':        {'installed': '2.10.8'},
             'git_mac':         {'installed': '2.19.2'},
-            'git_win':         {'installed': '2.20.0'},
+            'git_win':         {'installed': '2.20.1'},
             'GitLabRunner':    {'installed': '11.5.0'},
             'glew':            {'installed': '2.1.0'},
             'googletest':      {'installed': '1.8.1'},
