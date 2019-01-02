@@ -30,7 +30,7 @@ class VersionCheck:
             'KeePass':         {'installed': '2.40'},
             'libpng':          {'installed': '1.6.36'},
             'MuseScore':       {'installed': '3.0'},
-            'NotepadPlusPlus': {'installed': '7.6.1'},
+            'NotepadPlusPlus': {'installed': '7.6.2'},
             'python':          {'installed': '3.7.2'},
             'SDL2':            {'installed': '2.0.9'},
             'SDL2_image':      {'installed': '2.0.4'},
@@ -291,7 +291,7 @@ class VersionCheck:
 
         version_items = soup.find('h1').text.strip().split()
         
-        return version_items[-1]
+        return version_items[2]
 
 
     def get_latest_version_python(self):
