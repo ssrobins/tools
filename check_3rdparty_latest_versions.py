@@ -32,7 +32,7 @@ class VersionCheck:
             'MuseScore':       {'installed': '3.0'},
             'NotepadPlusPlus': {'installed': '7.6.2'},
             'python':          {'installed': '3.7.2'},
-            'SDL2':            {'installed': '2.0.9'},
+            'SDL2':            {'installed': '2.0.9'}, # Stuck at 2.0.8: https://bugzilla.libsdl.org/show_bug.cgi?id=4316
             'SDL2_image':      {'installed': '2.0.4'},
             'SDL2_mixer':      {'installed': '2.0.4'},
             'SDL2_ttf':        {'installed': '2.0.14'},
