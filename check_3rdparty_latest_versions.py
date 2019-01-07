@@ -20,7 +20,7 @@ class VersionCheck:
             'gcc':             {'installed': '8.2'},
             'GIMP_mac':        {'installed': '2.10.8'},
             'GIMP_win':        {'installed': '2.10.8'},
-            'git_mac':         {'installed': '2.19.2'},
+            'git_mac':         {'installed': '2.20.1'},
             'git_win':         {'installed': '2.20.1'},
             'GitLabRunner':    {'installed': '11.6.0'},
             'glew':            {'installed': '2.1.0'},
