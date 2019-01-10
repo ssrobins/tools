@@ -27,7 +27,7 @@ class VersionCheck:
             'googletest':      {'installed': '1.8.1'},
             'Gradle':          {'installed': '5.1'}, # Stuck at 4.6: https://issuetracker.google.com/issues/122278060
             'grepWin':         {'installed': '1.7.1'},
-            'KeePass':         {'installed': '2.40'},
+            'KeePass':         {'installed': '2.41'},
             'libpng':          {'installed': '1.6.36'},
             'MuseScore':       {'installed': '3.0'},
             'NotepadPlusPlus': {'installed': '7.6.2'},
