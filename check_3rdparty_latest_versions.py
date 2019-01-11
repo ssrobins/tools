@@ -25,7 +25,7 @@ class VersionCheck:
             'GitLabRunner':    {'installed': '11.6.0'},
             'glew':            {'installed': '2.1.0'},
             'googletest':      {'installed': '1.8.1'},
-            'Gradle':          {'installed': '5.1'}, # Stuck at 4.6: https://issuetracker.google.com/issues/122278060
+            'Gradle':          {'installed': '5.1.1'}, # Stuck at 4.6: https://issuetracker.google.com/issues/122278060
             'grepWin':         {'installed': '1.7.1'},
             'KeePass':         {'installed': '2.41'},
             'libpng':          {'installed': '1.6.36'},
