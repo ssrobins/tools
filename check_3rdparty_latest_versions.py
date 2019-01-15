@@ -11,10 +11,10 @@ class VersionCheck:
         self.versions = {
             'AndroidNDK':      {'installed': 'r18b'},
             'AndroidSDKTools': {'installed': '4333796'},
-            'AndroidStudio':   {'installed': '3.2.1'},
+            'AndroidStudio':   {'installed': '3.3'},
             'bzip2':           {'installed': 'Find the latest version on SourceForge.'},
             'bzip2new':        {'installed': '1.0.6'},
-            'cmake':           {'installed': '3.13.2'},
+            'cmake':           {'installed': '3.13.3'},
             'conan':           {'installed': '1.11.2'},
             'freetype':        {'installed': '2.9.1'},
             'gcc':             {'installed': '8.2'},
@@ -25,7 +25,7 @@ class VersionCheck:
             'GitLabRunner':    {'installed': '11.6.0'},
             'glew':            {'installed': '2.1.0'},
             'googletest':      {'installed': '1.8.1'},
-            'Gradle':          {'installed': '5.1.1'}, # Stuck at 4.6: https://issuetracker.google.com/issues/122278060
+            'Gradle':          {'installed': '5.1.1'},
             'grepWin':         {'installed': '1.7.1'},
             'KeePass':         {'installed': '2.41'},
             'libpng':          {'installed': '1.6.36'},
