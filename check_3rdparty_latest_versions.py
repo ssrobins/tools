@@ -9,7 +9,7 @@ import re
 class VersionCheck:
     def __init__(self):
         self.versions = {
-            'AndroidNDK':      {'installed': 'r18b'},
+            'AndroidNDK':      {'installed': 'r19'}, # Try using NDK's toolchain to upgrade past r18b: https://gitlab.kitware.com/cmake/cmake/issues/18739
             'AndroidSDKTools': {'installed': '4333796'},
             'AndroidStudio':   {'installed': '3.3'},
             'bzip2':           {'installed': 'Find the latest version on SourceForge.'},
@@ -29,7 +29,7 @@ class VersionCheck:
             'grepWin':         {'installed': '1.7.1'},
             'KeePass':         {'installed': '2.41'},
             'libpng':          {'installed': '1.6.36'},
-            'MuseScore':       {'installed': '3.0'},
+            'MuseScore':       {'installed': '3.0.1'},
             'NotepadPlusPlus': {'installed': '7.6.2'},
             'python':          {'installed': '3.7.2'},
             'SDL2':            {'installed': '2.0.9'}, # Stuck at 2.0.8: https://bugzilla.libsdl.org/show_bug.cgi?id=4316
