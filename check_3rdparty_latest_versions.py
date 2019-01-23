@@ -22,7 +22,7 @@ class VersionCheck:
             'GIMP_win':        {'installed': '2.10.8'},
             'git_mac':         {'installed': '2.20.1'},
             'git_win':         {'installed': '2.20.1'},
-            'GitLabRunner':    {'installed': '11.6.0'},
+            'GitLabRunner':    {'installed': '11.7.0'},
             'glew':            {'installed': '2.1.0'},
             'googletest':      {'installed': '1.8.1'},
             'Gradle':          {'installed': '5.1.1'},
