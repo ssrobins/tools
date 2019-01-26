@@ -35,7 +35,7 @@ class VersionCheck:
             'SDL2':            {'installed': '2.0.9'}, # Stuck at 2.0.8: https://bugzilla.libsdl.org/show_bug.cgi?id=4316
             'SDL2_image':      {'installed': '2.0.4'},
             'SDL2_mixer':      {'installed': '2.0.4'},
-            'SDL2_ttf':        {'installed': '2.0.14'},
+            'SDL2_ttf':        {'installed': '2.0.15'},
             'SFML':            {'installed': '2.5.1'},
             'TortoiseGit':     {'installed': '2.7.0'},
             'VisualStudio':    {'installed': '15.9.6'},
