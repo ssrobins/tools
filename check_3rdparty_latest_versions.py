@@ -15,7 +15,7 @@ class VersionCheck:
             'bzip2':           {'installed': 'Find the latest version on SourceForge.'},
             'bzip2new':        {'installed': '1.0.6'},
             'cmake':           {'installed': '3.13.3'},
-            'conan':           {'installed': '1.11.2'},
+            'conan':           {'installed': '1.12.0'},
             'freetype':        {'installed': '2.9.1'},
             'gcc':             {'installed': '8.2'},
             'GIMP_mac':        {'installed': '2.10.8'},
@@ -29,7 +29,7 @@ class VersionCheck:
             'grepWin':         {'installed': '1.7.1'},
             'KeePass':         {'installed': '2.41'},
             'libpng':          {'installed': '1.6.36'},
-            'MuseScore':       {'installed': '3.0.1'},
+            'MuseScore':       {'installed': '3.0.2'},
             'NotepadPlusPlus': {'installed': '7.6.3'},
             'python':          {'installed': '3.7.2'},
             'SDL2':            {'installed': '2.0.9'}, # Stuck at 2.0.8: https://bugzilla.libsdl.org/show_bug.cgi?id=4316
