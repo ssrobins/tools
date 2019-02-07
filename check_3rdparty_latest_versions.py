@@ -11,7 +11,7 @@ class VersionCheck:
         self.versions = {
             'AndroidNDK':      {'installed': 'r19'}, # Try using NDK's toolchain to upgrade past r18b: https://gitlab.kitware.com/cmake/cmake/issues/18739
             'AndroidSDKTools': {'installed': '4333796'},
-            'AndroidStudio':   {'installed': '3.3'},
+            'AndroidStudio':   {'installed': '3.3.1'},
             'bzip2':           {'installed': 'Find the latest version on SourceForge.'},
             'bzip2new':        {'installed': '1.0.6'},
             'cmake':           {'installed': '3.13.4'},
