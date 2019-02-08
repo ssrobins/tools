@@ -38,7 +38,8 @@ class VersionCheck:
             'SDL2_ttf':        {'installed': '2.0.15'},
             'SFML':            {'installed': '2.5.1'},
             'TortoiseGit':     {'installed': '2.7.0'},
-            'VisualStudio':    {'installed': '15.9.6'},
+            'VS2017':          {'installed': '15.9.6'},
+            'VS2019Preview':   {'installed': '2.2'},
             'WinSCP':          {'installed': '5.13.7'},
             'Xcode':           {'installed': '10.1'},
             'zlib':            {'installed': '1.2.11'},
@@ -366,11 +367,27 @@ class VersionCheck:
         return version_items[-1]
 
 
-    def get_latest_version_VisualStudio(self):
+    def get_latest_version_VS2017(self):
         page = urlopen('https://docs.microsoft.com/en-us/visualstudio/releasenotes/vs2017-relnotes')
         soup = BeautifulSoup(page, 'html.parser')
 
         version_items = soup.find('a', attrs={'href': re.compile('^#(\d+\.){1,2}(\d+)$')}).text.strip().split()
+
+        version_text = ''
+        for word in version_items:
+            result = re.match('^(\d+\.){1,2}(\d+)$', word)
+            if result:
+                version_text = result.group()
+                break
+
+        return version_text
+
+
+    def get_latest_version_VS2019Preview(self):
+        page = urlopen('https://docs.microsoft.com/en-us/visualstudio/releases/2019/release-notes')
+        soup = BeautifulSoup(page, 'html.parser')
+
+        version_items = soup.find('a', attrs={'href': re.compile('^#VS2019')}).text.strip().split()
 
         version_text = ''
         for word in version_items:
