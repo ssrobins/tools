@@ -14,7 +14,7 @@ class VersionCheck:
             'AndroidStudio':   {'installed': '3.3.1'},
             'bzip2':           {'installed': 'Find the latest version on SourceForge.'},
             'bzip2new':        {'installed': '1.0.6'},
-            'cmake':           {'installed': '3.13.4'},
+            'cmake':           {'installed': '3.14.0-rc1'},
             'conan':           {'installed': '1.12.1'},
             'freetype':        {'installed': '2.9.1'},
             'gcc':             {'installed': '8.2'},
