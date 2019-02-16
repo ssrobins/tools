@@ -9,12 +9,12 @@ import re
 class VersionCheck:
     def __init__(self):
         self.versions = {
-            'AndroidNDK':      {'installed': 'r19'}, # Try using NDK's toolchain to upgrade past r18b: https://gitlab.kitware.com/cmake/cmake/issues/18739
+            'AndroidNDK':      {'installed': 'r19b'}, # Try using NDK's toolchain to upgrade past r18b: https://gitlab.kitware.com/cmake/cmake/issues/18739
             'AndroidSDKTools': {'installed': '4333796'},
             'AndroidStudio':   {'installed': '3.3.1'},
             'bzip2':           {'installed': 'Find the latest version on SourceForge.'},
             'bzip2new':        {'installed': '1.0.6'},
-            'cmake':           {'installed': '3.14.0-rc1'},
+            'cmake':           {'installed': '3.14.0-rc2'},
             'conan':           {'installed': '1.12.2'},
             'freetype':        {'installed': '2.9.1'},
             'gcc':             {'installed': '8.2'},
@@ -39,7 +39,7 @@ class VersionCheck:
             'SFML':            {'installed': '2.5.1'},
             'TortoiseGit':     {'installed': '2.7.0'},
             'VS2017':          {'installed': '15.9.7'},
-            'VS2019Preview':   {'installed': '2.2'},
+            'VS2019':          {'installed': 'Preview 3'},
             'WinSCP':          {'installed': '5.13.7'},
             'Xcode':           {'installed': '10.1'},
             'zlib':            {'installed': '1.2.11'},
@@ -383,18 +383,12 @@ class VersionCheck:
         return version_text
 
 
-    def get_latest_version_VS2019Preview(self):
+    def get_latest_version_VS2019(self):
         page = urlopen('https://docs.microsoft.com/en-us/visualstudio/releases/2019/release-notes')
         soup = BeautifulSoup(page, 'html.parser')
 
         version_items = soup.find('a', attrs={'href': re.compile('^#VS2019')}).text.strip().split()
-
-        version_text = ''
-        for word in version_items:
-            result = re.match('^(\d+\.){1,2}(\d+)$', word)
-            if result:
-                version_text = result.group()
-                break
+        version_text = ' '.join(version_items[-2:])
 
         return version_text
 
