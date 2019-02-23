@@ -17,12 +17,12 @@ class VersionCheck:
             'cmake':           {'installed': '3.14.0-rc2'}, # Stuck at 3.14.0 RC1: https://gitlab.kitware.com/cmake/cmake/issues/18936
             'conan':           {'installed': '1.12.3'},
             'freetype':        {'installed': '2.9.1'},
-            'gcc':             {'installed': '8.2'},
+            'gcc':             {'installed': '8.3'}, # Stuck at gcc 8.2 until the new version is on DockerHub (https://hub.docker.com/_/gcc)
             'GIMP_mac':        {'installed': '2.10.8'},
             'GIMP_win':        {'installed': '2.10.8'},
             'git_mac':         {'installed': '2.20.1'},
             'git_win':         {'installed': '2.20.1'},
-            'GitLabRunner':    {'installed': '11.7.0'},
+            'GitLabRunner':    {'installed': '11.8.0'},
             'glew':            {'installed': '2.1.0'},
             'googletest':      {'installed': '1.8.1'},
             'Gradle':          {'installed': '5.2.1'},
