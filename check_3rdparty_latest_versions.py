@@ -29,7 +29,7 @@ class VersionCheck:
             'grepWin':         {'installed': '1.7.1'},
             'KeePass':         {'installed': '2.41'},
             'libpng':          {'installed': '1.6.36'},
-            'MuseScore':       {'installed': '3.0.2'},
+            'MuseScore':       {'installed': '3.0.3'},
             'NotepadPlusPlus': {'installed': '7.6.3'},
             'python':          {'installed': '3.7.2'},
             'SDL2':            {'installed': '2.0.9'}, # Stuck at 2.0.8: https://bugzilla.libsdl.org/show_bug.cgi?id=4316
