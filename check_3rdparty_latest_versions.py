@@ -20,7 +20,7 @@ class VersionCheck:
             'gcc':             {'installed': '8.3'}, # Stuck at gcc 8.2 until the new version is on DockerHub (https://hub.docker.com/_/gcc)
             'GIMP_mac':        {'installed': '2.10.8'},
             'GIMP_win':        {'installed': '2.10.8'},
-            'git_mac':         {'installed': '2.20.1'},
+            'git_mac':         {'installed': '2.21.0'},
             'git_win':         {'installed': '2.21.0'},
             'GitLabRunner':    {'installed': '11.8.0'},
             'glew':            {'installed': '2.1.0'},
@@ -29,7 +29,7 @@ class VersionCheck:
             'grepWin':         {'installed': '1.7.1'},
             'KeePass':         {'installed': '2.41'},
             'libpng':          {'installed': '1.6.36'},
-            'MuseScore':       {'installed': '3.0.3'},
+            'MuseScore':       {'installed': '3.0.4'},
             'NotepadPlusPlus': {'installed': '7.6.3'},
             'python':          {'installed': '3.7.2'},
             'SDL2':            {'installed': '2.0.9'}, # Stuck at 2.0.8: https://bugzilla.libsdl.org/show_bug.cgi?id=4316
@@ -37,7 +37,7 @@ class VersionCheck:
             'SDL2_mixer':      {'installed': '2.0.4'},
             'SDL2_ttf':        {'installed': '2.0.15'},
             'SFML':            {'installed': '2.5.1'},
-            'TortoiseGit':     {'installed': '2.7.0'},
+            'TortoiseGit':     {'installed': '2.8.0'},
             'VS2017':          {'installed': '15.9.7'},
             'VS2019':          {'installed': '2019 RC'},
             'WinSCP':          {'installed': '5.13.8'},
