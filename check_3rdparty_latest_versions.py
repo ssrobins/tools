@@ -9,12 +9,12 @@ import re
 class VersionCheck:
     def __init__(self):
         self.versions = {
-            'AndroidNDK':      {'installed': 'r19b'}, # Try using NDK's toolchain to upgrade past r18b: https://gitlab.kitware.com/cmake/cmake/issues/18739
+            'AndroidNDK':      {'installed': 'r19b'},
             'AndroidSDKTools': {'installed': '4333796'},
             'AndroidStudio':   {'installed': '3.3.1'},
             'bzip2':           {'installed': 'Find the latest version on SourceForge.'},
             'bzip2new':        {'installed': '1.0.6'},
-            'cmake':           {'installed': '3.14.0-rc2'}, # Stuck at 3.14.0 RC1: https://gitlab.kitware.com/cmake/cmake/issues/18936
+            'cmake':           {'installed': '3.14.0-rc3'},
             'conan':           {'installed': '1.12.3'},
             'freetype':        {'installed': '2.9.1'},
             'gcc':             {'installed': '8.3'},
