@@ -30,7 +30,7 @@ class VersionCheck:
             'KeePass':         {'installed': '2.41'},
             'libpng':          {'installed': '1.6.36'},
             'MuseScore':       {'installed': '3.0.4'},
-            'NotepadPlusPlus': {'installed': '7.6.3'},
+            'NotepadPlusPlus': {'installed': '7.6.4'},
             'python':          {'installed': '3.7.2'},
             'SDL2':            {'installed': '2.0.9'}, # Stuck at 2.0.8: https://bugzilla.libsdl.org/show_bug.cgi?id=4316
             'SDL2_image':      {'installed': '2.0.4'},
@@ -39,7 +39,7 @@ class VersionCheck:
             'SFML':            {'installed': '2.5.1'},
             'TortoiseGit':     {'installed': '2.8.0'},
             'VS2017':          {'installed': '15.9.8'},
-            'VS2019':          {'installed': '2019 RC.1'},
+            'VS2019':          {'installed': 'RC.1 Svc1'},
             'WinSCP':          {'installed': '5.13.8'},
             'Xcode':           {'installed': '10.1'},
             'zlib':            {'installed': '1.2.11'},
