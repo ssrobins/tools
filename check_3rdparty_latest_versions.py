@@ -9,14 +9,14 @@ import re
 class VersionCheck:
     def __init__(self):
         self.versions = {
-            'AndroidNDK':      {'installed': 'r19b'},
+            'AndroidNDK':      {'installed': 'r19c'},
             'AndroidSDKTools': {'installed': '4333796'},
             'AndroidStudio':   {'installed': '3.3.2'},
             'bzip2':           {'installed': 'Find the latest version on SourceForge.'},
             'bzip2new':        {'installed': '1.0.6'},
             'cmake':           {'installed': '3.14.0'},
-            'conan':           {'installed': '1.13.0'},
-            'freetype':        {'installed': '2.9.1'},
+            'conan':           {'installed': '1.13.1'},
+            'freetype':        {'installed': '2.10.0'},
             'gcc':             {'installed': '8.3'},
             'GIMP_mac':        {'installed': '2.10.8'},
             'GIMP_win':        {'installed': '2.10.8'},
