@@ -39,8 +39,8 @@ class VersionCheck:
             'SFML':            {'installed': '2.5.1'},
             'TortoiseGit':     {'installed': '2.8.0'},
             'VS2017':          {'installed': '15.9.9'},
-            'VS2019':          {'installed': '2019 RC.2'},
-            'WinSCP':          {'installed': '5.13.8'},
+            'VS2019':          {'installed': '2019 RC.3'},
+            'WinSCP':          {'installed': '5.13.9'},
             'Xcode':           {'installed': '10.1'},
             'zlib':            {'installed': '1.2.11'},
         }
