@@ -22,7 +22,7 @@ class VersionCheck:
             'GIMP_win':        {'installed': '2.10.8'},
             'git_mac':         {'installed': '2.21.0'},
             'git_win':         {'installed': '2.21.0'},
-            'GitLabRunner':    {'installed': '11.8.0'},
+            'GitLabRunner':    {'installed': '11.9.0'}, # Stuck at 11.8.0: https://gitlab.com/gitlab-org/gitlab-runner/issues/4080
             'glew':            {'installed': '2.1.0'},
             'googletest':      {'installed': '1.8.1'},
             'Gradle':          {'installed': '5.3'},
