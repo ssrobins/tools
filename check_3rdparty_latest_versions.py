@@ -31,17 +31,17 @@ class VersionCheck:
             'libpng':          {'installed': '1.6.36'},
             'MuseScore':       {'installed': '3.0.5'},
             'NotepadPlusPlus': {'installed': '7.6.4'},
-            'python':          {'installed': '3.7.2'},
+            'python':          {'installed': '3.7.3'},
             'SDL2':            {'installed': '2.0.9'}, # Stuck at 2.0.8: https://bugzilla.libsdl.org/show_bug.cgi?id=4316
             'SDL2_image':      {'installed': '2.0.4'},
             'SDL2_mixer':      {'installed': '2.0.4'},
             'SDL2_ttf':        {'installed': '2.0.15'},
             'SFML':            {'installed': '2.5.1'},
             'TortoiseGit':     {'installed': '2.8.0'},
-            'VS2017':          {'installed': '15.9.9'},
+            'VS2017':          {'installed': '15.9.10'},
             'VS2019':          {'installed': '2019 RC.3'},
             'WinSCP':          {'installed': '5.13.9'},
-            'Xcode':           {'installed': '10.1'},
+            'Xcode':           {'installed': '10.2'}, # Stuck on 10.1 until I can upgrade my MacBook to macOS 10.14.3 or later
             'zlib':            {'installed': '1.2.11'},
         }
         
