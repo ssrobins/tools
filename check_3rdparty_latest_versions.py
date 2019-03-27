@@ -39,7 +39,7 @@ class VersionCheck:
             'SFML':            {'installed': '2.5.1'},
             'TortoiseGit':     {'installed': '2.8.0'},
             'VS2017':          {'installed': '15.9.10'},
-            'VS2019':          {'installed': '2019 RC.3'},
+            'VS2019':          {'installed': '2019 RC.4'},
             'WinSCP':          {'installed': '5.13.9'},
             'Xcode':           {'installed': '10.2'}, # Stuck on 10.1 until I can upgrade my MacBook to macOS 10.14.3 or later
             'zlib':            {'installed': '1.2.11'},
