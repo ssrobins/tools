@@ -15,7 +15,7 @@ class VersionCheck:
             'bzip2':           {'installed': 'Find the latest version on SourceForge.'},
             'bzip2new':        {'installed': '1.0.6'},
             'cmake':           {'installed': '3.14.0'},
-            'conan':           {'installed': '1.13.3'},
+            'conan':           {'installed': '1.14.0'},
             'freetype':        {'installed': '2.10.0'},
             'gcc':             {'installed': '8.3'},
             'GIMP_mac':        {'installed': '2.10.8'},
@@ -25,7 +25,7 @@ class VersionCheck:
             'GitLabRunner':    {'installed': '11.9.0'}, # Stuck at 11.8.0: https://gitlab.com/gitlab-org/gitlab-runner/issues/4080
             'glew':            {'installed': '2.1.0'},
             'googletest':      {'installed': '1.8.1'},
-            'Gradle':          {'installed': '5.3'},
+            'Gradle':          {'installed': '5.3.1'},
             'grepWin':         {'installed': '1.7.1'},
             'KeePass':         {'installed': '2.41'},
             'libpng':          {'installed': '1.6.36'},
