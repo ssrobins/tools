@@ -15,7 +15,7 @@ class VersionCheck:
             'bzip2':           {'installed': 'Find the latest version on SourceForge.'},
             'bzip2new':        {'installed': '1.0.6'},
             'cmake':           {'installed': '3.14.1'},
-            'conan':           {'installed': '1.14.0'},
+            'conan':           {'installed': '1.14.1'},
             'freetype':        {'installed': '2.10.0'},
             'gcc':             {'installed': '8.3'},
             'GIMP_mac':        {'installed': '2.10.8'},
