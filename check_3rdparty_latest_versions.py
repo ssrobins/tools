@@ -30,7 +30,7 @@ class VersionCheck:
             'KeePass':         {'installed': '2.41'},
             'libpng':          {'installed': '1.6.36'},
             'MuseScore':       {'installed': '3.0.5'},
-            'NotepadPlusPlus': {'installed': '7.6.5'},
+            'NotepadPlusPlus': {'installed': '7.6.4'},
             'python':          {'installed': '3.7.3'},
             'SDL2':            {'installed': '2.0.9'}, # Stuck at 2.0.8: https://bugzilla.libsdl.org/show_bug.cgi?id=4316
             'SDL2_image':      {'installed': '2.0.4'},
@@ -38,8 +38,8 @@ class VersionCheck:
             'SDL2_ttf':        {'installed': '2.0.15'},
             'SFML':            {'installed': '2.5.1'},
             'TortoiseGit':     {'installed': '2.8.0'},
-            'VS2017':          {'installed': '15.9.10'},
-            'VS2019':          {'installed': '2019 RC.4'},
+            'VS2017':          {'installed': '15.9.11'},
+            'VS2019':          {'installed': '2019'},
             'WinSCP':          {'installed': '5.15'},
             'Xcode':           {'installed': '10.2'}, # Stuck on 10.1 until I can upgrade my MacBook to macOS 10.14.3 or later
             'zlib':            {'installed': '1.2.11'},
@@ -387,8 +387,8 @@ class VersionCheck:
         page = urlopen('https://docs.microsoft.com/en-us/visualstudio/releases/2019/release-notes')
         soup = BeautifulSoup(page, 'html.parser')
 
-        version_items = soup.find('a', attrs={'href': re.compile('^#VS2019')}).text.strip().split()
-        version_text = ' '.join(version_items[-2:])
+        version_items = soup.find('a', attrs={'href': re.compile('^#GA')}).text.strip().split()
+        version_text = version_items[-1]
 
         return version_text
 
