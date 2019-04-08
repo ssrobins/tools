@@ -41,7 +41,7 @@ class VersionCheck:
             'VS2017':          {'installed': '15.9.11'},
             'VS2019':          {'installed': '2019'},
             'WinSCP':          {'installed': '5.15'},
-            'Xcode':           {'installed': '10.2'}, # Stuck on 10.1 until I can upgrade my MacBook to macOS 10.14.3 or later
+            'Xcode':           {'installed': '10.2'},
             'zlib':            {'installed': '1.2.11'},
         }
         
