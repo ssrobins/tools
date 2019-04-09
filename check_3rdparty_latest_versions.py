@@ -18,8 +18,8 @@ class VersionCheck:
             'conan':           {'installed': '1.14.1'},
             'freetype':        {'installed': '2.10.0'},
             'gcc':             {'installed': '8.3'},
-            'GIMP_mac':        {'installed': '2.10.8'},
-            'GIMP_win':        {'installed': '2.10.8'},
+            'GIMP_mac':        {'installed': '2.10.10'},
+            'GIMP_win':        {'installed': '2.10.10'},
             'git_mac':         {'installed': '2.21.0'},
             'git_win':         {'installed': '2.21.0'},
             'GitLabRunner':    {'installed': '11.9.0'}, # Stuck at 11.8.0: https://gitlab.com/gitlab-org/gitlab-runner/issues/4080
