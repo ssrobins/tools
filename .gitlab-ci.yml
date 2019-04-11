@@ -1,7 +1,7 @@
 image: python:latest
 
 before_script:
-  - pip install BeautifulSoup4
+  - pip install BeautifulSoup4 certifi
   - python -V                                   # Print out python version for debugging
 
 run:
