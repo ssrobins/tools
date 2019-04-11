@@ -64,11 +64,13 @@ class VersionCheck:
                 if(self.versions[item]['latest'] != self.versions[item]['installed']):
                     print(item + ' ' + self.versions[item]['installed'] + ' can be upgraded to ' + self.versions[item]['latest'] + '.')
                     self.uptodate = False
-            except AttributeError:
+            except AttributeError as error:
                 print(item + ' version could not be found. Check the website.')
+                print('Details: ', error)
                 self.error = True
-            except (HTTPError, URLError):
+            except (HTTPError, URLError) as error:
                 print(item + ' website couldn\'t be loaded.')
+                print('Details: ', error)
                 self.error = True
 
         print()
