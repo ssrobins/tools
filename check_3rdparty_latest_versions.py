@@ -9,40 +9,40 @@ import re
 class VersionCheck:
     def __init__(self):
         self.versions = {
-            'AndroidNDK':      {'installed': 'r19c'},
-            'AndroidSDKTools': {'installed': '4333796'},
-            'AndroidStudio':   {'installed': '3.3.2'},
-            'bzip2':           {'installed': 'Find the latest version on SourceForge.'},
-            'bzip2new':        {'installed': '1.0.6'},
-            'cmake':           {'installed': '3.14.1'},
-            'conan':           {'installed': '1.14.1'},
-            'freetype':        {'installed': '2.10.0'},
-            'gcc':             {'installed': '8.3'},
-            'GIMP_mac':        {'installed': '2.10.10'},
-            'GIMP_win':        {'installed': '2.10.10'},
-            'git_mac':         {'installed': '2.21.0'},
-            'git_win':         {'installed': '2.21.0'},
-            'GitLabRunner':    {'installed': '11.9.0'}, # Stuck at 11.8.0: https://gitlab.com/gitlab-org/gitlab-runner/issues/4080
-            'glew':            {'installed': '2.1.0'},
-            'googletest':      {'installed': '1.8.1'},
-            'Gradle':          {'installed': '5.3.1'},
-            'grepWin':         {'installed': '1.7.1'},
-            'KeePass':         {'installed': '2.41'},
-            'libpng':          {'installed': '1.6.36'},
-            'MuseScore':       {'installed': '3.0.5'},
-            'NotepadPlusPlus': {'installed': '7.6.6'},
-            'python':          {'installed': '3.7.3'},
-            'SDL2':            {'installed': '2.0.9'}, # Stuck at 2.0.8: https://bugzilla.libsdl.org/show_bug.cgi?id=4316
-            'SDL2_image':      {'installed': '2.0.4'},
-            'SDL2_mixer':      {'installed': '2.0.4'},
-            'SDL2_ttf':        {'installed': '2.0.15'},
-            'SFML':            {'installed': '2.5.1'},
-            'TortoiseGit':     {'installed': '2.8.0'},
-            'VS2017':          {'installed': '15.9.11'},
-            'VS2019':          {'installed': '2019'},
-            'WinSCP':          {'installed': '5.15'},
-            'Xcode':           {'installed': '10.2'},
-            'zlib':            {'installed': '1.2.11'},
+            'AndroidNDK':      'r19c',
+            'AndroidSDKTools': '4333796',
+            'AndroidStudio':   '3.3.2',
+            'bzip2':           'Find the latest version on SourceForge.',
+            'bzip2new':        '1.0.6',
+            'cmake':           '3.14.1',
+            'conan':           '1.14.1',
+            'freetype':        '2.10.0',
+            'gcc':             '8.3',
+            'GIMP_mac':        '2.10.10',
+            'GIMP_win':        '2.10.10',
+            'git_mac':         '2.21.0',
+            'git_win':         '2.21.0',
+            'GitLabRunner':    '11.9.0', # Stuck at 11.8.0: https://gitlab.com/gitlab-org/gitlab-runner/issues/4080
+            'glew':            '2.1.0',
+            'googletest':      '1.8.1',
+            'Gradle':          '5.3.1',
+            'grepWin':         '1.7.1',
+            'KeePass':         '2.41',
+            'libpng':          '1.6.36',
+            'MuseScore':       '3.0.5',
+            'NotepadPlusPlus': '7.6.6',
+            'python':          '3.7.3',
+            'SDL2':            '2.0.9', # Stuck at 2.0.8: https://bugzilla.libsdl.org/show_bug.cgi?id=4316
+            'SDL2_image':      '2.0.4',
+            'SDL2_mixer':      '2.0.4',
+            'SDL2_ttf':        '2.0.15',
+            'SFML':            '2.5.1',
+            'TortoiseGit':     '2.8.0',
+            'VS2017':          '15.9.11',
+            'VS2019':          '2019',
+            'WinSCP':          '5.15',
+            'Xcode':           '10.2',
+            'zlib':            '1.2.11',
         }
         
         self.error = False
@@ -60,9 +60,9 @@ class VersionCheck:
     def compare_latest_to_current(self):
         for item in self.versions:
             try:
-                self.versions[item]['latest'] = getattr(self, 'get_latest_version_' + item)()
-                if(self.versions[item]['latest'] != self.versions[item]['installed']):
-                    print(item + ' ' + self.versions[item]['installed'] + ' can be upgraded to ' + self.versions[item]['latest'] + '.')
+                latest_version = getattr(self, 'get_latest_version_' + item)()
+                if(latest_version != self.versions[item]):
+                    print(item + ' ' + self.versions[item] + ' can be upgraded to ' + latest_version + '.')
                     self.uptodate = False
             except AttributeError as error:
                 print(item + ' version could not be found. Check the website.')
