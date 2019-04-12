@@ -15,7 +15,7 @@ class VersionCheck:
             'bzip2':           'Find the latest version on SourceForge.',
             'bzip2new':        '1.0.6',
             'cmake':           '3.14.1',
-            'conan':           '1.14.1',
+            'conan':           '1.14.3',
             'freetype':        '2.10.0',
             'gcc':             '8.3',
             'GIMP_mac':        '2.10.10',
@@ -40,7 +40,7 @@ class VersionCheck:
             'TortoiseGit':     '2.8.0',
             'VS2017':          '15.9.11',
             'VS2019':          '2019',
-            'WinSCP':          '5.15',
+            'WinSCP':          '5.15.1',
             'Xcode':           '10.2',
             'zlib':            '1.2.11',
         }
