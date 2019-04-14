@@ -39,7 +39,7 @@ class VersionCheck:
             'SFML':            '2.5.1',
             'TortoiseGit':     '2.8.0',
             'VS2017':          '15.9.11',
-            'VS2019':          '2019',
+            'VS2019':          '16.0.1',
             'WinSCP':          '5.15.1',
             'Xcode':           '10.2',
             'zlib':            '1.2.11',
@@ -389,8 +389,14 @@ class VersionCheck:
         page = urlopen('https://docs.microsoft.com/en-us/visualstudio/releases/2019/release-notes')
         soup = BeautifulSoup(page, 'html.parser')
 
-        version_items = soup.find('a', attrs={'href': re.compile('^#GA')}).text.strip().split()
-        version_text = version_items[-1]
+        version_items = soup.find('a', attrs={'href': re.compile('^#(\d+\.){1,2}(\d+)$')}).text.strip().split()
+
+        version_text = ''
+        for word in version_items:
+            result = re.match('^(\d+\.){1,2}(\d+)$', word)
+            if result:
+                version_text = result.group()
+                break
 
         return version_text
 
