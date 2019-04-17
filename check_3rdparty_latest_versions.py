@@ -25,7 +25,7 @@ class VersionCheck:
             'GitLabRunner':    '11.9.0', # Stuck at 11.8.0: https://gitlab.com/gitlab-org/gitlab-runner/issues/4080
             'glew':            '2.1.0',
             'googletest':      '1.8.1',
-            'Gradle':          '5.3.1',
+            'Gradle':          '5.4',
             'grepWin':         '1.7.1',
             'KeePass':         '2.41',
             'libpng':          '1.6.36',
