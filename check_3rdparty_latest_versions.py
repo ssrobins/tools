@@ -66,11 +66,11 @@ class VersionCheck:
                     self.uptodate = False
             except AttributeError as error:
                 print(item + ' version could not be found. Check the website.')
-                print('Details: ', error)
+                print('  Details: ', error)
                 self.error = True
             except (HTTPError, URLError) as error:
                 print(item + ' website couldn\'t be loaded.')
-                print('Details: ', error)
+                print('  Details: ', error)
                 self.error = True
 
         print()
