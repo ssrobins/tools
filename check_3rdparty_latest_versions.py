@@ -32,6 +32,7 @@ class VersionCheck:
             'libpng':          '1.6.37',
             'MuseScore':       '3.0.5',
             'NotepadPlusPlus': '7.6.6',
+            'openjdk':         '8u212',
             'python':          '3.7.3',
             'SDL2':            '2.0.9', # Stuck at 2.0.8: https://bugzilla.libsdl.org/show_bug.cgi?id=4316
             'SDL2_image':      '2.0.4',
@@ -291,6 +292,21 @@ class VersionCheck:
         version_items = soup.find('h1').text.strip().split()
         
         return version_items[2]
+
+
+    def get_latest_version_openjdk(self):
+        page = urlopen('https://registry.hub.docker.com/v1/repositories/openjdk/tags')
+        soup = BeautifulSoup(page, 'html.parser')
+
+        data = json.loads(soup.get_text())
+
+        version_text = ''
+        for item in data:
+            docker_tag = item.get('name')
+            if "jdk-slim-stretch" in docker_tag and "8u" in docker_tag:
+                version_text = docker_tag.split('-')[0]
+
+        return version_text
 
 
     def get_latest_version_python(self):
