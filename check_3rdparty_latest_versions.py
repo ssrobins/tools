@@ -2,6 +2,7 @@ from urllib.request import Request, urlopen
 from urllib.error import HTTPError
 from urllib.error import URLError
 from bs4 import BeautifulSoup
+import json
 import re
 
 
@@ -17,7 +18,7 @@ class VersionCheck:
             'cmake':           '3.14.3',
             'conan':           '1.14.3',
             'freetype':        '2.10.0',
-            'gcc':             '8.3',
+            'gcc':             '8.3.0',
             'GIMP_mac':        '2.10.10',
             'GIMP_win':        '2.10.10',
             'git_mac':         '2.21.0',
@@ -153,17 +154,12 @@ class VersionCheck:
 
 
     def get_latest_version_gcc(self):
-        page = urlopen('https://gcc.gnu.org/releases.html')
+        page = urlopen('https://registry.hub.docker.com/v1/repositories/gcc/tags')
         soup = BeautifulSoup(page, 'html.parser')
 
-        version_list_raw = soup.findAll('a', attrs={'href': lambda L: L and L.startswith('gcc-')}, limit=10)
-        latest_version = 0
-        for version_raw in version_list_raw:
-            version = float(version_raw.text.split()[1])
-            if(version > latest_version):
-                latest_version = version
+        docker_tags = json.loads(soup.get_text())
 
-        return str(latest_version)
+        return docker_tags[-1].get('name')
 
 
     def get_latest_version_GIMP_mac(self):
