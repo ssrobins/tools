@@ -28,7 +28,7 @@ class VersionCheck:
             'googletest':      '1.8.1',
             'Gradle':          '5.4.1',
             'grepWin':         '1.7.1',
-            'KeePass':         '2.41',
+            'KeePass':         '2.42',
             'libpng':          '1.6.37',
             'MuseScore':       '3.0.5',
             'NotepadPlusPlus': '7.6.6',
