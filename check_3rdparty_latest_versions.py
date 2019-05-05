@@ -18,7 +18,7 @@ class VersionCheck:
             'cmake':           '3.14.3',
             'conan':           '1.14.5',
             'freetype':        '2.10.0',
-            'gcc':             '8.3.0',
+            'gcc':             '9.1.0', # Stuck because GitLab CI fails to run pip install conan during Docker image build
             'GIMP_mac':        '2.10.10',
             'GIMP_win':        '2.10.10',
             'git_mac':         '2.21.0',
@@ -28,7 +28,7 @@ class VersionCheck:
             'googletest':      '1.8.1',
             'Gradle':          '5.4.1',
             'grepWin':         '1.7.1',
-            'KeePass':         '2.42',
+            'KeePass':         '2.42.1',
             'libpng':          '1.6.37',
             'MuseScore':       '3.0.5',
             'NotepadPlusPlus': '7.6.6',
