@@ -16,7 +16,7 @@ class VersionCheck:
             'bzip2':           'Find the latest version on SourceForge.',
             'bzip2new':        '1.0.6',
             'cmake':           '3.14.3',
-            'conan':           '1.14.5',
+            'conan':           '1.15.0',
             'freetype':        '2.10.0',
             'gcc':             '9.1.0', # Stuck because GitLab CI fails to run pip install conan during Docker image build
             'GIMP_mac':        '2.10.10',
