@@ -12,7 +12,7 @@ class VersionCheck:
         self.versions = {
             'AndroidNDK':      'r19c',
             'AndroidSDKTools': '4333796',
-            'AndroidStudio':   '3.4',
+            'AndroidStudio':   '3.4.1',
             'bzip2':           'Find the latest version on SourceForge.',
             'bzip2new':        '1.0.6',
             'cmake':           '3.14.4',
