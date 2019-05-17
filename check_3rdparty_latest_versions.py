@@ -16,7 +16,7 @@ class VersionCheck:
             'bzip2':           'Find the latest version on SourceForge.',
             'bzip2new':        '1.0.6',
             'cmake':           '3.14.4',
-            'conan':           '1.15.0',
+            'conan':           '1.15.1',
             'freetype':        '2.10.0',
             'gcc':             '9.1.0',
             'GIMP_mac':        '2.10.10',
