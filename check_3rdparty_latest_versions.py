@@ -31,7 +31,7 @@ class VersionCheck:
             'KeePass':         '2.42.1',
             'libpng':          '1.6.37',
             'MuseScore':       '3.0.5',
-            'NotepadPlusPlus': '7.6.6',
+            'NotepadPlusPlus': '7.7',
             'openjdk':         '8u212',
             'python':          '3.7.3',
             'SDL2':            '2.0.9', # Stuck at 2.0.8: https://bugzilla.libsdl.org/show_bug.cgi?id=4316
