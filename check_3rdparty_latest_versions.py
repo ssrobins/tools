@@ -30,7 +30,7 @@ class VersionCheck:
             'grepWin':         '1.7.1',
             'KeePass':         '2.42.1',
             'libpng':          '1.6.37',
-            'MuseScore':       '3.0.5',
+            'MuseScore':       '3.1',
             'NotepadPlusPlus': '7.7',
             'openjdk':         '8u212',
             'python':          '3.7.3',
