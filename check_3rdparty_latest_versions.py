@@ -32,7 +32,7 @@ class VersionCheck:
             'libpng':          '1.6.37',
             'MuseScore':       '3.1',
             'NotepadPlusPlus': '7.7',
-            'openjdk':         '8u212',
+            'openjdk':         '8u212-b04',
             'python':          '3.7.3',
             'SDL2':            '2.0.9', # Stuck at 2.0.8: https://bugzilla.libsdl.org/show_bug.cgi?id=4316
             'SDL2_image':      '2.0.4',
@@ -300,13 +300,14 @@ class VersionCheck:
 
         data = json.loads(soup.get_text())
 
-        version_text = ''
+        version_text_list = list()
         for item in data:
             docker_tag = item.get('name')
             if "jdk-slim-stretch" in docker_tag and "8u" in docker_tag:
-                version_text = docker_tag.split('-')[0]
+                version_text_list.append(docker_tag.replace('-jdk-slim-stretch',''))
 
-        return version_text
+        version_text_list.sort()
+        return version_text_list[-1]
 
 
     def get_latest_version_python(self):
