@@ -158,9 +158,16 @@ class VersionCheck:
         page = urlopen('https://registry.hub.docker.com/v1/repositories/gcc/tags')
         soup = BeautifulSoup(page, 'html.parser')
 
-        docker_tags = json.loads(soup.get_text())
+        data = json.loads(soup.get_text())
 
-        return docker_tags[-1].get('name')
+        version_text_list = list()
+        for item in data:
+            docker_tag = item.get('name')
+            if 'latest' not in docker_tag:
+                version_text_list.append(item.get('name'))
+        version_text_list.sort()
+
+        return version_text_list[-1]
 
 
     def get_latest_version_GIMP_mac(self):
@@ -303,10 +310,10 @@ class VersionCheck:
         version_text_list = list()
         for item in data:
             docker_tag = item.get('name')
-            if "jdk-slim-stretch" in docker_tag and "8u" in docker_tag:
+            if 'jdk-slim-stretch' in docker_tag and '8u' in docker_tag:
                 version_text_list.append(docker_tag.replace('-jdk-slim-stretch',''))
-
         version_text_list.sort()
+
         return version_text_list[-1]
 
 
