@@ -10,7 +10,7 @@ import re
 class VersionCheck:
     def __init__(self):
         self.versions = {
-            'AndroidNDK':      'r19c',
+            'AndroidNDK':      'r20',
             'AndroidSDKTools': '4333796',
             'AndroidStudio':   '3.4.1',
             'bzip2':           'Find the latest version on SourceForge.',
@@ -41,7 +41,7 @@ class VersionCheck:
             'SFML':            '2.5.1',
             'TortoiseGit':     '2.8.0',
             'VS2017':          '15.9.12',
-            'VS2019':          '16.1.1',
+            'VS2019':          '16.1.2',
             'WinSCP':          '5.15.2',
             'Xcode':           '10.2.1',
             'zlib':            '1.2.11',
