@@ -11,6 +11,7 @@ class VersionCheck:
     def __init__(self):
         self.versions = {
             'AndroidNDK':      'r20',
+            'AndroidSDKAPI':   '28',
             'AndroidSDKTools': '4333796',
             'AndroidStudio':   '3.4.1',
             'bzip2':           'Find the latest version on SourceForge.',
@@ -85,6 +86,15 @@ class VersionCheck:
         version_text = soup.find('h2', attrs={'id': 'stable-downloads'}).text.split()[-1].strip('()')
 
         return version_text
+
+
+    def get_latest_version_AndroidSDKAPI(self):
+        page = urlopen('https://developer.android.com/studio/releases/platforms')
+        soup = BeautifulSoup(page, 'html.parser')
+
+        version_items = soup.find('h2', attrs={'id': re.compile('^[0-9]+\.[0-9]+$')}).text.strip(')').split()
+
+        return version_items[-1]
 
 
     def get_latest_version_AndroidSDKTools(self):
