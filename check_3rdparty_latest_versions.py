@@ -16,7 +16,7 @@ class VersionCheck:
             'bzip2':           'Find the latest version on SourceForge.',
             'bzip2new':        '1.0.6',
             'cmake':           '3.15.0-rc1',
-            'conan':           '1.16.0', # Stuck at 1.15.2: https://github.com/conan-io/conan/issues/5308
+            'conan':           '1.16.0',
             'freetype':        '2.10.0',
             'gcc':             '9.1.0',
             'GIMP_mac':        '2.10.10',
