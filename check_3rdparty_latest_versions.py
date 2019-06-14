@@ -20,7 +20,7 @@ class VersionCheck:
             'conan':           '1.16.0',
             'freetype':        '2.10.0',
             'gcc':             '9.1.0',
-            'GIMP_mac':        '2.10.10',
+            'GIMP_mac':        '2.10.12',
             'GIMP_win':        '2.10.10',
             'git_mac':         '2.21.0',
             'git_win':         '2.22.0',
