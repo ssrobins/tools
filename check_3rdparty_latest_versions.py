@@ -17,11 +17,11 @@ class VersionCheck:
             'bzip2':           'Find the latest version on SourceForge.',
             'bzip2new':        '1.0.6',
             'cmake':           '3.15.0-rc1',
-            'conan':           '1.16.0',
+            'conan':           '1.16.1',
             'freetype':        '2.10.0',
             'gcc':             '9.1.0',
             'GIMP_mac':        '2.10.12',
-            'GIMP_win':        '2.10.10',
+            'GIMP_win':        '2.10.12', # Can't upgrade because the download link is broken
             'git_mac':         '2.21.0',
             'git_win':         '2.22.0',
             'GitLabRunner':    '11.11.2',
