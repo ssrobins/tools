@@ -16,7 +16,7 @@ class VersionCheck:
             'AndroidStudio':   '3.4.1',
             'bzip2':           'Find the latest version on SourceForge.',
             'bzip2new':        '1.0.6',
-            'cmake':           '3.15.0-rc1',
+            'cmake':           '3.15.0-rc2',
             'conan':           '1.16.1',
             'freetype':        '2.10.0',
             'gcc':             '9.1.0',
@@ -32,7 +32,7 @@ class VersionCheck:
             'KeePass':         '2.42.1',
             'libpng':          '1.6.37',
             'MuseScore':       '3.1',
-            'NotepadPlusPlus': '7.7',
+            'NotepadPlusPlus': '7.7.1',
             'openjdk':         '8u212-b04',
             'python':          '3.7.3',
             'SDL2':            '2.0.9', # Stuck at 2.0.8: https://bugzilla.libsdl.org/show_bug.cgi?id=4316
