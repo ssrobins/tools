@@ -22,9 +22,9 @@ class VersionCheck:
             'gcc':             '9.1.0',
             'GIMP_mac':        '2.10.12',
             'GIMP_win':        '2.10.12', # Can't upgrade because the download link is broken
-            'git_mac':         '2.21.0',
+            'git_mac':         '2.22.0',
             'git_win':         '2.22.0',
-            'GitLabRunner':    '11.11.2',
+            'GitLabRunner':    '12.0.0',
             'glew':            '2.1.0',
             'googletest':      '1.8.1',
             'Gradle':          '5.4.1',
