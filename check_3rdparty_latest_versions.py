@@ -18,6 +18,7 @@ class VersionCheck:
             'bzip2new':        '1.0.6',
             'cmake':           '3.15.0-rc2',
             'conan':           '1.16.1',
+            'DockerCE':        '2.0.0.3',
             'freetype':        '2.10.0',
             'gcc':             '9.1.0',
             'GIMP_mac':        '2.10.12',
@@ -153,6 +154,15 @@ class VersionCheck:
         version_text = soup.find('span', attrs={'class': 'dl-version'}).text.strip()
 
         return version_text
+
+
+    def get_latest_version_DockerCE(self):
+        page = urlopen('https://docs.docker.com/docker-for-windows/release-notes/')
+        soup = BeautifulSoup(page, 'html.parser')
+
+        version_items = soup.find('h3', attrs={'id': lambda L: L and L.startswith('docker-community-edition')}).text.split()
+
+        return version_items[3]
 
 
     def get_latest_version_freetype(self):
