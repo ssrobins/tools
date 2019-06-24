@@ -22,7 +22,7 @@ class VersionCheck:
             'freetype':        '2.10.0',
             'gcc':             '9.1.0',
             'GIMP_mac':        '2.10.12',
-            'GIMP_win':        '2.10.12', # Can't upgrade because the download link is broken
+            'GIMP_win':        '2.10.12',
             'git_mac':         '2.22.0',
             'git_win':         '2.22.0',
             'GitLabRunner':    '12.0.0',
