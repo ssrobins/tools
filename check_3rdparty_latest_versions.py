@@ -16,7 +16,7 @@ class VersionCheck:
             'AndroidStudio':   '3.4.1',
             'bzip2':           'Find the latest version on SourceForge.',
             'bzip2new':        '1.0.6',
-            'cmake':           '3.15.0-rc2',
+            'cmake':           '3.15.0-rc3',
             'conan':           '1.16.1',
             'DockerCE':        '2.0.0.3',
             'freetype':        '2.10.0',
