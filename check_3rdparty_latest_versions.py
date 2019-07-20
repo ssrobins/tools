@@ -25,7 +25,7 @@ class VersionCheck:
             'GIMP_win':        '2.10.12',
             'git_mac':         '2.22.0',
             'git_win':         '2.22.0',
-            'GitLabRunner':    '12.0.0',
+            'GitLabRunner':    '12.1.0',
             'glew':            '2.1.0',
             'googletest':      '1.8.1',
             'Gradle':          '5.5.1',
