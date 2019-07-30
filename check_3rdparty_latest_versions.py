@@ -45,7 +45,7 @@ class VersionCheck:
             'VS2017':          '15.9.14',
             'VS2019':          '16.2',
             'WinSCP':          '5.15.3',
-            'Xcode':           '11 beta 4 (11M374r)',
+            'Xcode':           '10.3 (10G8)',
             'zlib':            '1.2.11',
         }
         
@@ -457,14 +457,12 @@ class VersionCheck:
         h2_tag_contents = soup.findAll('h2')
         version_text_raw = None
         for h2_tag_content in h2_tag_contents:
-            if 'Xcode' in h2_tag_content.text:
+            if 'Xcode' in h2_tag_content.text and 'beta' not in h2_tag_content.text:
                 version_text_raw = h2_tag_content.text
+                break
 
         version_items = version_text_raw.split()
-        if len(version_items) >= 3 and version_items[2] == 'beta':
-            version_text = ' '.join(version_items[1:])
-        else:
-            version_text = version_items[1]
+        version_text = ' '.join(version_items[1:])
 
         return version_text
 
