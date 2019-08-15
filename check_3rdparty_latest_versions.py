@@ -28,7 +28,7 @@ class VersionCheck:
             'GitLabRunner':    '12.1.0',
             'glew':            '2.1.0',
             'googletest':      '1.8.1',
-            'Gradle':          '5.5.1',
+            'Gradle':          '5.6',
             'grepWin':         '1.7.1',
             'KeePass':         '2.42.1',
             'libpng':          '1.6.37',
