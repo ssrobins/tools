@@ -17,7 +17,7 @@ class VersionCheck:
             'bzip2':           'Find the latest version on SourceForge.',
             'bzip2new':        '1.0.6',
             'cmake':           '3.15.2',
-            'conan':           '1.18.2', # Potential problem after upgrading: https://github.com/conan-io/conan/issues/5694
+            'conan':           '1.18.2',
             'DockerCE':        '2.0.0.3',
             'freetype':        '2.10.1',
             'gcc':             '9.2.0',
