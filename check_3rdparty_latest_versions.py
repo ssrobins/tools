@@ -23,7 +23,7 @@ class VersionCheck:
             'gcc':             '9.2.0',
             'GIMP_mac':        '2.10.12',
             'GIMP_win':        '2.10.12',
-            'git_mac':         '2.22.0',
+            'git_mac':         '2.23.0',
             'git_win':         '2.23.0',
             'GitLabRunner':    '12.2.0',
             'glew':            '2.1.0',
