@@ -28,7 +28,7 @@ class VersionCheck:
             'GitLabRunner':    '12.2.0',
             'glew':            '2.1.0',
             'googletest':      '1.8.1',
-            'Gradle':          '5.6.1',
+            'Gradle':          '5.6.2',
             'grepWin':         '1.7.1',
             'KeePass':         '2.42.1',
             'libpng':          '1.6.37',
@@ -44,7 +44,7 @@ class VersionCheck:
             'SFML':            '2.5.1',
             'TortoiseGit':     '2.8.0',
             'VS2017':          '15.9.15',
-            'VS2019':          '16.2.3',
+            'VS2019':          '16.2.4',
             'WinSCP':          '5.15.3',
             'Xcode':           '10.3 (10G8)',
             'zlib':            '1.2.11',
@@ -114,7 +114,7 @@ class VersionCheck:
         page = urlopen(req).read()
         soup = BeautifulSoup(page, 'html.parser')
 
-        version_items = soup.find('div', attrs={'class': 'dac-studio-version'}).text.split()
+        version_items = soup.find('div', attrs={'class': 'dac-info-size'}).text.split()
 
         return version_items[0]
 
