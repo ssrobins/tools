@@ -17,7 +17,7 @@ class VersionCheck:
             'bzip2':           'Find the latest version on SourceForge.',
             'bzip2new':        '1.0.6',
             'cmake':           '3.15.3',
-            'conan':           '1.18.3',
+            'conan':           '1.18.4',
             'DockerCE':        '2.0.0.3',
             'freetype':        '2.10.1',
             'gcc':             '9.2.0',
