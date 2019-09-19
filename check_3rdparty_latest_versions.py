@@ -32,7 +32,8 @@ class VersionCheck:
             'grepWin':         '1.7.1',
             'KeePass':         '2.43',
             'libpng':          '1.6.37',
-            'OBS':             '23.2.1',
+            'OBS_mac':         '23.2.1',
+            'OBS_win':         '24.0.0',
             'MuseScore':       '3.2.3',
             'NotepadPlusPlus': '7.7.1',
             'openjdk':         '8u212-b04',
@@ -304,13 +305,22 @@ class VersionCheck:
         return version_text
 
 
-    def get_latest_version_OBS(self):
-        page = urlopen('https://obsproject.com/download')
+    def get_latest_version_OBS_mac(self):
+        page = urlopen('https://obsproject.com')
         soup = BeautifulSoup(page, 'html.parser')
 
-        version_items = soup.find('span', attrs={'class': 'dl_ver'}).text.strip().split()
+        version_text = soup.find('div', attrs={'class': 'latest_icon latest_mac'}).next_sibling.text
 
-        return version_items[1]
+        return version_text
+
+
+    def get_latest_version_OBS_win(self):
+        page = urlopen('https://obsproject.com')
+        soup = BeautifulSoup(page, 'html.parser')
+
+        version_text = soup.find('div', attrs={'class': 'latest_icon latest_win'}).next_sibling.text
+
+        return version_text
 
 
     def get_latest_version_MuseScore(self):
