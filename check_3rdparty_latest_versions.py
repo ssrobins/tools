@@ -323,11 +323,12 @@ class VersionCheck:
 
 
     def get_latest_version_NotepadPlusPlus(self):
-        page = urlopen('https://notepad-plus-plus.org/download')
+        req = Request('https://notepad-plus-plus.org/downloads', headers={'User-Agent': 'Mozilla/5.0'})
+        page = urlopen(req).read()
         soup = BeautifulSoup(page, 'html.parser')
 
-        version_items = soup.find('h1').text.strip().split()
-        
+        version_items = soup.find('a', attrs={'href': lambda L: L and L.startswith('/downloads/')}).text.split()
+
         return version_items[2]
 
 
