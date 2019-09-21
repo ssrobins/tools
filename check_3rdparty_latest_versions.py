@@ -28,7 +28,7 @@ class VersionCheck:
             'GIMP_win':        '2.10.12',
             'git_mac':         '2.23.0',
             'git_win':         '2.23.0',
-            'GitLabRunner':    '12.2.0',
+            'GitLabRunner':    '12.3.0',
             'glew':            '2.1.0',
             'googletest':      '1.8.1',
             'Gradle':          '5.6.2',
@@ -36,7 +36,7 @@ class VersionCheck:
             'KeePass':         '2.43',
             'libpng':          '1.6.37',
             'OBS_mac':         '23.2.1',
-            'OBS_win':         '24.0.0',
+            'OBS_win':         '24.0.1',
             'MuseScore':       '3.2.3',
             'NotepadPlusPlus': '7.7.1',
             'openjdk':         '8u212-b04',
@@ -50,7 +50,7 @@ class VersionCheck:
             'VS2017':          '15.9.16',
             'VS2019':          '16.2.5',
             'WinSCP':          '5.15.4',
-            'Xcode':           '11 GM seed 2 (11A420a)',
+            'Xcode':           '11 (11A420a)',
             'zlib':            '1.2.11',
         }
 
