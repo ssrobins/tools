@@ -2,6 +2,7 @@ from urllib.request import Request, urlopen
 from urllib.error import HTTPError
 from urllib.error import URLError
 from bs4 import BeautifulSoup
+from multiprocessing import Pool
 import json
 import re
 
@@ -51,35 +52,26 @@ class VersionCheck:
             'zlib':            '1.2.11',
         }
         
-        self.error = False
-        self.uptodate = True
 
+    def compare_latest_to_current(self, tool):
+        result = dict();
+        result['error'] = False
+        result['uptodate'] = True
 
-    def has_error(self):
-        return self.error
-
-
-    def all_uptodate(self):
-        return self.uptodate
-
-
-    def compare_latest_to_current(self):
-        for item in self.versions:
-            try:
-                latest_version = getattr(self, 'get_latest_version_' + item)()
-                if(latest_version != self.versions[item]):
-                    print(item + ' ' + self.versions[item] + ' can be upgraded to ' + latest_version + '.')
-                    self.uptodate = False
-            except AttributeError as error:
-                print(item + ' version could not be found. Check the website.')
-                print('  Details: ', error)
-                self.error = True
-            except (HTTPError, URLError) as error:
-                print(item + ' website couldn\'t be loaded.')
-                print('  Details: ', error)
-                self.error = True
-
-        print()
+        try:
+            latest_version = getattr(self, 'get_latest_version_' + tool)()
+            if(latest_version != self.versions[tool]):
+                print(tool + ' ' + self.versions[tool] + ' can be upgraded to ' + latest_version + '.')
+                result['uptodate'] = False
+        except AttributeError as error:
+            print(tool + ' version could not be found. Check the website.')
+            print('  Details: ', error)
+            results['error'] = True
+        except (HTTPError, URLError) as error:
+            print(tool + ' website couldn\'t be loaded.')
+            print('  Details: ', error)
+            results['error'] = True
+        return result
 
 
     def get_latest_version_AndroidNDK(self):
@@ -500,19 +492,25 @@ class VersionCheck:
 
 def main():
     version_check = VersionCheck()
-    
-    version_check.compare_latest_to_current()
 
-    if version_check.all_uptodate():
-        if version_check.has_error() == False:
-            print('Everything is up-to-date!')
-            exit(0)
-        else:
-            exit(1)
-    else:
+    with Pool(processes=len(version_check.versions)) as pool:
+        results = pool.map(version_check.compare_latest_to_current, version_check.versions)
+
+    error = list()
+    uptodate = list()
+    for index in range(len(results)):
+        error.append(results[index]['error'])
+        uptodate.append(results[index]['uptodate'])
+
+    if False in uptodate:
         print('Do the upgrade(s) and update the latest version(s) at the top of this script.')
         exit(1)
-
+    else:
+        if True in error:
+            exit(1)
+        else:
+            print('Everything is up-to-date!')
+            exit(0)
 
 
 if __name__ == "__main__":
