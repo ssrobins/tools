@@ -3,13 +3,15 @@ from urllib.error import HTTPError
 from urllib.error import URLError
 from bs4 import BeautifulSoup
 from multiprocessing import Pool
+import argparse
 import json
 import re
+import time
 
 
 
 class VersionCheck:
-    def __init__(self):
+    def __init__(self, debug):
         self.versions = {
             'AndroidNDK':      'r20',
             'AndroidSDKAPI':   '28',
@@ -51,6 +53,8 @@ class VersionCheck:
             'Xcode':           '11 GM seed 2 (11A420a)',
             'zlib':            '1.2.11',
         }
+
+        self.debug = debug
         
 
     def compare_latest_to_current(self, tool):
@@ -59,6 +63,8 @@ class VersionCheck:
         result['uptodate'] = True
 
         try:
+            if self.debug:
+                start_time = time.time()
             latest_version = getattr(self, 'get_latest_version_' + tool)()
             if(latest_version != self.versions[tool]):
                 print(tool + ' ' + self.versions[tool] + ' can be upgraded to ' + latest_version + '.')
@@ -66,11 +72,15 @@ class VersionCheck:
         except AttributeError as error:
             print(tool + ' version could not be found. Check the website.')
             print('  Details: ', error)
-            results['error'] = True
+            result['error'] = True
         except (HTTPError, URLError) as error:
             print(tool + ' website couldn\'t be loaded.')
             print('  Details: ', error)
-            results['error'] = True
+            result['error'] = True
+        finally:
+            if self.debug:
+                elapsed_time = time.time() - start_time
+                print(tool + ': ' + str(elapsed_time) + ' seconds')
         return result
 
 
@@ -491,16 +501,39 @@ class VersionCheck:
 
 
 def main():
-    version_check = VersionCheck()
+    parser = argparse.ArgumentParser()
 
-    with Pool(processes=len(version_check.versions)) as pool:
-        results = pool.map(version_check.compare_latest_to_current, version_check.versions)
+    parser.add_argument(
+        "--debug",
+        required=False,
+        help="Turn on debug info",
+        action="store_true"
+    )
+
+    parser.add_argument(
+        "--tool",
+        required=False,
+        help="Tool to version check",
+        type=str
+    )
+
+    args = parser.parse_args()
+
+    version_check = VersionCheck(args.debug)
 
     error = list()
     uptodate = list()
-    for index in range(len(results)):
-        error.append(results[index]['error'])
-        uptodate.append(results[index]['uptodate'])
+
+    if args.tool:
+        results = version_check.compare_latest_to_current(args.tool)
+        error.append(results['error'])
+        uptodate.append(results['uptodate'])
+    else:
+        with Pool(processes=len(version_check.versions)) as pool:
+            results = pool.map(version_check.compare_latest_to_current, version_check.versions)
+        for index in range(len(results)):
+            error.append(results[index]['error'])
+            uptodate.append(results[index]['uptodate'])
 
     if False in uptodate:
         print('Do the upgrade(s) and update the latest version(s) at the top of this script.')
