@@ -48,7 +48,7 @@ class VersionCheck:
             'SFML':            '2.5.1',
             'TortoiseGit':     '2.8.0',
             'VS2017':          '15.9.16',
-            'VS2019':          '16.2.5',
+            'VS2019':          '16.3.0',
             'WinSCP':          '5.15.4',
             'Xcode':           '11 (11A420a)',
             'zlib':            '1.2.11',
