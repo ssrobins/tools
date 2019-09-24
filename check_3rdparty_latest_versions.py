@@ -17,8 +17,7 @@ class VersionCheck:
             'AndroidSDKAPI':   '28',
             'AndroidSDKTools': '4333796',
             'AndroidStudio':   '3.5',
-            'bzip2':           'Find the latest version on SourceForge.',
-            'bzip2new':        '1.0.6',
+            'bzip2':           '1.0.8',
             'cmake':           '3.15.3',
             'conan':           '1.18.4',
             'DockerCE':        '2.0.0.3',
@@ -123,19 +122,15 @@ class VersionCheck:
 
 
     def get_latest_version_bzip2(self):
-        page = urlopen('http://www.bzip.org/downloads.html')
+        page = urlopen('https://sourceware.org/bzip2/')
         soup = BeautifulSoup(page, 'html.parser')
 
-        version_text = soup.find('div', attrs={'class': 'entry-content'}).text.strip()
+        version_text_raw = soup.find('td', attrs={'colspan': '2'}).text
 
-        return version_text
-
-
-    def get_latest_version_bzip2new(self):
-        page = urlopen('https://github.com/nemequ/bzip2/releases')
-        soup = BeautifulSoup(page, 'html.parser')
-
-        version_text = soup.find('a', attrs={'href': re.compile('^/nemequ/bzip2/releases/tag/v[0-9]+\.[0-9]+\.[0-9]+$')}).text
+        for line in version_text_raw.splitlines():
+            if 'The current stable version' in line:
+                version_text = line.split()[-1].strip('.')
+                break
 
         return version_text
 
