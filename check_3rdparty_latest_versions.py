@@ -19,7 +19,7 @@ class VersionCheck:
             'AndroidStudio':   '3.5',
             'bzip2':           '1.0.8',
             'cmake':           '3.15.3',
-            'conan':           '1.18.4',
+            'conan':           '1.18.5',
             'DockerCE':        '2.0.0.3',
             'freetype':        '2.10.1',
             'gcc':             '9.2.0',
@@ -47,9 +47,9 @@ class VersionCheck:
             'SFML':            '2.5.1',
             'TortoiseGit':     '2.8.0',
             'VS2017':          '15.9.16',
-            'VS2019':          '16.3.0',
+            'VS2019':          '16.3.1',
             'WinSCP':          '5.15.4',
-            'Xcode':           '11 (11A420a)',
+            'Xcode':           '11.1 GM seed (11A1027)',
             'zlib':            '1.2.11',
         }
 
