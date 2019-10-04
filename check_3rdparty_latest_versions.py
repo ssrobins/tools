@@ -29,7 +29,7 @@ class VersionCheck:
             'git_win':         '2.23.0',
             'GitLabRunner':    '12.3.0',
             'glew':            '2.1.0',
-            'googletest':      '1.8.1',
+            'googletest':      '1.10.0',
             'Gradle':          '5.6.2',
             'grepWin':         '1.7.1',
             'KeePass':         '2.43',
