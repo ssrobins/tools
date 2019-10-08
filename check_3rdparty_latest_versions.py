@@ -49,7 +49,7 @@ class VersionCheck:
             'VS2017':          '15.9.16',
             'VS2019':          '16.3.2',
             'WinSCP':          '5.15.4',
-            'Xcode':           '11.1 GM seed (11A1027)',
+            'Xcode':           '11.1 (11A1027)',
             'zlib':            '1.2.11',
         }
 
