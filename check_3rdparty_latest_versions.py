@@ -18,7 +18,7 @@ class VersionCheck:
             'AndroidSDKTools': '4333796',
             'AndroidStudio':   '3.5.1',
             'bzip2':           '1.0.8',
-            'cmake':           '3.15.4',
+            'cmake':           '3.16.0-rc1',
             'conan':           '1.19.1',
             'DockerCE':        '2.0.0.3',
             'freetype':        '2.10.1',
@@ -37,7 +37,7 @@ class VersionCheck:
             'OBS_mac':         '23.2.1',
             'OBS_win':         '24.0.1',
             'MuseScore':       '3.2.3',
-            'NotepadPlusPlus': '7.7.1',
+            'NotepadPlusPlus': '7.8',
             'openjdk':         '8u212-b04',
             'python':          '3.7.4',
             'SDL2':            '2.0.10', # Stuck at 2.0.8: https://bugzilla.libsdl.org/show_bug.cgi?id=4316
