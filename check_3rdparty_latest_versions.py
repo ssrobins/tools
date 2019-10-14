@@ -35,7 +35,7 @@ class VersionCheck:
             'KeePass':         '2.43',
             'libpng':          '1.6.37',
             'OBS_mac':         '24.0.2',
-            'OBS_win':         '24.0.2',
+            'OBS_win':         '24.0.3',
             'MuseScore':       '3.2.3',
             'NotepadPlusPlus': '7.8',
             'openjdk':         '8u212-b04',
