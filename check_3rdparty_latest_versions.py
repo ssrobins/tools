@@ -30,7 +30,7 @@ class VersionCheck:
             'GitLabRunner':    '12.3.0',
             'glew':            '2.1.0',
             'googletest':      '1.10.0',
-            'Gradle':          '5.6.2',
+            'Gradle':          '5.6.3',
             'grepWin':         '1.7.1',
             'KeePass':         '2.43',
             'libpng':          '1.6.37',
