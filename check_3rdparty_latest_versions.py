@@ -20,7 +20,7 @@ class VersionCheck:
             'bzip2':           '1.0.8',
             'cmake':           '3.16.0-rc1',
             'conan':           '1.19.2',
-            'DockerCE':        '2.0.0.3',
+            'DockerCE':        '2.1.0.3',
             'freetype':        '2.10.1',
             'gcc':             '9.2.0',
             'GIMP_mac':        '2.10.12',
@@ -159,7 +159,7 @@ class VersionCheck:
         page = urlopen('https://docs.docker.com/docker-for-windows/release-notes/')
         soup = BeautifulSoup(page, 'html.parser')
 
-        version_items = soup.find('h3', attrs={'id': lambda L: L and L.startswith('docker-community-edition')}).text.split()
+        version_items = soup.find('h2', attrs={'id': lambda L: L and L.startswith('docker-desktop-community')}).text.split()
 
         return version_items[3]
 
