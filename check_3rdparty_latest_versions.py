@@ -37,6 +37,7 @@ class VersionCheck:
             'OBS_mac':         '24.0.2',
             'OBS_win':         '24.0.3',
             'MuseScore':       '3.2.3',
+            'ninja':           '1.9.0',
             'NotepadPlusPlus': '7.8',
             'openjdk':         '8u212-b04',
             'python':          '3.8.0',
@@ -327,6 +328,15 @@ class VersionCheck:
         version_items = soup.find('span', attrs={'id': 'download-version'}).text.split()
 
         return version_items[1]
+
+
+    def get_latest_version_ninja(self):
+        page = urlopen('https://github.com/ninja-build/ninja/releases')
+        soup = BeautifulSoup(page, 'html.parser')
+
+        version_text = soup.find('a', attrs={'href': re.compile('^/ninja-build/ninja/releases/tag/v[0-9]+\.[0-9]+\.[0-9]+$')}).text.lstrip('v')
+
+        return version_text
 
 
     def get_latest_version_NotepadPlusPlus(self):
