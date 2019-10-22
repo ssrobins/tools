@@ -14,7 +14,7 @@ class VersionCheck:
     def __init__(self, debug):
         self.versions = {
             'AndroidNDK':      'r20',
-            'AndroidSDKAPI':   '28',
+            'AndroidSDKAPI':   '29', # Still on 28, this is a reminder to upgrade
             'AndroidSDKTools': '4333796',
             'AndroidStudio':   '3.5.1',
             'bzip2':           '1.0.8',
@@ -97,7 +97,7 @@ class VersionCheck:
         page = urlopen('https://developer.android.com/studio/releases/platforms')
         soup = BeautifulSoup(page, 'html.parser')
 
-        version_items = soup.find('h2', attrs={'id': re.compile('^[0-9]+\.[0-9]+$')}).text.strip(')').split()
+        version_items = soup.find('h2', attrs={'id': re.compile('^[0-9]+(\.[0-9])*$')}).text.strip(')').split()
 
         return version_items[-1]
 
