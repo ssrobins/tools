@@ -27,18 +27,18 @@ class VersionCheck:
             'GIMP_win':        '2.10.12',
             'git_mac':         '2.23.0',
             'git_win':         '2.23.0',
-            'GitLabRunner':    '12.4.0',
+            'GitLabRunner':    '12.4.1',
             'glew':            '2.1.0',
             'googletest':      '1.10.0',
             'Gradle':          '5.6.3',
-            'grepWin':         '1.7.1',
+            'grepWin':         '1.9.2',
             'KeePass':         '2.43',
             'libpng':          '1.6.37',
             'OBS_mac':         '24.0.2',
             'OBS_win':         '24.0.3',
             'MuseScore':       '3.2.3',
             'ninja':           '1.9.0',
-            'NotepadPlusPlus': '7.8',
+            'NotepadPlusPlus': '7.8.1',
             'openjdk':         '8u212-b04',
             'python':          '3.8.0',
             'SDL2':            '2.0.10', # Stuck at 2.0.8: https://bugzilla.libsdl.org/show_bug.cgi?id=4316
@@ -277,12 +277,12 @@ class VersionCheck:
 
 
     def get_latest_version_grepWin(self):
-        page = urlopen('https://sourceforge.net/projects/grepwin/files/')
+        page = urlopen('https://github.com/stefankueng/grepWin/releases/')
         soup = BeautifulSoup(page, 'html.parser')
 
-        version_text = soup.find('a', attrs={'href': re.compile('^/projects/grepwin/files/[0-9]+\.[0-9]+[\.[0-9]+]*/$')}).text.strip()
+        version_items = soup.find('a', attrs={'href': re.compile('^/stefankueng/grepWin/releases/tag/[0-9]+\.[0-9]+\.[0-9]+$')}).text.split()
 
-        return version_text
+        return version_items[1]
 
 
     def get_latest_version_KeePass(self):
