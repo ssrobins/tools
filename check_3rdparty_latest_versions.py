@@ -14,7 +14,7 @@ class VersionCheck:
     def __init__(self, debug):
         self.versions = {
             'AndroidNDK':      'r20',
-            'AndroidSDKAPI':   '29', # Still on 28, this is a reminder to upgrade
+            'AndroidSDKAPI':   '29',
             'AndroidSDKTools': '4333796',
             'AndroidStudio':   '3.5.1',
             'bzip2':           '1.0.8',
