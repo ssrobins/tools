@@ -485,7 +485,9 @@ class VersionCheck:
         h2_tag_contents = soup.findAll('h2')
         version_text_raw = None
         for h2_tag_content in h2_tag_contents:
-            if 'Xcode' in h2_tag_content.text and 'beta' not in h2_tag_content.text:
+            if ('Xcode' in h2_tag_content.text and
+               'beta' not in h2_tag_content.text and
+               'GM seed' not in h2_tag_content.text):
                 version_text_raw = h2_tag_content.text
                 break
 
