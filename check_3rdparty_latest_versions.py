@@ -13,13 +13,13 @@ import time
 class VersionCheck:
     def __init__(self, debug):
         self.versions = {
-            'AndroidNDK':      'r20',
+            'AndroidNDK':      'r20b',
             'AndroidSDKAPI':   '29',
             'AndroidSDKTools': '4333796',
             'AndroidStudio':   '3.5.2',
             'bzip2':           '1.0.8',
             'cmake':           '3.16.0-rc3',
-            'conan':           '1.20.0',
+            'conan':           '1.20.2',
             'DockerCE':        '2.1.0.4',
             'freetype':        '2.10.1',
             'gcc':             '9.2.0',
