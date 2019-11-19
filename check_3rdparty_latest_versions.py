@@ -19,7 +19,7 @@ class VersionCheck:
             'AndroidStudio':   '3.5.2',
             'bzip2':           '1.0.8',
             'cmake':           '3.16.0-rc4',
-            'conan':           '1.20.3',
+            'conan':           '1.20.4',
             'DockerCE':        '2.1.0.5',
             'freetype':        '2.10.1',
             'gcc':             '9.2.0',
