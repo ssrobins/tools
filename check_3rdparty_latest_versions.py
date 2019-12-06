@@ -16,7 +16,7 @@ class VersionCheck:
             'AndroidNDK':      'r20b',
             'AndroidSDKAPI':   '29',
             'AndroidSDKTools': '4333796',
-            'AndroidStudio':   '3.5.2',
+            'AndroidStudio':   '3.5.3',
             'bzip2':           '1.0.8',
             'cmake':           '3.16.0',
             'conan':           '1.20.5',
@@ -38,7 +38,7 @@ class VersionCheck:
             'OBS_win':         '24.0.3',
             'MuseScore':       '3.3.4',
             'ninja':           '1.9.0',
-            'NotepadPlusPlus': '7.8.1',
+            'NotepadPlusPlus': '7.8.2',
             'openjdk':         '8u212-b04',
             'python':          '3.8.0',
             'SDL2':            '2.0.10', # Stuck at 2.0.8: https://bugzilla.libsdl.org/show_bug.cgi?id=4316
@@ -49,7 +49,7 @@ class VersionCheck:
             'TortoiseGit':     '2.9.0',
             'VS2017':          '15.9.17',
             'VS2019':          '16.4.0',
-            'WinSCP':          '5.15.7',
+            'WinSCP':          '5.15.9',
             'Xcode':           '11.2.1 (11B500)',
             'zlib':            '1.2.11',
         }
