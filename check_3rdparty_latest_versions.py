@@ -34,7 +34,7 @@ class VersionCheck:
             'grepWin':         '1.9.2',
             'KeePass':         '2.43',
             'libpng':          '1.6.37',
-            'OBS_mac':         '24.0.2',
+            'OBS_mac':         '24.0.5',
             'OBS_win':         '24.0.3',
             'MuseScore':       '3.3.4',
             'ninja':           '1.9.0',
