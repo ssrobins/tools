@@ -32,7 +32,7 @@ class VersionCheck:
             'googletest':      '1.10.0',
             'Gradle':          '6.0.1',
             'grepWin':         '1.9.2',
-            'KeePass':         '2.43',
+            'KeePassXC':       '2.5.1',
             'libpng':          '1.6.37',
             'OBS_mac':         '24.0.6',
             'OBS_win':         '24.0.3',
@@ -285,13 +285,13 @@ class VersionCheck:
         return version_items[1]
 
 
-    def get_latest_version_KeePass(self):
-        page = urlopen('https://keepass.info/download.html')
+    def get_latest_version_KeePassXC(self):
+        page = urlopen('https://keepassxc.org/download/')
         soup = BeautifulSoup(page, 'html.parser')
 
-        version_items = soup.find('th', attrs={'colspan': '2'}).text.strip().split()
+        version_text = soup.find('span', attrs={'class': 'label label-success'}).text.lstrip('v')
 
-        return version_items[-1]
+        return version_text
 
 
     def get_latest_version_libpng(self):
