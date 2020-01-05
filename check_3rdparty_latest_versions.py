@@ -32,7 +32,7 @@ class VersionCheck:
             'googletest':      '1.10.0',
             'Gradle':          '6.0.1',
             'grepWin':         '1.9.2',
-            'KeePassXC':       '2.5.1',
+            'KeePassXC':       '2.5.2',
             'libpng':          '1.6.37',
             'OBS_mac':         '24.0.6',
             'OBS_win':         '24.0.3',
