@@ -27,7 +27,7 @@ class VersionCheck:
             'GIMP_win':        '2.10.14',
             'git_mac':         '2.23.0',
             'git_win':         '2.25.0',
-            'GitLabRunner':    '12.7.0', # Stuck at 12.5.0: https://gitlab.com/gitlab-org/gitlab-runner/issues/6202
+            'GitLabRunner':    '12.7.1', # Stuck at 12.5.0: https://gitlab.com/gitlab-org/gitlab-runner/issues/6202
             'glew':            '2.1.0',
             'googletest':      '1.10.0',
             'Gradle':          '6.1',
