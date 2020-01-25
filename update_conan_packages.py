@@ -1,6 +1,7 @@
 import argparse
 import base64
 import os
+import re
 import requests
 import subprocess
 
@@ -14,40 +15,23 @@ def main():
     rootdir = os.getcwd()
     fullpath = os.path.join(rootdir, repo)
 
-    # Run the command once to update so the next run doesn'tell
-    # have warning messages that mess up the string parsing
-    subprocess.run(
-        "conan info . --update",
-        cwd=fullpath, capture_output=True, shell=True, check=True)
-    
-    conan_info_raw = subprocess.run(
-        "conan info . --only id",
-        cwd=fullpath, capture_output=True, shell=True, check=True).stdout.splitlines()
+    with open(os.path.join(fullpath, "conanfile.py"), "r", newline="") as conan_file:
+        conan_file_content = conan_file.read()
 
-    packages = list()
+        packages = list()
+        package_strings = re.findall('requires.add\("(.*?)/(.*?)#(.*?)"', conan_file_content)
 
-    for index in range(0, len(conan_info_raw), 2):
-        if "conanfile.py" not in conan_info_raw[index].decode("UTF-8"):
+        for package_string in package_strings:
             package = {
-                "name": conan_info_raw[index].decode("UTF-8").split("/")[0],
-                "version": conan_info_raw[index].decode("UTF-8").split("/")[1],
+                "name": package_string[0],
+                "version": package_string[1],
+                "sha": package_string[2],
             }
             packages.append(package)
 
-    with open(os.path.join(fullpath, "conanfile.py"), "r", newline="") as conan_file:
-        conan_file_content = conan_file.read()
-        
         base_gitlab_url = "https://gitlab.com/api/v4/projects"
 
         for package in packages:
-            conan_info_raw = subprocess.run(
-                f"conan info . --update --package-filter {package['name']}/{package['version']}",
-                cwd=fullpath, capture_output=True, shell=True, check=True).stdout.decode("utf-8").splitlines()
-            for line in conan_info_raw:
-                if "Revision" in line:
-                    package["sha"] = line.split(":")[1].strip()
-                    break
-        
             commit = requests.get(
                 f"{base_gitlab_url}/ssrobins%2Fconan-{package['name']}/repository/commits/HEAD").json()
             package["latest_sha"] = commit["id"]
