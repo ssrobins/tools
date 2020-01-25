@@ -36,7 +36,7 @@ class VersionCheck:
             "libpng":          "1.6.37",
             "OBS_mac":         "24.0.6",
             "OBS_win":         "24.0.3",
-            "MuseScore":       "3.4",
+            "MuseScore":       "3.4.1",
             "ninja":           "1.9.0",
             "NotepadPlusPlus": "7.8.3",
             "openjdk":         "8u212-b04",
