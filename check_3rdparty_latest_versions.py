@@ -65,22 +65,22 @@ class VersionCheck:
         try:
             if self.debug:
                 start_time = time.time()
-            latest_version = getattr(self, "get_latest_version_" + tool)()
+            latest_version = getattr(self, f"get_latest_version_{tool}")()
             if(latest_version != self.versions[tool]):
-                print(tool + " " + self.versions[tool] + " can be upgraded to " + latest_version + ".")
+                print(f"{tool} {self.versions[tool]} can be upgraded to {latest_version}.")
                 result["uptodate"] = False
         except AttributeError as error:
-            print(tool + " version could not be found. Check the website.")
-            print("  Details: ", error)
+            print(f"{tool} version could not be found. Check the website.")
+            print(f"  Details: {error}")
             result["error"] = True
         except (HTTPError, URLError) as error:
-            print(tool + " website could not be loaded.")
-            print("  Details: ", error)
+            print(f"{tool} website could not be loaded.")
+            print(f"  Details: {error}")
             result["error"] = True
         finally:
             if self.debug:
                 elapsed_time = time.time() - start_time
-                print(tool + ": " + str(elapsed_time) + " seconds")
+                print(f"{tool}: {elapsed_time} seconds")
         return result
 
 
@@ -390,7 +390,7 @@ class VersionCheck:
         version_text_raw = soup.find("a", attrs={"href": lambda L: L and L.startswith("release/SDL2_image-")}).text.strip()
 
         version_items = re.findall(r"[\w']+", version_text_raw)
-        version_text = version_items[1] + "." + version_items[2] + "." + version_items[3]
+        version_text = f"{version_items[1]}.{version_items[2]}.{version_items[3]}"
 
         return version_text
 
@@ -402,7 +402,7 @@ class VersionCheck:
         version_text_raw = soup.find("a", attrs={"href": lambda L: L and L.startswith("release/SDL2_mixer-")}).text.strip()
 
         version_items = re.findall(r"[\w']+", version_text_raw)
-        version_text = version_items[1] + "." + version_items[2] + "." + version_items[3]
+        version_text = f"{version_items[1]}.{version_items[2]}.{version_items[3]}"
 
         return version_text
 
@@ -414,7 +414,7 @@ class VersionCheck:
         version_text_raw = soup.find("a", attrs={"href": lambda L: L and L.startswith("release/SDL2_ttf-")}).text.strip()
 
         version_items = re.findall(r"[\w']+", version_text_raw)
-        version_text = version_items[1] + "." + version_items[2] + "." + version_items[3]
+        version_text = f"{version_items[1]}.{version_items[2]}.{version_items[3]}"
 
         return version_text
 
