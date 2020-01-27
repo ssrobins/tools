@@ -479,7 +479,7 @@ class VersionCheck:
 
 
     def get_latest_version_Xcode(self):
-        page = urlopen("https://developer.apple.com/news/releases/")
+        page = urlopen("http://developer.apple.com/news/releases/")
         soup = BeautifulSoup(page, "html.parser")
 
         h2_tag_contents = soup.findAll("h2")
