@@ -41,7 +41,7 @@ class VersionCheck:
             "NotepadPlusPlus": "7.8.3",
             "openjdk":         "8u212-b04",
             "python":          "3.8.1",
-            "SDL2":            "2.0.10", # Stuck at 2.0.8: https://bugzilla.libsdl.org/show_bug.cgi?id=4316
+            "SDL2":            "2.0.10", # Stuck at 2.0.8: https://bugzilla.libsdl.org/show_bug.cgi?id=4601
             "SDL2_image":      "2.0.5",
             "SDL2_mixer":      "2.0.4",
             "SDL2_ttf":        "2.0.15",
