@@ -68,7 +68,7 @@ def main():
     cmd = command_args.cmd
     for dir in dirs:
         fullpath = os.path.join(rootdir, dir)
-        print(f"######## Running '{cmd}' in {dir}")
+        print(f"######## Running '{cmd}' in {dir}", flush=True)
         subprocess.run(cmd, cwd=fullpath, shell=True, check=True)
         print("###################################")
         print()
