@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError
 from urllib.error import URLError

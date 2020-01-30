@@ -2,8 +2,8 @@ image: python:latest
 
 before_script:
   - pip install BeautifulSoup4 certifi
-  - python -V                                   # Print out python version for debugging
+  - python --version
 
 run:
   script:
-  - python check_3rdparty_latest_versions.py
+  - ./check_3rdparty_latest_versions.py
