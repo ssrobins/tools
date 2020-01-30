@@ -41,7 +41,7 @@ class VersionCheck:
             "MuseScore":       "3.4.1",
             "ninja":           "1.10.0",
             "NotepadPlusPlus": "7.8.4",
-            "openjdk":         "8u212-b04",
+            "openjdk":         "8u242",
             "python":          "3.8.1",
             "SDL2":            "2.0.10", # Stuck at 2.0.8: https://bugzilla.libsdl.org/show_bug.cgi?id=4601
             "SDL2_image":      "2.0.5",
@@ -352,7 +352,7 @@ class VersionCheck:
 
 
     def get_latest_version_openjdk(self):
-        page = urlopen("https://registry.hub.docker.com/v1/repositories/openjdk/tags")
+        page = urlopen("https://registry.hub.docker.com/v1/repositories/amd64/openjdk/tags")
         soup = BeautifulSoup(page, "html.parser")
 
         data = json.loads(soup.get_text())
@@ -360,8 +360,8 @@ class VersionCheck:
         version_text_list = list()
         for item in data:
             docker_tag = item.get("name")
-            if "jdk-slim-stretch" in docker_tag and "8u" in docker_tag:
-                version_text_list.append(docker_tag.replace("-jdk-slim-stretch",""))
+            if "jdk-slim" in docker_tag and "8u" in docker_tag:
+                version_text_list.append(re.match("^\d+u\d+", docker_tag).group())
         version_text_list.sort()
 
         return version_text_list[-1]
