@@ -38,7 +38,7 @@ class VersionCheck:
             "OBS_win":         "24.0.3",
             "MuseScore":       "3.4.1",
             "ninja":           "1.10.0",
-            "NotepadPlusPlus": "7.8.3",
+            "NotepadPlusPlus": "7.8.4",
             "openjdk":         "8u212-b04",
             "python":          "3.8.1",
             "SDL2":            "2.0.10", # Stuck at 2.0.8: https://bugzilla.libsdl.org/show_bug.cgi?id=4601
