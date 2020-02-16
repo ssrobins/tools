@@ -23,6 +23,7 @@ class VersionCheck:
             "cmake":           "3.17.0-rc1",
             "conan":           "1.22.2",
             "DockerCE":        "2.2.0.3",
+            "DockerEngine":    "19.03.6", # Stuck at 19.03.5: https://gitlab.com/gitlab-org/gitlab-runner/issues/6697
             "freetype":        "2.10.1",
             "gcc":             "9.2.0",
             "GIMP_mac":        "2.10.14",
@@ -165,6 +166,23 @@ class VersionCheck:
         version_items = soup.find("h2", attrs={"id": lambda L: L and L.startswith("docker-desktop-community")}).text.split()
 
         return version_items[3]
+
+
+    def get_latest_version_DockerEngine(self):
+        page = urlopen("https://registry.hub.docker.com/v1/repositories/docker/tags")
+        soup = BeautifulSoup(page, "html.parser")
+
+        data = json.loads(soup.get_text())
+
+        version_text_list = list()
+        for item in data:
+            docker_tag = item.get("name")
+            match = re.match("^\d+\.\d+\.\d+", docker_tag)
+            if match:
+                version_text_list.append(match.group())
+        version_text_list.sort()
+
+        return version_text_list[-1]
 
 
     def get_latest_version_freetype(self):
