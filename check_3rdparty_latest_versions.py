@@ -33,7 +33,7 @@ class VersionCheck:
             "GitLabRunner":    "12.7.1", # Stuck at 12.5.0: https://gitlab.com/gitlab-org/gitlab-runner/issues/6202
             "glew":            "2.1.0",
             "googletest":      "1.10.0",
-            "Gradle":          "6.1.1",
+            "Gradle":          "6.2",
             "grepWin":         "1.9.2",
             "KeePassXC":       "2.5.3",
             "libpng":          "1.6.37",
