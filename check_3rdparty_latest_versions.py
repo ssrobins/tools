@@ -280,7 +280,7 @@ class VersionCheck:
         page = urlopen("https://github.com/google/googletest/releases")
         soup = BeautifulSoup(page, "html.parser")
 
-        version_text = soup.find("a", attrs={"href": re.compile("^/google/googletest/releases/tag/release-[0-9]+\.[0-9]+\.[0-9]+$")}).text.lstrip("v")
+        version_text = soup.find("a", attrs={"href": re.compile("^/google/googletest/releases/tag/release-\d+\.\d+\.\d+$")}).text.lstrip("v")
 
         return version_text
 
@@ -305,7 +305,7 @@ class VersionCheck:
         page = urlopen("https://github.com/stefankueng/grepWin/releases/")
         soup = BeautifulSoup(page, "html.parser")
 
-        version_items = soup.find("a", attrs={"href": re.compile("^/stefankueng/grepWin/releases/tag/[0-9]+\.[0-9]+\.[0-9]+$")}).text.split()
+        version_items = soup.find("a", attrs={"href": re.compile("^/stefankueng/grepWin/releases/tag/\d+\.\d+\.\d+$")}).text.split()
 
         return version_items[1]
 
@@ -359,7 +359,7 @@ class VersionCheck:
         page = urlopen("https://github.com/ninja-build/ninja/releases/latest")
         soup = BeautifulSoup(page, "html.parser")
 
-        version_text = soup.find("a", attrs={"href": re.compile("^/ninja-build/ninja/releases/tag/v[0-9]+\.[0-9]+\.[0-9]+$")}).text.lstrip("v")
+        version_text = soup.find("a", attrs={"href": re.compile("^/ninja-build/ninja/releases/tag/v\d+\.\d+\.\d+$")}).text.lstrip("v")
 
         return version_text
 
@@ -498,7 +498,7 @@ class VersionCheck:
         page = urlopen("https://sourceforge.net/projects/winscp/files/WinSCP/")
         soup = BeautifulSoup(page, "html.parser")
 
-        version_text = soup.find("a", attrs={"href": re.compile("^/projects/winscp/files/WinSCP/[0-9]+\.[0-9]+[\.[0-9]+]*/$")}).text.strip()
+        version_text = soup.find("a", attrs={"href": re.compile("^/projects/winscp/files/WinSCP/\d+\.\d+[\.\d+]*/$")}).text.strip()
         
         return version_text
 
