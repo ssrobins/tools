@@ -100,9 +100,14 @@ class VersionCheck:
         page = urlopen("https://developer.android.com/studio/releases/platforms")
         soup = BeautifulSoup(page, "html.parser")
 
-        version_items = soup.find("h2", attrs={"id": re.compile("^[0-9]+(\.[0-9])*$")}).text.strip(")").split()
+        h2_tag_contents = soup.findAll("h2", attrs={"id": re.compile("^\d+(\.\d)*$")})
+        for h2_tag_content in h2_tag_contents:
+            match = re.search("\(API level (\d+)\)", h2_tag_content.text)
+            if match:
+                version_text = match.group(1)
+                break
 
-        return version_items[-1]
+        return version_text
 
 
     def get_latest_version_AndroidSDKTools(self):
