@@ -17,7 +17,7 @@ class VersionCheck:
         self.versions = {
             "AndroidNDK":      "r21",
             "AndroidSDKAPI":   "29",
-            "AndroidSDKTools": "4333796",
+            "AndroidSDKTools": "6200805", # Still at 4333796 while I figure out why sdkmanager doesn't work
             "AndroidStudio":   "3.6",
             "bzip2":           "1.0.8",
             "cmake":           "3.17.0-rc1",
@@ -43,7 +43,7 @@ class VersionCheck:
             "ninja":           "1.10.0",
             "NotepadPlusPlus": "7.8.4",
             "openjdk":         "8u242",
-            "python":          "3.8.1",
+            "python":          "3.8.2",
             "SDL2":            "2.0.10", # Stuck at 2.0.8: https://bugzilla.libsdl.org/show_bug.cgi?id=4601
             "SDL2_image":      "2.0.5",
             "SDL2_mixer":      "2.0.4",
@@ -114,8 +114,9 @@ class VersionCheck:
         page = urlopen("https://developer.android.com/studio/")
         soup = BeautifulSoup(page, "html.parser")
 
-        version_items = soup.find("button", attrs={"data-modal-dialog-id": "sdk_linux_download"}).text.split("-")
-        version_subitems = version_items[3].split(".")
+        version_items = soup.find("button", attrs={"data-modal-dialog-id": "sdk_linux_download"}).text.replace("_", "-").split("-")
+
+        version_subitems = version_items[2].split(".")
 
         return version_subitems[0]
 
