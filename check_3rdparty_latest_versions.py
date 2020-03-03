@@ -20,7 +20,7 @@ class VersionCheck:
             "AndroidSDKTools": "6200805", # Still at 4333796 while I figure out why sdkmanager doesn't work
             "AndroidStudio":   "3.6.1",
             "bzip2":           "1.0.8",
-            "cmake":           "3.17.0-rc1",
+            "cmake":           "3.17.0-rc2",
             "conan":           "1.22.2",
             "DockerCE":        "2.2.0.3",
             "DockerEngine":    "19.03.6", # Stuck at 19.03.5: https://gitlab.com/gitlab-org/gitlab-runner/issues/6697
