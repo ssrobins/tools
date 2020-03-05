@@ -23,7 +23,7 @@ class VersionCheck:
             "cmake":           "3.17.0-rc2",
             "conan":           "1.22.2",
             "DockerCE":        "2.2.0.3",
-            "DockerEngine":    "19.03.6", # Stuck at 19.03.5: https://gitlab.com/gitlab-org/gitlab-runner/issues/6697
+            "DockerEngine":    "19.03.7",
             "freetype":        "2.10.1",
             "gcc":             "9.2.0",
             "GIMP_mac":        "2.10.14",
@@ -33,7 +33,7 @@ class VersionCheck:
             "GitLabRunner":    "12.8.0", # Stuck at 12.5.0: https://gitlab.com/gitlab-org/gitlab-runner/issues/6202
             "glew":            "2.1.0",
             "googletest":      "1.10.0",
-            "Gradle":          "6.2.1",
+            "Gradle":          "6.2.2",
             "grepWin":         "1.9.2",
             "KeePassXC":       "2.5.3",
             "libpng":          "1.6.37",
