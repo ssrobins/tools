@@ -260,8 +260,8 @@ class VersionCheck:
         version_text_raw = ""
         for line in page.readlines():
             line_str = line.decode("utf-8")
-            if line_str.startswith("v"):
-                version_text_raw = line_str.split("v")[1].split("(")[0].strip()
+            if line_str.startswith("## v"):
+                version_text_raw = line_str.split("## v")[1].split("(")[0].strip()
                 if "rc" not in version_text_raw:
                     break
 
