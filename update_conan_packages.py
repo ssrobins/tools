@@ -21,7 +21,7 @@ def main():
         conan_file_content = conan_file.read()
 
         packages = list()
-        package_strings = re.findall('requires.add\("(.*?)/(.*?)#(.*?)"', conan_file_content)
+        package_strings = re.findall('requires\("(.*?)/(.*?)#(.*?)"', conan_file_content)
 
         for package_string in package_strings:
             package = {
