@@ -20,10 +20,10 @@ class VersionCheck:
             "AndroidSDKTools": "6200805", # Still at 4333796 while I figure out why sdkmanager doesn't work
             "AndroidStudio":   "3.6.1",
             "bzip2":           "1.0.8",
-            "cmake":           "3.17.0-rc2",
+            "cmake":           "3.17.0-rc3",
             "conan":           "1.23.0",
             "DockerCE":        "2.2.0.3",
-            "DockerEngine":    "19.03.7",
+            "DockerEngine":    "19.03.8",
             "freetype":        "2.10.1",
             "gcc":             "9.2.0",
             "GIMP_mac":        "2.10.14",
