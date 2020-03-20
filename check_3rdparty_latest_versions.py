@@ -38,7 +38,7 @@ class VersionCheck:
             "KeePassXC":       "2.5.3",
             "libpng":          "1.6.37",
             "OBS_mac":         "24.0.6",
-            "OBS_win":         "25.0",
+            "OBS_win":         "25.0.1",
             "MuseScore":       "3.4.2",
             "ninja":           "1.10.0",
             "NotepadPlusPlus": "7.8.5",
