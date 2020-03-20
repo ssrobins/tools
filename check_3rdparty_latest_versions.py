@@ -17,7 +17,7 @@ class VersionCheck:
         self.versions = {
             "AndroidNDK":      "r21",
             "AndroidSDKAPI":   "29",
-            "AndroidSDKTools": "6200805", # Still at 4333796 while I figure out why sdkmanager doesn't work
+            "AndroidSDKTools": "6200805",
             "AndroidStudio":   "3.6.1",
             "bzip2":           "1.0.8",
             "cmake":           "3.17.0-rc3",
