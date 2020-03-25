@@ -33,7 +33,7 @@ class VersionCheck:
             "GitLabRunner":    "12.9.0", # Stuck at 12.5.0: https://gitlab.com/gitlab-org/gitlab-runner/issues/6202 and won't support Windows 1903 and greater: https://gitlab.com/gitlab-org/gitlab-runner/issues/4396
             "glew":            "2.1.0",
             "googletest":      "1.10.0",
-            "Gradle":          "6.2.2",
+            "Gradle":          "6.3",
             "grepWin":         "1.9.2",
             "KeePassXC":       "2.5.3",
             "libpng":          "1.6.37",
@@ -53,7 +53,7 @@ class VersionCheck:
             "VS2017":          "15.9.21",
             "VS2019":          "16.5.1",
             "WinSCP":          "5.17.2",
-            "Xcode":           "11.3.1 (11C504)",
+            "Xcode":           "11.4 (11E146)",
             "zlib":            "1.2.11",
         }
 
