@@ -21,7 +21,7 @@ class VersionCheck:
             "AndroidStudio":   "3.6.2",
             "bzip2":           "1.0.8",
             "cmake":           "3.17.0",
-            "conan":           "1.23.0",
+            "conan":           "1.24.0",
             "DockerCE":        "2.2.0.4",
             "DockerEngine":    "19.03.8",
             "freetype":        "2.10.1",
@@ -52,7 +52,7 @@ class VersionCheck:
             "TortoiseGit":     "2.10.0",
             "VS2017":          "15.9.21",
             "VS2019":          "16.5.2",
-            "WinSCP":          "5.17.2",
+            "WinSCP":          "5.17.3",
             "Xcode":           "11.4 (11E146)",
             "zlib":            "1.2.11",
         }
