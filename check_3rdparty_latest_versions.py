@@ -255,7 +255,8 @@ class VersionCheck:
 
 
     def get_latest_version_GitLabRunner(self):
-        page = urlopen("https://gitlab.com/gitlab-org/gitlab-runner/raw/master/CHANGELOG.md")
+        req = Request("https://gitlab.com/gitlab-org/gitlab-runner/raw/master/CHANGELOG.md", headers={"User-Agent": "Mozilla/5.0"})
+        page = urlopen(req)
 
         version_text_raw = ""
         for line in page.readlines():
