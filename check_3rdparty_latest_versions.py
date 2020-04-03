@@ -122,7 +122,7 @@ class VersionCheck:
 
 
     def get_latest_version_AndroidStudio(self):
-        req = Request("https://developer.android.com/studio/", headers={"User-Agent": "Mozilla/5.0 (X11; Linux i686)"})
+        req = Request("https://developer.android.com/studio/", headers={"User-Agent": "Mozilla/72 (X11; Linux i686)"})
         page = urlopen(req).read()
         soup = BeautifulSoup(page, "html.parser")
 
@@ -235,7 +235,7 @@ class VersionCheck:
 
 
     def get_latest_version_git_mac(self):
-        req = Request("https://git-scm.com/download", headers={"User-Agent": "Mozilla/5.0"})
+        req = Request("https://git-scm.com/download", headers={"User-Agent": "Mozilla/72"})
         page = urlopen(req).read()
         soup = BeautifulSoup(page, "html.parser")
 
@@ -245,7 +245,7 @@ class VersionCheck:
 
 
     def get_latest_version_git_win(self):
-        req = Request("https://git-scm.com/download", headers={"User-Agent": "Mozilla/5.0"})
+        req = Request("https://git-scm.com/download", headers={"User-Agent": "Mozilla/72"})
         page = urlopen(req).read()
         soup = BeautifulSoup(page, "html.parser")
 
@@ -255,7 +255,7 @@ class VersionCheck:
 
 
     def get_latest_version_GitLabRunner(self):
-        req = Request("https://gitlab.com/gitlab-org/gitlab-runner/raw/master/CHANGELOG.md", headers={"User-Agent": "Mozilla/5.0"})
+        req = Request("https://gitlab.com/gitlab-org/gitlab-runner/raw/master/CHANGELOG.md", headers={"User-Agent": "Mozilla/72"})
         page = urlopen(req)
 
         version_text_raw = ""
@@ -367,7 +367,7 @@ class VersionCheck:
 
 
     def get_latest_version_NotepadPlusPlus(self):
-        req = Request("https://notepad-plus-plus.org/downloads", headers={"User-Agent": "Mozilla/5.0"})
+        req = Request("https://notepad-plus-plus.org/downloads", headers={"User-Agent": "Mozilla/72"})
         page = urlopen(req).read()
         soup = BeautifulSoup(page, "html.parser")
 
