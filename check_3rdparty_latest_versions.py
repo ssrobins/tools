@@ -37,12 +37,12 @@ class VersionCheck:
             "grepWin":         "2.0.0",
             "KeePassXC":       "2.5.4",
             "libpng":          "1.6.37",
-            "OBS_mac":         "25.0.6",
-            "OBS_win":         "25.0.4",
             "MuseScore":       "3.4.2",
             "ninja":           "1.10.0",
             "NotepadPlusPlus": "7.8.5",
-            "openjdk":         "8u242",
+            "OBS_mac":         "25.0.6",
+            "OBS_win":         "25.0.4",
+            "openjdk":         "8u252",
             "python":          "3.8.2",
             "SDL2":            "2.0.12", # See if I can finally upgrade from 2.0.8: https://bugzilla.libsdl.org/show_bug.cgi?id=4601
             "SDL2_image":      "2.0.5",
@@ -53,7 +53,7 @@ class VersionCheck:
             "VS2017":          "15.9.22",
             "VS2019":          "16.5.4",
             "WinSCP":          "5.17.3",
-            "Xcode":           "11.4 (11E146)",
+            "Xcode":           "11.4.1 (11E503a)",
             "zlib":            "1.2.11",
         }
 
