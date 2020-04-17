@@ -40,7 +40,7 @@ class VersionCheck:
             "MuseScore":       "3.4.2",
             "ninja":           "1.10.0",
             "NotepadPlusPlus": "7.8.5",
-            "OBS_mac":         "25.0.6",
+            "OBS_mac":         "25.0.7",
             "OBS_win":         "25.0.4",
             "openjdk":         "8u252",
             "python":          "3.8.2",
