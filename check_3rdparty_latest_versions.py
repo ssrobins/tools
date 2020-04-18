@@ -18,7 +18,7 @@ class VersionCheck:
             "AndroidNDK":      "r21",
             "AndroidSDKAPI":   "29",
             "AndroidSDKTools": "6200805",
-            "AndroidStudio":   "3.6.2",
+            "AndroidStudio":   "3.6.3",
             "bzip2":           "1.0.8",
             "cmake":           "3.17.1",
             "conan":           "1.24.0",
