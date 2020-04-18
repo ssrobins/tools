@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from urllib.request import Request, urlopen
+from urllib.request import build_opener, HTTPCookieProcessor, install_opener, Request, urlopen
 from urllib.error import HTTPError
 from urllib.error import URLError
 from bs4 import BeautifulSoup
@@ -122,8 +122,10 @@ class VersionCheck:
 
 
     def get_latest_version_AndroidStudio(self):
+        opener = build_opener(HTTPCookieProcessor())
+        install_opener(opener)
         req = Request("https://developer.android.com/studio/", headers={"User-Agent": "Mozilla/72 (X11; Linux i686)"})
-        page = urlopen(req).read()
+        page = urlopen(req).read().decode('utf8', errors='ignore')
         soup = BeautifulSoup(page, "html.parser")
 
         version_items = soup.find("div", attrs={"class": "dac-info-size"}).text.split()
