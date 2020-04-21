@@ -30,7 +30,7 @@ class VersionCheck:
             "GIMP_win":        "2.10.18",
             "git_mac":         "2.23.0",
             "git_win":         "2.26.2",
-            "GitLabRunner":    "12.9.0", # Stuck at 12.5.0: https://gitlab.com/gitlab-org/gitlab-runner/issues/6202 and won't support Windows 1903 and greater: https://gitlab.com/gitlab-org/gitlab-runner/issues/4396
+            "GitLabRunner":    "12.10.0", # Stuck at 12.5.0 on Windows: https://gitlab.com/gitlab-org/gitlab-runner/issues/6202 and won't support Windows 1903 and greater: https://gitlab.com/gitlab-org/gitlab-runner/issues/4396
             "glew":            "2.1.0",
             "googletest":      "1.10.0",
             "Gradle":          "6.3",
