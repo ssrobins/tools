@@ -15,7 +15,7 @@ import time
 class VersionCheck:
     def __init__(self, debug):
         self.versions = {
-            "AndroidNDK":      "r21",
+            "AndroidNDK":      "r21b",
             "AndroidSDKAPI":   "29",
             "AndroidSDKTools": "6200805",
             "AndroidStudio":   "3.6.3",
@@ -41,7 +41,7 @@ class VersionCheck:
             "ninja":           "1.10.0",
             "NotepadPlusPlus": "7.8.6",
             "OBS_mac":         "25.0.7",
-            "OBS_win":         "25.0.4",
+            "OBS_win":         "25.0.8",
             "openjdk":         "8u252",
             "python":          "3.8.2",
             "SDL2":            "2.0.12", # See if I can finally upgrade from 2.0.8: https://bugzilla.libsdl.org/show_bug.cgi?id=4601
@@ -52,7 +52,7 @@ class VersionCheck:
             "TortoiseGit":     "2.10.0",
             "VS2017":          "15.9.22",
             "VS2019":          "16.5.4",
-            "WinSCP":          "5.17.3",
+            "WinSCP":          "5.17.4",
             "Xcode":           "11.4.1 (11E503a)",
             "zlib":            "1.2.11",
         }
