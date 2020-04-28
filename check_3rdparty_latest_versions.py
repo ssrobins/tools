@@ -40,8 +40,7 @@ class VersionCheck:
             "MuseScore":       "3.4.2",
             "ninja":           "1.10.0",
             "NotepadPlusPlus": "7.8.6",
-            "OBS_mac":         "25.0.7",
-            "OBS_win":         "25.0.8",
+            "OBS":             "25.0.8",
             "openjdk":         "8u252",
             "python":          "3.8.2",
             "SDL2":            "2.0.12", # See if I can finally upgrade from 2.0.8: https://bugzilla.libsdl.org/show_bug.cgi?id=4601
@@ -332,22 +331,13 @@ class VersionCheck:
         return version_text
 
 
-    def get_latest_version_OBS_mac(self):
-        page = urlopen("https://obsproject.com")
+    def get_latest_version_OBS(self):
+        page = urlopen("https://obsproject.com/download")
         soup = BeautifulSoup(page, "html.parser")
 
-        version_text = soup.find("div", attrs={"class": "latest_icon latest_mac"}).next_sibling.text
+        version_items = soup.find("span", attrs={"class": "dl_ver"}).text.replace(" ", "").split(":")
 
-        return version_text
-
-
-    def get_latest_version_OBS_win(self):
-        page = urlopen("https://obsproject.com")
-        soup = BeautifulSoup(page, "html.parser")
-
-        version_text = soup.find("div", attrs={"class": "latest_icon latest_win"}).next_sibling.text
-
-        return version_text
+        return version_items[1]
 
 
     def get_latest_version_MuseScore(self):
