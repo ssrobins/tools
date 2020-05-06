@@ -15,6 +15,7 @@ import time
 class VersionCheck:
     def __init__(self, debug):
         self.versions = {
+            "7Zip":            "19.00",
             "AndroidNDK":      "r21b",
             "AndroidSDKAPI":   "29",
             "AndroidSDKTools": "6200805",
@@ -84,6 +85,20 @@ class VersionCheck:
                 elapsed_time = time.time() - start_time
                 print(f"{tool}: {elapsed_time} seconds")
         return result
+
+
+    def get_latest_version_7Zip(self):
+        page = urlopen("https://www.7-zip.org/")
+        soup = BeautifulSoup(page, "html.parser")
+
+        b_tag_contents = soup.findAll("b")
+        version_text_raw = None
+        for b_tag_content in b_tag_contents:
+            if "Download" in b_tag_content.text:
+                version_text_raw = b_tag_content.text
+                break
+
+        return version_text_raw.split()[2]
 
 
     def get_latest_version_AndroidNDK(self):
