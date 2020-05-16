@@ -34,7 +34,7 @@ class VersionCheck:
             "GitLabRunner":    "12.10.0", # Stuck at 12.5.0 on Windows: https://gitlab.com/gitlab-org/gitlab-runner/issues/6202 and won't support Windows 1903 and greater: https://gitlab.com/gitlab-org/gitlab-runner/issues/4396
             "glew":            "2.1.0",
             "googletest":      "1.10.0",
-            "Gradle":          "6.4",
+            "Gradle":          "6.4.1",
             "grepWin":         "2.0.0",
             "KeePassXC":       "2.5.4",
             "libpng":          "1.6.37",
@@ -43,7 +43,7 @@ class VersionCheck:
             "NotepadPlusPlus": "7.8.6",
             "OBS":             "25.0.8",
             "openjdk":         "8u252",
-            "python":          "3.8.2",
+            "python":          "3.8.3",
             "SDL2":            "2.0.12", # See if I can finally upgrade from 2.0.8: https://bugzilla.libsdl.org/show_bug.cgi?id=4601
             "SDL2_image":      "2.0.5",
             "SDL2_mixer":      "2.0.4",
