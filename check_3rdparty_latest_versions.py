@@ -22,16 +22,16 @@ class VersionCheck:
             "AndroidStudio":   "3.6.3",
             "bzip2":           "1.0.8",
             "cmake":           "3.17.2",
-            "conan":           "1.25.1",
+            "conan":           "1.25.2",
             "DockerCE":        "2.3.0.2",
-            "DockerEngine":    "19.03.8",
+            "DockerEngine":    "19.03.9",
             "freetype":        "2.10.2",
             "gcc":             "9.3.0",
             "GIMP_mac":        "2.10.14",
             "GIMP_win":        "2.10.18",
             "git_mac":         "2.23.0",
             "git_win":         "2.26.2",
-            "GitLabRunner":    "12.10.0", # Stuck at 12.5.0 on Windows: https://gitlab.com/gitlab-org/gitlab-runner/issues/6202 and won't support Windows 1903 and greater: https://gitlab.com/gitlab-org/gitlab-runner/issues/4396
+            "GitLabRunner":    "13.0.0", # Stuck at 12.5.0 on Windows: https://gitlab.com/gitlab-org/gitlab-runner/issues/6202 and won't support Windows 1903 and greater: https://gitlab.com/gitlab-org/gitlab-runner/issues/4396
             "glew":            "2.1.0",
             "googletest":      "1.10.0",
             "Gradle":          "6.4.1",
@@ -51,9 +51,9 @@ class VersionCheck:
             "SFML":            "2.5.1",
             "TortoiseGit":     "2.10.0",
             "VS2017":          "15.9.23",
-            "VS2019":          "16.5.5",
+            "VS2019":          "16.6.0",
             "WinSCP":          "5.17.5",
-            "Xcode":           "11.4.1 (11E503a)",
+            "Xcode":           "11.5 (11E608c)",
             "zlib":            "1.2.11",
         }
 
