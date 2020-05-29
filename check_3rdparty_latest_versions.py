@@ -16,12 +16,12 @@ class VersionCheck:
     def __init__(self, debug):
         self.versions = {
             "7Zip":            "19.00",
-            "AndroidNDK":      "r21b",
+            "AndroidNDK":      "r21c",
             "AndroidSDKAPI":   "29",
-            "AndroidSDKTools": "6200805",
-            "AndroidStudio":   "3.6.3",
+            "AndroidSDKTools": "6514223",
+            "AndroidStudio":   "4.0",
             "bzip2":           "1.0.8",
-            "cmake":           "3.17.2",
+            "cmake":           "3.17.3",
             "conan":           "1.25.2",
             "DockerCE":        "2.3.0.3",
             "DockerEngine":    "19.03.9",
@@ -52,7 +52,7 @@ class VersionCheck:
             "TortoiseGit":     "2.10.0",
             "VS2017":          "15.9.23",
             "VS2019":          "16.6.0",
-            "WinSCP":          "5.17.5",
+            "WinSCP":          "5.17.6",
             "Xcode":           "11.5 (11E608c)",
             "zlib":            "1.2.11",
         }
