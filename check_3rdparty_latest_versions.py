@@ -173,10 +173,11 @@ class VersionCheck:
 
 
     def get_latest_version_conan(self):
-        page = urlopen("https://conan.io/")
+        page = urlopen("https://docs.conan.io/en/latest/")
         soup = BeautifulSoup(page, "html.parser")
 
-        version_text = soup.find("span", attrs={"class": "dl-version"}).text.strip()
+        version_text = soup.find("a", attrs={"href": lambda L: L and L.startswith("changelog.html#")}).text.split()[0]
+        #version_text = soup.find("span", attrs={"class": "dl-version"}).text.strip()
 
         return version_text
 
