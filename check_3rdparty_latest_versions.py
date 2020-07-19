@@ -40,9 +40,9 @@ class VersionCheck:
             "libpng":          "1.6.37",
             "MuseScore":       "3.4.2",
             "ninja":           "1.10.0",
-            "NotepadPlusPlus": "7.8.8",
+            "NotepadPlusPlus": "7.8.9",
             "OBS":             "25.0.8",
-            "openjdk":         "8u252",
+            "openjdk":         "8u262",
             "python":          "3.8.4",
             "SDL2":            "2.0.12", # See if I can finally upgrade from 2.0.8: https://bugzilla.libsdl.org/show_bug.cgi?id=4601
             "SDL2_image":      "2.0.5",
