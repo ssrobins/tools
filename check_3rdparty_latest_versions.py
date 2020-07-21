@@ -31,7 +31,7 @@ class VersionCheck:
             "GIMP_win":        "2.10.20",
             "git_mac":         "2.23.0",
             "git_win":         "2.27.0",
-            "GitLabRunner":    "13.1.0", # Stuck at 12.5.0 on Windows: https://gitlab.com/gitlab-org/gitlab-runner/issues/6202 and won't support Windows 1903 and greater: https://gitlab.com/gitlab-org/gitlab-runner/issues/4396
+            "GitLabRunner":    "13.2.0", # Stuck at 12.5.0 on Windows: https://gitlab.com/gitlab-org/gitlab-runner/issues/6202 and won't support Windows 1903 and greater: https://gitlab.com/gitlab-org/gitlab-runner/issues/4396
             "glew":            "2.1.0",
             "googletest":      "1.10.0",
             "Gradle":          "6.5.1",
@@ -43,7 +43,7 @@ class VersionCheck:
             "NotepadPlusPlus": "7.8.9",
             "OBS":             "25.0.8",
             "openjdk":         "8u262",
-            "python":          "3.8.4",
+            "python":          "3.8.5",
             "SDL2":            "2.0.12", # See if I can finally upgrade from 2.0.8: https://bugzilla.libsdl.org/show_bug.cgi?id=4601
             "SDL2_image":      "2.0.5",
             "SDL2_mixer":      "2.0.4",
