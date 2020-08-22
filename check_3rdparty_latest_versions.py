@@ -21,7 +21,7 @@ class VersionCheck:
             "AndroidSDKTools": "6609375",
             "AndroidStudio":   "4.0.1",
             "bzip2":           "1.0.8",
-            "cmake":           "3.18.1",
+            "cmake":           "3.18.2",
             "conan":           "1.28.1",
             "DockerCE":        "2.3.0.4",
             "DockerEngine":    "19.03.9",
@@ -31,12 +31,12 @@ class VersionCheck:
             "GIMP_win":        "2.10.20",
             "git_mac":         "2.27.0",
             "git_win":         "2.28.0",
-            "GitLabRunner":    "13.2.0", # Stuck at 12.5.0 on Windows: https://gitlab.com/gitlab-org/gitlab-runner/issues/6202 and won't support Windows 1903 and greater: https://gitlab.com/gitlab-org/gitlab-runner/issues/4396
+            "GitLabRunner":    "13.3.0", # Stuck at 12.5.0 on Windows: https://gitlab.com/gitlab-org/gitlab-runner/issues/6202 and won't support Windows 1903 and greater: https://gitlab.com/gitlab-org/gitlab-runner/issues/4396
             "glew":            "2.1.0",
             "googletest":      "1.10.0",
             "Gradle":          "6.6",
             "grepWin":         "2.0.3",
-            "KeePassXC":       "2.6.0",
+            "KeePassXC":       "2.6.1",
             "libpng":          "1.6.37",
             "MuseScore":       "3.5",
             "ninja":           "1.10.1",
