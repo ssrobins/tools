@@ -34,7 +34,7 @@ class VersionCheck:
             "GitLabRunner":    "13.3.0", # Stuck at 12.5.0 on Windows: https://gitlab.com/gitlab-org/gitlab-runner/issues/6202 and won't support Windows 1903 and greater: https://gitlab.com/gitlab-org/gitlab-runner/issues/4396
             "glew":            "2.1.0",
             "googletest":      "1.10.0",
-            "Gradle":          "6.6",
+            "Gradle":          "6.6.1",
             "grepWin":         "2.0.3",
             "KeePassXC":       "2.6.1",
             "libpng":          "1.6.37",
