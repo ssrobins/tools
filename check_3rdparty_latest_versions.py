@@ -53,7 +53,7 @@ class VersionCheck:
             "VS2017":          "15.9.26",
             "VS2019":          "16.7.2",
             "WinSCP":          "5.17.7",
-            "Xcode":           "11.6 (11E708)",
+            "Xcode":           "11.6",
             "zlib":            "1.2.11",
         }
 
@@ -514,22 +514,12 @@ class VersionCheck:
 
 
     def get_latest_version_Xcode(self):
-        page = urlopen("http://developer.apple.com/news/releases/")
+        page = urlopen("https://apps.apple.com/us/app/xcode/id497799835")
         soup = BeautifulSoup(page, "html.parser")
 
-        h2_tag_contents = soup.findAll("h2")
-        version_text_raw = None
-        for h2_tag_content in h2_tag_contents:
-            if ("Xcode" in h2_tag_content.text and
-               "beta" not in h2_tag_content.text and
-               "GM seed" not in h2_tag_content.text):
-                version_text_raw = h2_tag_content.text
-                break
+        version_items = soup.find("p", attrs={"class": "l-column small-6 medium-12 whats-new__latest__version"}).text.split()
 
-        version_items = version_text_raw.split()
-        version_text = " ".join(version_items[1:])
-
-        return version_text
+        return version_items[1]
 
 
     def get_latest_version_zlib(self):
