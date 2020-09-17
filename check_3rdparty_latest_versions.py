@@ -23,7 +23,7 @@ class VersionCheck:
             "bzip2":           "1.0.8",
             "cmake":           "3.18.2",
             "conan":           "1.29.0",
-            "DockerCE":        "2.3.0.4",
+            "DockerCE":        "2.3.0.5",
             "DockerEngine":    "19.03.9",
             "freetype":        "2.10.2",
             "gcc":             "9.3.0",
@@ -53,7 +53,7 @@ class VersionCheck:
             "VS2017":          "15.9.27",
             "VS2019":          "16.7.3",
             "WinSCP":          "5.17.7",
-            "Xcode":           "11.7",
+            "Xcode":           "12.0",
             "zlib":            "1.2.11",
         }
 
