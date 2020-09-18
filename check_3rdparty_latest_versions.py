@@ -22,7 +22,7 @@ class VersionCheck:
             "AndroidStudio":   "4.0.1",
             "bzip2":           "1.0.8",
             "cmake":           "3.18.2",
-            "conan":           "1.29.0",
+            "conan":           "1.29.1",
             "DockerCE":        "2.3.0.5",
             "DockerEngine":    "19.03.9",
             "freetype":        "2.10.2",
