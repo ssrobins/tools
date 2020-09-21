@@ -1,9 +1,0 @@
-image: python:latest
-
-before_script:
-  - pip install BeautifulSoup4 certifi
-  - python --version
-
-run:
-  script:
-  - ./check_3rdparty_latest_versions.py

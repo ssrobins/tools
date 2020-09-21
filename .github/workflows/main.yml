@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  schedule:
+    - cron:  '0 23 * * *'
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    container: python:latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: pip install BeautifulSoup4 certifi
+
+      - name: Print Python version
+        run: python --version
+
+      - name: Run version check
+        run: ./check_3rdparty_latest_versions.py
