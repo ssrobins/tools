@@ -17,7 +17,7 @@ class VersionCheck:
         self.versions = {
             "7Zip":            "19.00",
             "AndroidNDK":      "r21d",
-            "AndroidSDKAPI":   "29",
+            "AndroidSDKAPI":   "30",
             "AndroidSDKTools": "6609375",
             "AndroidStudio":   "4.0.1",
             "bzip2":           "1.0.8",
