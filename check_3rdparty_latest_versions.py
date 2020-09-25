@@ -43,7 +43,7 @@ class VersionCheck:
             "NotepadPlusPlus": "7.8.9",
             "OBS":             "25.0.8",
             "openjdk":         "8u265",
-            "python":          "3.8.5",
+            "python":          "3.8.6",
             "SDL2":            "2.0.12", # See if I can finally upgrade from 2.0.8: https://bugzilla.libsdl.org/show_bug.cgi?id=4601
             "SDL2_image":      "2.0.5",
             "SDL2_mixer":      "2.0.4",
@@ -53,7 +53,7 @@ class VersionCheck:
             "VS2017":          "15.9.27",
             "VS2019":          "16.7.4",
             "WinSCP":          "5.17.7",
-            "Xcode":           "12.0",
+            "Xcode":           "12.0.1",
             "zlib":            "1.2.11",
         }
 
