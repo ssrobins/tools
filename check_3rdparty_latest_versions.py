@@ -41,7 +41,7 @@ class VersionCheck:
             "MuseScore":       "3.5",
             "ninja":           "1.10.1",
             "NotepadPlusPlus": "7.9",
-            "OBS":             "25.0.8",
+            "OBS":             "26.0",
             "openjdk":         "8u265",
             "python":          "3.8.6",
             "SDL2":            "2.0.12", # See if I can finally upgrade from 2.0.8: https://bugzilla.libsdl.org/show_bug.cgi?id=4601
@@ -51,7 +51,7 @@ class VersionCheck:
             "SFML":            "2.5.1",
             "TortoiseGit":     "2.10.0",
             "VS2017":          "15.9.27",
-            "VS2019":          "16.7.4",
+            "VS2019":          "16.7.5",
             "WinSCP":          "5.17.7",
             "Xcode":           "12.0.1",
             "zlib":            "1.2.11",
