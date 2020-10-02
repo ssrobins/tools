@@ -23,7 +23,7 @@ class VersionCheck:
             "bzip2":           "1.0.8",
             "cmake":           "3.18.3",
             "conan":           "1.29.2",
-            "DockerCE":        "2.3.0.5",
+            "DockerCE":        "2.4.0.0",
             "DockerEngine":    "19.03.9",
             "freetype":        "2.10.2",
             "gcc":             "9.3.0",
