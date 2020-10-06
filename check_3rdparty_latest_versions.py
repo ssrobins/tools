@@ -22,7 +22,7 @@ class VersionCheck:
             "AndroidStudio":   "4.0.1",
             "bzip2":           "1.0.8",
             "cmake":           "3.18.3",
-            "conan":           "1.29.2",
+            "conan":           "1.30.0",
             "DockerCE":        "2.4.0.0",
             "DockerEngine":    "19.03.9",
             "freetype":        "2.10.2",
@@ -43,7 +43,7 @@ class VersionCheck:
             "NotepadPlusPlus": "7.9",
             "OBS":             "26.0",
             "openjdk":         "8u265",
-            "python":          "3.8.6",
+            "python":          "3.9.0",
             "SDL2":            "2.0.12", # See if I can finally upgrade from 2.0.8: https://bugzilla.libsdl.org/show_bug.cgi?id=4601
             "SDL2_image":      "2.0.5",
             "SDL2_mixer":      "2.0.4",
