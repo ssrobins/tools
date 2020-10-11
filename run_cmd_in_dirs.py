@@ -38,8 +38,7 @@ def main():
 
     docker = [
         "docker-android-build",
-        "docker-linux-build",
-        "docker-windows-build"
+        "docker-linux-build"
     ]
 
     all = apps + conan + docker
