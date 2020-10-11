@@ -13,9 +13,8 @@ def main():
     parser.add_argument("--repo", help="Repo name of the package to update", required=True)
     command_args = parser.parse_args()
 
-    repo = command_args.repo
     rootdir = os.getcwd()
-    fullpath = os.path.join(rootdir, repo)
+    fullpath = os.path.join(rootdir, command_args.repo)
 
     with open(os.path.join(fullpath, "conanfile.py"), "r", newline="") as conan_file:
         conan_file_content = conan_file.read()
@@ -31,16 +30,17 @@ def main():
             }
             packages.append(package)
 
-        base_gitlab_url = "https://gitlab.com/api/v4/projects"
+        base_gitlab_url = "https://api.github.com/repos/ssrobins"
 
         for package in packages:
             commit = requests.get(
-                f"{base_gitlab_url}/ssrobins%2Fconan-{package['name']}/repository/commits/HEAD").json()
-            package["latest_sha"] = commit["id"]
+                f"{base_gitlab_url}/conan-{package['name']}/commits/HEAD").json()
+            package["latest_sha"] = commit["sha"]
         
             conanfile = requests.get(
-                f"{base_gitlab_url}/ssrobins%2Fconan-{package['name']}/repository/files/conanfile.py?ref=HEAD").json()
+                f"{base_gitlab_url}/conan-{package['name']}/contents/conanfile.py").json()
             content_list = base64.b64decode(conanfile["content"]).decode("utf-8").splitlines()
+
             for line in content_list:
                 if "version" in line:
                     latest_version = line.split("=")[1].strip().replace('"', '')
@@ -58,6 +58,7 @@ def main():
                 print("With:")
                 print(f"  {new_package}")
                 print()
+                print(f"https://github.com/ssrobins/conan-{package['name']}/compare/{package['sha']}...{package['latest_sha']}")
 
     with open(os.path.join(fullpath, "conanfile.py"), "w", newline="") as conan_file:
         conan_file.write(conan_file_content)
