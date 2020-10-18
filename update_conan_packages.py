@@ -57,8 +57,8 @@ def main():
                 print(f"  {old_package}")
                 print("With:")
                 print(f"  {new_package}")
-                print()
                 print(f"https://github.com/ssrobins/conan-{package['name']}/compare/{package['sha']}...{package['latest_sha']}")
+                print()
 
     with open(os.path.join(fullpath, "conanfile.py"), "w", newline="") as conan_file:
         conan_file.write(conan_file_content)
