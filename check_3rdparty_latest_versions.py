@@ -25,12 +25,12 @@ class VersionCheck:
             "conan":           "1.30.2",
             "DockerCE":        "2.4.0.0",
             "DockerEngine":    "19.03.9",
-            "freetype":        "2.10.3",
+            "freetype":        "2.10.4",
             "gcc":             "9.3.0",
             "GIMP_mac":        "2.10.14",
             "GIMP_win":        "2.10.22",
             "git_mac":         "2.27.0",
-            "git_win":         "2.28.0",
+            "git_win":         "2.29.0",
             "glew":            "2.1.0",
             "googletest":      "1.10.0",
             "Gradle":          "6.7",
@@ -52,7 +52,7 @@ class VersionCheck:
             "VS2017":          "15.9.28",
             "VS2019":          "16.7.6",
             "WinSCP":          "5.17.8",
-            "Xcode":           "12.0.1",
+            "Xcode":           "12.1",
             "zlib":            "1.2.11",
         }
 
