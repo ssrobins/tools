@@ -34,8 +34,9 @@ def main():
 
         for package in packages:
             commit = requests.get(
-                f"{base_gitlab_url}/conan-{package['name']}/commits/HEAD").json()
-            package["latest_sha"] = commit["sha"]
+                f"{base_gitlab_url}/conan-{package['name']}/commits/HEAD")
+            commit.raise_for_status()
+            package["latest_sha"] = commit.json()["sha"]
         
             conanfile = requests.get(
                 f"{base_gitlab_url}/conan-{package['name']}/contents/conanfile.py").json()
