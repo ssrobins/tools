@@ -252,21 +252,6 @@ class VersionCheck:
         return version_text_raw["data-win"]
 
 
-    def get_latest_version_GitLabRunner(self):
-        req = Request("https://gitlab.com/gitlab-org/gitlab-runner/raw/master/CHANGELOG.md", headers={"User-Agent": "Mozilla/72"})
-        page = urlopen(req)
-
-        version_text_raw = ""
-        for line in page.readlines():
-            line_str = line.decode("utf-8")
-            if line_str.startswith("## v"):
-                version_text_raw = line_str.split("## v")[1].split("(")[0].strip()
-                if "rc" not in version_text_raw:
-                    break
-
-        return version_text_raw
-
-
     def get_latest_version_glew(self):
         page = urlopen("http://glew.sourceforge.net/")
         soup = BeautifulSoup(page, "html.parser")
