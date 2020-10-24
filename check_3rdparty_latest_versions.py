@@ -24,13 +24,12 @@ class VersionCheck:
             "cmake":           "3.19.0-rc1",
             "conan":           "1.30.2",
             "DockerCE":        "2.4.0.0",
-            "DockerEngine":    "19.03.9",
             "freetype":        "2.10.4",
             "gcc":             "9.3.0",
             "GIMP_mac":        "2.10.14",
             "GIMP_win":        "2.10.22",
             "git_mac":         "2.27.0",
-            "git_win":         "2.29.0",
+            "git_win":         "2.29.1",
             "glew":            "2.1.0",
             "googletest":      "1.10.0",
             "Gradle":          "6.7",
@@ -188,23 +187,6 @@ class VersionCheck:
         version_items = soup.find("h2", attrs={"id": lambda L: L and L.startswith("docker-desktop-community")}).text.split()
 
         return version_items[3]
-
-
-    def get_latest_version_DockerEngine(self):
-        page = urlopen("https://registry.hub.docker.com/v1/repositories/docker/tags")
-        soup = BeautifulSoup(page, "html.parser")
-
-        data = json.loads(soup.get_text())
-
-        version_text_list = list()
-        for item in data:
-            docker_tag = item.get("name")
-            match = re.match("^\d+\.\d+\.\d+", docker_tag)
-            if match:
-                version_text_list.append(match.group())
-        version_text_list.sort()
-
-        return version_text_list[-1]
 
 
     def get_latest_version_freetype(self):
