@@ -40,7 +40,7 @@ class VersionCheck:
             "ninja":           "1.10.1",
             "NotepadPlusPlus": "7.9",
             "OBS":             "26.0.2",
-            "openjdk":         "8u265",
+            "openjdk":         "8u272",
             "python":          "3.9.0",
             "SDL2":            "2.0.12", # See if I can finally upgrade from 2.0.8: https://bugzilla.libsdl.org/show_bug.cgi?id=4601
             "SDL2_image":      "2.0.5",
@@ -49,7 +49,7 @@ class VersionCheck:
             "SFML":            "2.5.1",
             "TortoiseGit":     "2.11.0",
             "VS2017":          "15.9.28",
-            "VS2019":          "16.7.6",
+            "VS2019":          "16.7.7",
             "WinSCP":          "5.17.8",
             "Xcode":           "12.1",
             "zlib":            "1.2.11",
