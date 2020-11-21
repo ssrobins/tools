@@ -50,7 +50,7 @@ class VersionCheck:
             "TortoiseGit":     "2.11.0",
             "VS2017":          "15.9.29",
             "VS2019":          "16.8.2",
-            "WinSCP":          "5.17.8",
+            "WinSCP":          "5.17.9",
             "Xcode":           "12.2",
             "zlib":            "1.2.11",
         }
