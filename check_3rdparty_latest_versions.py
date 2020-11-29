@@ -37,7 +37,7 @@ class VersionCheck:
             "KeePassXC":       "2.6.2",
             "libpng":          "1.6.37",
             "MuseScore":       "3.5.2",
-            "ninja":           "1.10.1",
+            "ninja":           "1.10.2",
             "NotepadPlusPlus": "7.9.1",
             "OBS":             "26.0.2",
             "openjdk":         "8u275",
