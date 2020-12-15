@@ -39,7 +39,7 @@ class VersionCheck:
             "MuseScore":       "3.5.2",
             "ninja":           "1.10.2",
             "NotepadPlusPlus": "7.9.1",
-            "OBS":             "26.0.2",
+            "OBS":             "26.1",
             "openjdk":         "8u275",
             "python":          "3.9.1",
             "SDL2":            "2.0.12", # See if I can finally upgrade from 2.0.8: https://bugzilla.libsdl.org/show_bug.cgi?id=4601
@@ -51,7 +51,7 @@ class VersionCheck:
             "VS2017":          "15.9.30",
             "VS2019":          "16.8.3",
             "WinSCP":          "5.17.9",
-            "Xcode":           "12.2",
+            "Xcode":           "12.3",
             "zlib":            "1.2.11",
         }
 
