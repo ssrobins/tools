@@ -16,13 +16,13 @@ class VersionCheck:
     def __init__(self, debug):
         self.versions = {
             "7Zip":            "19.00",
-            "AndroidNDK":      "r21d",
+            "AndroidNDK":      "r22",
             "AndroidSDKAPI":   "30",
             "AndroidSDKTools": "6858069",
             "AndroidStudio":   "4.1.1",
             "bzip2":           "1.0.8",
             "cmake":           "3.19.1",
-            "conan":           "1.32.0",
+            "conan":           "1.32.1",
             "DockerCE":        "3.0.0",
             "freetype":        "2.10.4",
             "gcc":             "9.3.0",
