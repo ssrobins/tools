@@ -42,7 +42,7 @@ class VersionCheck:
             "OBS":             "26.1",
             "openjdk":         "8u275",
             "python":          "3.9.1",
-            "SDL2":            "2.0.12", # See if I can finally upgrade from 2.0.8: https://bugzilla.libsdl.org/show_bug.cgi?id=4601
+            "SDL2":            "2.0.14", # See if I can finally upgrade from 2.0.8: https://bugzilla.libsdl.org/show_bug.cgi?id=4601
             "SDL2_image":      "2.0.5",
             "SDL2_mixer":      "2.0.4",
             "SDL2_ttf":        "2.0.15",
