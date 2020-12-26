@@ -26,7 +26,7 @@ class VersionCheck:
             "DockerCE":        "3.0.0",
             "freetype":        "2.10.4",
             "gcc":             "9.3.0",
-            "GIMP_mac":        "2.10.14",
+            "GIMP_mac":        "2.10.22",
             "GIMP_win":        "2.10.22",
             "git_mac":         "2.27.0",
             "git_win":         "2.29.2",
