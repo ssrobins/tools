@@ -32,7 +32,7 @@ class VersionCheck:
             "git_win":         "2.30.0",
             "glew":            "2.1.0",
             "googletest":      "1.10.0",
-            "Gradle":          "6.7.1",
+            "Gradle":          "6.8",
             "grepWin":         "2.0.4",
             "KeePassXC":       "2.6.2",
             "libpng":          "1.6.37",
