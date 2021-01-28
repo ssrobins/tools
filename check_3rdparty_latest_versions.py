@@ -36,7 +36,7 @@ class VersionCheck:
             "grepWin":         "2.0.5",
             "KeePassXC":       "2.6.3",
             "libpng":          "1.6.37",
-            "MuseScore":       "3.6",
+            "MuseScore":       "3.6.1",
             "ninja":           "1.10.2",
             "NotepadPlusPlus": "7.9.2",
             "OBS":             "26.1.1",
@@ -50,8 +50,8 @@ class VersionCheck:
             "TortoiseGit":     "2.11.0",
             "VS2017":          "15.9.31",
             "VS2019":          "16.8.4",
-            "WinSCP":          "5.17.9",
-            "Xcode":           "12.3",
+            "WinSCP":          "5.17.10",
+            "Xcode":           "12.4",
             "zlib":            "1.2.11",
         }
 
