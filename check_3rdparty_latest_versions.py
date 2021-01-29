@@ -21,7 +21,7 @@ class VersionCheck:
             "AndroidSDKTools": "6858069",
             "AndroidStudio":   "4.1.2",
             "bzip2":           "1.0.8",
-            "cmake":           "3.19.3",
+            "cmake":           "3.19.4",
             "conan":           "1.33.0",
             "DockerCE":        "3.1.0",
             "freetype":        "2.10.4",
