@@ -48,7 +48,7 @@ class VersionCheck:
             "SDL2_ttf":        "2.0.15",
             "SFML":            "2.5.1",
             "TortoiseGit":     "2.11.0",
-            "VS2017":          "15.9.32",
+            "VS2017":          "15.9.33",
             "VS2019":          "16.8.5",
             "WinSCP":          "5.17.10",
             "Xcode":           "12.4",
