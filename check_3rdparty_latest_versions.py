@@ -41,7 +41,7 @@ class VersionCheck:
             "NotepadPlusPlus": "7.9.3",
             "OBS":             "26.1.1",
             "openjdk":         "8u282",
-            "python":          "3.9.1",
+            "python":          "3.9.2",
             "SDL2":            "2.0.14",
             "SDL2_image":      "2.0.5",
             "SDL2_mixer":      "2.0.4",
