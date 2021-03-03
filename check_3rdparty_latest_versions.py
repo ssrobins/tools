@@ -23,7 +23,7 @@ class VersionCheck:
             "bzip2":           "1.0.8",
             "cmake":           "3.20.0-rc2",
             "conan":           "1.34.0",
-            "DockerCE":        "3.1.0",
+            "DockerCE":        "3.2.0",
             "freetype":        "2.10.4",
             "gcc":             "9.3.0",
             "GIMP_mac":        "2.10.22",
@@ -49,7 +49,7 @@ class VersionCheck:
             "SFML":            "2.5.1",
             "TortoiseGit":     "2.11.0",
             "VS2017":          "15.9.33",
-            "VS2019":          "16.8.6",
+            "VS2019":          "16.9.0",
             "WinSCP":          "5.17.10",
             "Xcode":           "12.4",
             "zlib":            "1.2.11",
@@ -184,9 +184,9 @@ class VersionCheck:
         page = urlopen("https://docs.docker.com/docker-for-windows/release-notes/")
         soup = BeautifulSoup(page, "html.parser")
 
-        version_items = soup.find("h2", attrs={"id": lambda L: L and L.startswith("docker-desktop-community")}).text.split()
+        version_items = soup.find("h2", attrs={"id": lambda L: L and L.startswith("docker-desktop")}).text.split()
 
-        return version_items[3]
+        return version_items[2]
 
 
     def get_latest_version_freetype(self):
