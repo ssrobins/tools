@@ -23,7 +23,7 @@ class VersionCheck:
             "bzip2":           "1.0.8",
             "cmake":           "3.20.0-rc3",
             "conan":           "1.34.0",
-            "DockerCE":        "3.2.1",
+            "DockerDesktop":   "3.2.1",
             "freetype":        "2.10.4",
             "gcc":             "9.3.0",
             "GIMP_mac":        "2.10.22",
@@ -180,7 +180,7 @@ class VersionCheck:
         return version_text
 
 
-    def get_latest_version_DockerCE(self):
+    def get_latest_version_DockerDesktop(self):
         page = urlopen("https://docs.docker.com/docker-for-windows/release-notes/")
         soup = BeautifulSoup(page, "html.parser")
 
