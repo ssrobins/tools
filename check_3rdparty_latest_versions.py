@@ -25,7 +25,7 @@ class VersionCheck:
             "conan":           "1.34.1",
             "DockerDesktop":   "3.2.2",
             "freetype":        "2.10.4",
-            "gcc":             "9.3.0",
+            "gcc":             "10.2.0",
             "GIMP_mac":        "2.10.22",
             "GIMP_win":        "2.10.22",
             "git_mac":         "2.31.0",
@@ -209,7 +209,7 @@ class VersionCheck:
             docker_tag = item.get("name")
             if "latest" not in docker_tag:
                 version_text_list.append(item.get("name"))
-        version_text_list.sort()
+        version_text_list.sort(key=lambda s: list(map(int, s.split('.'))))
 
         return version_text_list[-1]
 
