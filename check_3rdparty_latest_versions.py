@@ -16,12 +16,12 @@ class VersionCheck:
     def __init__(self, debug):
         self.versions = {
             "7Zip":            "19.00",
-            "AndroidNDK":      "r22",
+            "AndroidNDK":      "r22b",
             "AndroidSDKAPI":   "30",
             "AndroidSDKTools": "6858069",
             "AndroidStudio":   "4.1.3",
             "bzip2":           "1.0.8",
-            "cmake":           "3.20.0-rc5",
+            "cmake":           "3.20.0",
             "conan":           "1.34.1",
             "DockerDesktop":   "3.2.2",
             "freetype":        "2.10.4",
@@ -38,7 +38,7 @@ class VersionCheck:
             "libpng":          "1.6.37",
             "MuseScore":       "3.6.2",
             "ninja":           "1.10.2",
-            "NotepadPlusPlus": "7.9.4",
+            "NotepadPlusPlus": "7.9.5",
             "OBS":             "26.1.1",
             "openjdk":         "8u282",
             "python":          "3.9.2",
