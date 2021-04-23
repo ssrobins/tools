@@ -40,7 +40,7 @@ class VersionCheck:
             "ninja":           "1.10.2",
             "NotepadPlusPlus": "7.9.5",
             "OBS":             "26.1.1",
-            "openjdk":         "8u282",
+            "openjdk":         "8u292",
             "python":          "3.9.4",
             "SDL2":            "2.0.14",
             "SDL2_image":      "2.0.5",
