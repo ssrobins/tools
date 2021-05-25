@@ -33,7 +33,7 @@ class VersionCheck:
             "glew":            "2.1.0",
             "googletest":      "1.10.0",
             "Gradle":          "7.0.2",
-            "grepWin":         "2.0.7",
+            "grepWin":         "2.0.8",
             "KeePassXC":       "2.6.4",
             "libpng":          "1.6.37",
             "MuseScore":       "3.6.2",
