@@ -29,7 +29,7 @@ class VersionCheck:
             "GIMP_mac":        "2.10.22",
             "GIMP_win":        "2.10.24",
             "git_mac":         "2.31.0",
-            "git_win":         "2.31.1",
+            "git_win":         "2.32.0",
             "glew":            "2.1.0",
             "googletest":      "1.10.0",
             "Gradle":          "7.0.2",
@@ -38,7 +38,7 @@ class VersionCheck:
             "libpng":          "1.6.37",
             "MuseScore":       "3.6.2",
             "ninja":           "1.10.2",
-            "NotepadPlusPlus": "7.9.5",
+            "NotepadPlusPlus": "8.0",
             "OBS":             "27.0.0",
             "openjdk":         "8u292",
             "python":          "3.9.5",
@@ -480,7 +480,8 @@ class VersionCheck:
 
 
     def get_latest_version_Xcode(self):
-        page = urlopen("https://apps.apple.com/us/app/xcode/id497799835")
+        req = Request("https://apps.apple.com/us/app/xcode/id497799835", headers={"User-Agent": "Mozilla/72"})
+        page = urlopen(req).read()
         soup = BeautifulSoup(page, "html.parser")
 
         version_items = soup.find("p", attrs={"class": "l-column small-6 medium-12 whats-new__latest__version"}).text.split()
