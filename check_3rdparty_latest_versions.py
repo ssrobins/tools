@@ -21,7 +21,7 @@ class VersionCheck:
             "AndroidSDKTools": "7302050",
             "AndroidStudio":   "4.2.1",
             "bzip2":           "1.0.8",
-            "cmake":           "3.20.4",
+            "cmake":           "3.20.5",
             "conan":           "1.37.2",
             "DockerDesktop":   "3.4.0",
             "freetype":        "2.10.4",
@@ -51,7 +51,7 @@ class VersionCheck:
             "VS2017":          "15.9.36",
             "VS2019":          "16.10.2",
             "WinSCP":          "5.19",
-            "Xcode":           "12.5",
+            "Xcode":           "12.5.1",
             "zlib":            "1.2.11",
         }
 
