@@ -23,7 +23,7 @@ class VersionCheck:
             "bzip2":           "1.0.8",
             "cmake":           "3.21.0-rc1",
             "conan":           "1.37.2",
-            "DockerDesktop":   "3.5.0",
+            "DockerDesktop":   "3.5.1",
             "freetype":        "2.10.4",
             "gcc":             "11.1.0",
             "GIMP_mac":        "2.10.22",
