@@ -160,7 +160,10 @@ class VersionCheck:
 
 
     def get_latest_version_cmake(self):
-        page = urlopen("https://cmake.org/download/")
+        opener = build_opener(HTTPCookieProcessor())
+        install_opener(opener)
+        req = Request("https://cmake.org/download/", headers={"User-Agent": "Mozilla/72 (X11; Linux i686)"})
+        page = urlopen(req).read().decode('utf8', errors='ignore')
         soup = BeautifulSoup(page, "html.parser")
 
         version_items = soup.find("h3").text.strip().split()
