@@ -25,7 +25,7 @@ class VersionCheck:
             "conan":           "1.39.0",
             "DockerDesktop":   "3.5.2",
             "freetype":        "2.11.0",
-            "gcc":             "11.1.0",
+            "gcc":             "11.2.0",
             "GIMP_mac":        "2.10.24",
             "GIMP_win":        "2.10.24",
             "git_mac":         "2.32.0",
