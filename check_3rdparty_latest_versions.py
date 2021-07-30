@@ -461,7 +461,7 @@ class VersionCheck:
         page = urlopen("https://docs.microsoft.com/en-us/visualstudio/releases/2019/release-notes")
         soup = BeautifulSoup(page, "html.parser")
 
-        version_items = soup.find("a", attrs={"href": re.compile("^#(\d+\.){1,2}(\d+)$")}).text.strip().split()
+        version_items = soup.find("a", attrs={"href": re.compile("^#section-(\d+\.){1,2}(\d+)$")}).text.strip().split()
 
         version_text = ""
         for word in version_items:
