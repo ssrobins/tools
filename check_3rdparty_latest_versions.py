@@ -23,7 +23,7 @@ class VersionCheck:
             "bzip2":           "1.0.8",
             "cmake":           "3.21.1",
             "conan":           "1.39.0",
-            "DockerDesktop":   "3.5.2",
+            "DockerDesktop":   "3.6.0",
             "freetype":        "2.11.0",
             "gcc":             "11.2.0",
             "GIMP_mac":        "2.10.24",
@@ -48,8 +48,8 @@ class VersionCheck:
             "SDL2_ttf":        "2.0.15",
             "SFML":            "2.5.1",
             "TortoiseGit":     "2.12.0",
-            "VS2017":          "15.9.37",
-            "VS2019":          "16.10.4",
+            "VS2017":          "15.9.38",
+            "VS2019":          "16.11.0",
             "WinSCP":          "5.19.2",
             "Xcode":           "12.5.1",
             "zlib":            "1.2.11",
@@ -461,7 +461,7 @@ class VersionCheck:
         page = urlopen("https://docs.microsoft.com/en-us/visualstudio/releases/2019/release-notes")
         soup = BeautifulSoup(page, "html.parser")
 
-        version_items = soup.find("a", attrs={"href": re.compile("^#section-(\d+\.){1,2}(\d+)$")}).text.strip().split()
+        version_items = soup.find("a", attrs={"href": re.compile("^#(\d+\.){1,2}(\d+)$")}).text.strip().split()
 
         version_text = ""
         for word in version_items:
