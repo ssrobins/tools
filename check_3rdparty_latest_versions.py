@@ -42,7 +42,7 @@ class VersionCheck:
             "OBS":             "27.0.1",
             "openjdk":         "8u302",
             "python":          "3.9.6",
-            "SDL2":            "2.0.14",
+            "SDL2":            "2.0.16",
             "SDL2_image":      "2.0.5",
             "SDL2_mixer":      "2.0.4",
             "SDL2_ttf":        "2.0.15",
