@@ -16,7 +16,7 @@ class VersionCheck:
     def __init__(self, debug):
         self.versions = {
             "7Zip":            "19.00",
-            "AndroidNDK":      "r22b",
+            "AndroidNDK":      "r23",
             "AndroidSDKAPI":   "30",
             "AndroidSDKTools": "7583922",
             "AndroidStudio":   "2020.3.1",
@@ -103,7 +103,7 @@ class VersionCheck:
         page = urlopen("https://developer.android.com/ndk/downloads/")
         soup = BeautifulSoup(page, "html.parser")
 
-        version_text = soup.find("h2", attrs={"id": "stable-downloads"}).text.split()[-1].strip("()")
+        version_text = soup.find("h2", attrs={"id": "lts-downloads"}).text.split()[-1].strip("()")
 
         return version_text
 
