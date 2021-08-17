@@ -184,10 +184,10 @@ class VersionCheck:
 
 
     def get_latest_version_DockerDesktop(self):
-        page = urlopen("https://docs.docker.com/docker-for-windows/release-notes/")
+        page = urlopen("https://docs.docker.com/desktop/windows/release-notes/")
         soup = BeautifulSoup(page, "html.parser")
 
-        version_items = soup.find("h2", attrs={"id": lambda L: L and L.startswith("docker-desktop")}).text.split()
+        version_items = soup.find("h2", attrs={"id": "docker-desktop-360"}).text.split()
 
         return version_items[2]
 
