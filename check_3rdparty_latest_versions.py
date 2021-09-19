@@ -27,7 +27,7 @@ class VersionCheck:
             "freetype":        "2.11.0",
             "gcc":             "11.2.0",
             "GIMP_mac":        "2.10.24",
-            "GIMP_win":        "2.10.24",
+            "GIMP_win":        "2.10.28",
             "git_mac":         "2.33.0",
             "git_win":         "2.33.0",
             "glew":            "2.1.0",
