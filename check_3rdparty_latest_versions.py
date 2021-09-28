@@ -38,7 +38,7 @@ class VersionCheck:
             "libpng":          "1.6.37",
             "MuseScore":       "3.6.2",
             "ninja":           "1.10.2",
-            "NotepadPlusPlus": "8.1.4",
+            "NotepadPlusPlus": "8.1.5",
             "OBS":             "27.0.1",
             "openjdk":         "8u302",
             "python":          "3.9.7",
