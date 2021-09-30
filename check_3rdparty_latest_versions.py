@@ -39,7 +39,7 @@ class VersionCheck:
             "MuseScore":       "3.6.2",
             "ninja":           "1.10.2",
             "NotepadPlusPlus": "8.1.5",
-            "OBS":             "27.0.1",
+            "OBS":             "27.1.1",
             "openjdk":         "8u302",
             "python":          "3.9.7",
             "SDL2":            "2.0.16",
