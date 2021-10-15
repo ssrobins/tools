@@ -21,15 +21,15 @@ class VersionCheck:
             "AndroidSDKTools": "7583922",
             "AndroidStudio":   "2020.3.1",
             "bzip2":           "1.0.8",
-            "cmake":           "3.21.3",
+            "cmake":           "3.22.0-rc1",
             "conan":           "1.41.0",
-            "DockerDesktop":   "3.6.0",
+            "DockerDesktop":   "4.1.1",
             "freetype":        "2.11.0",
             "gcc":             "11.2.0",
             "GIMP_mac":        "2.10.24",
             "GIMP_win":        "2.10.28",
             "git_mac":         "2.33.0",
-            "git_win":         "2.33.0",
+            "git_win":         "2.33.1",
             "glew":            "2.1.0",
             "googletest":      "1.11.0",
             "Gradle":          "7.2",
@@ -38,7 +38,7 @@ class VersionCheck:
             "libpng":          "1.6.37",
             "MuseScore":       "3.6.2",
             "ninja":           "1.10.2",
-            "NotepadPlusPlus": "8.1.5",
+            "NotepadPlusPlus": "8.1.6",
             "OBS":             "27.1.3",
             "openjdk":         "8u302",
             "python":          "3.10.0",
@@ -48,9 +48,9 @@ class VersionCheck:
             "SDL2_ttf":        "2.0.15",
             "SFML":            "2.5.1",
             "TortoiseGit":     "2.12.0",
-            "VS2017":          "15.9.39",
-            "VS2019":          "16.11.4",
-            "WinSCP":          "5.19.2",
+            "VS2017":          "15.9.40",
+            "VS2019":          "16.11.5",
+            "WinSCP":          "5.19.3",
             "Xcode":           "13.0",
             "zlib":            "1.2.11",
         }
@@ -187,7 +187,7 @@ class VersionCheck:
         page = urlopen("https://docs.docker.com/desktop/windows/release-notes/")
         soup = BeautifulSoup(page, "html.parser")
 
-        version_items = soup.find("h2", attrs={"id": "docker-desktop-360"}).text.split()
+        version_items = soup.find("h2", attrs={"id": lambda L: L and L.startswith("docker-desktop-")}).text.split()
 
         return version_items[2]
 
