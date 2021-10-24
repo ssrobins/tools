@@ -338,7 +338,7 @@ class VersionCheck:
         page = urlopen("https://github.com/ninja-build/ninja/releases/latest")
         soup = BeautifulSoup(page, "html.parser")
 
-        version_text = soup.find("a", attrs={"href": re.compile("^/ninja-build/ninja/releases/tag/v\d+\.\d+\.\d+$")}).text.lstrip("v")
+        version_text = soup.find("a", attrs={"href": re.compile("^/ninja-build/ninja/releases/tag/v\d+\.\d+\.\d+$")}).text.strip().lstrip("v")
 
         return version_text
 
