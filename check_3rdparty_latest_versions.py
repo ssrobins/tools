@@ -48,8 +48,8 @@ class VersionCheck:
             "SDL2_ttf":        "2.0.15",
             "SFML":            "2.5.1",
             "TortoiseGit":     "2.12.0",
-            "VS2017":          "15.9.40",
             "VS2019":          "16.11.5",
+            "VS2022":          "17.0.0",
             "WinSCP":          "5.19.4",
             "Xcode":           "13.1",
             "zlib":            "1.2.11",
@@ -441,8 +441,8 @@ class VersionCheck:
         return version_items[-1]
 
 
-    def get_latest_version_VS2017(self):
-        page = urlopen("https://docs.microsoft.com/en-us/visualstudio/releasenotes/vs2017-relnotes")
+    def get_latest_version_VS2019(self):
+        page = urlopen("https://docs.microsoft.com/en-us/visualstudio/releases/2019/release-notes")
         soup = BeautifulSoup(page, "html.parser")
 
         version_items = soup.find("a", attrs={"href": re.compile("^#(\d+\.){1,2}(\d+)$")}).text.strip().split()
@@ -457,11 +457,11 @@ class VersionCheck:
         return version_text
 
 
-    def get_latest_version_VS2019(self):
-        page = urlopen("https://docs.microsoft.com/en-us/visualstudio/releases/2019/release-notes")
+    def get_latest_version_VS2022(self):
+        page = urlopen("https://docs.microsoft.com/en-us/visualstudio/releases/2022/release-notes")
         soup = BeautifulSoup(page, "html.parser")
 
-        version_items = soup.find("a", attrs={"href": re.compile("^#(\d+\.){1,2}(\d+)$")}).text.strip().split()
+        version_items = soup.find("a", attrs={"href": re.compile("^#(\d+\.){1,3}(\d+)$")}).text.strip().split()
 
         version_text = ""
         for word in version_items:
