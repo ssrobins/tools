@@ -29,7 +29,7 @@ class VersionCheck:
             "GIMP_mac":        "2.10.24",
             "GIMP_win":        "2.10.28",
             "git_mac":         "2.33.0",
-            "git_win":         "2.33.1",
+            "git_win":         "2.34.0",
             "glew":            "2.1.0",
             "googletest":      "1.11.0",
             "Gradle":          "7.3",
