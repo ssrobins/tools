@@ -28,8 +28,7 @@ class VersionCheck:
             "gcc":             "11.2.0",
             "GIMP_mac":        "2.10.28",
             "GIMP_win":        "2.10.28",
-            "git_mac":         "2.33.0",
-            "git_win":         "2.34.1",
+            "git":             "2.34.1",
             "glew":            "2.1.0",
             "googletest":      "1.11.0",
             "Gradle":          "7.3",
@@ -235,24 +234,14 @@ class VersionCheck:
         return str(version_items[2])
 
 
-    def get_latest_version_git_mac(self):
+    def get_latest_version_git(self):
         req = Request("https://git-scm.com/download", headers={"User-Agent": "Mozilla/72"})
         page = urlopen(req).read()
         soup = BeautifulSoup(page, "html.parser")
 
-        version_text_raw = soup.find("span", attrs={"id": "installer-version"})
+        version_text = soup.find("span", attrs={"class": "version"}).text.strip()
 
-        return version_text_raw["data-mac"]
-
-
-    def get_latest_version_git_win(self):
-        req = Request("https://git-scm.com/download", headers={"User-Agent": "Mozilla/72"})
-        page = urlopen(req).read()
-        soup = BeautifulSoup(page, "html.parser")
-
-        version_text_raw = soup.find("span", attrs={"id": "installer-version"})
-
-        return version_text_raw["data-win"]
+        return version_text
 
 
     def get_latest_version_glew(self):
