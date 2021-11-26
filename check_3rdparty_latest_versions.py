@@ -15,7 +15,7 @@ import time
 class VersionCheck:
     def __init__(self, debug):
         self.versions = {
-            "7Zip":            "21.05",
+            "7Zip":            "21.06",
             "AndroidNDK":      "r23b",
             "AndroidSDKAPI":   "30",
             "AndroidSDKTools": "7583922",
@@ -29,7 +29,7 @@ class VersionCheck:
             "GIMP_mac":        "2.10.28",
             "GIMP_win":        "2.10.28",
             "git_mac":         "2.33.0",
-            "git_win":         "2.34.0",
+            "git_win":         "2.34.1",
             "glew":            "2.1.0",
             "googletest":      "1.11.0",
             "Gradle":          "7.3",
@@ -50,7 +50,7 @@ class VersionCheck:
             "TortoiseGit":     "2.12.0",
             "VS2019":          "16.11.7",
             "VS2022":          "17.0.1",
-            "WinSCP":          "5.19.4",
+            "WinSCP":          "5.19.5",
             "Xcode":           "13.1",
             "zlib":            "1.2.11",
         }
