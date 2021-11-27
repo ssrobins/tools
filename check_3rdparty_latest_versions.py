@@ -17,7 +17,7 @@ class VersionCheck:
         self.versions = {
             "7Zip":            "21.06",
             "AndroidNDK":      "r23b",
-            "AndroidSDKAPI":   "30",
+            "AndroidSDKAPI":   "31",
             "AndroidSDKTools": "7583922",
             "AndroidStudio":   "2020.3.1",
             "bzip2":           "1.0.8",
@@ -108,15 +108,10 @@ class VersionCheck:
 
 
     def get_latest_version_AndroidSDKAPI(self):
-        page = urlopen("https://developer.android.com/studio/releases/platforms")
+        page = urlopen("https://developer.android.com/guide/topics/manifest/uses-sdk-element")
         soup = BeautifulSoup(page, "html.parser")
 
-        h2_tag_contents = soup.findAll("h2", attrs={"id": re.compile("^\d+(\.\d)*$")})
-        for h2_tag_content in h2_tag_contents:
-            match = re.search("\(API level (\d+)\)", h2_tag_content.text)
-            if match:
-                version_text = match.group(1)
-                break
+        version_text = soup.find("a", attrs={"href": re.compile("^/sdk/api_diff/\d+/changes$")}).text
 
         return version_text
 
