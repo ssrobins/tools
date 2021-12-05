@@ -22,7 +22,7 @@ class VersionCheck:
             "AndroidStudio":   "2020.3.1",
             "bzip2":           "1.0.8",
             "cmake":           "3.22.0",
-            "conan":           "1.42.2",
+            "conan":           "1.43.0",
             "DockerDesktop":   "4.3.0",
             "freetype":        "2.11.1",
             "gcc":             "11.2.0",
