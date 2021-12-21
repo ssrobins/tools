@@ -22,7 +22,7 @@ class VersionCheck:
             "AndroidStudio":   "2020.3.1",
             "bzip2":           "1.0.8",
             "cmake":           "3.22.1",
-            "conan":           "1.43.0",
+            "conan":           "1.43.1",
             "DockerDesktop":   "4.3.1",
             "freetype":        "2.11.1",
             "gcc":             "11.2.0",
@@ -48,9 +48,9 @@ class VersionCheck:
             "SFML":            "2.5.1",
             "TortoiseGit":     "2.12.0",
             "VS2019":          "16.11.8",
-            "VS2022":          "17.0.3",
+            "VS2022":          "17.0.4",
             "WinSCP":          "5.19.5",
-            "Xcode":           "13.2",
+            "Xcode":           "13.2.1",
             "zlib":            "1.2.11",
         }
 
