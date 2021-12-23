@@ -31,7 +31,7 @@ class VersionCheck:
             "git":             "2.34.1",
             "glew":            "2.1.0",
             "googletest":      "1.11.0",
-            "Gradle":          "7.3.2",
+            "Gradle":          "7.3.3",
             "grepWin":         "2.0.9",
             "KeePassXC":       "2.6.6",
             "libpng":          "1.6.37",
