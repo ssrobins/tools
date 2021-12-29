@@ -15,7 +15,7 @@ import time
 class VersionCheck:
     def __init__(self, debug):
         self.versions = {
-            "7Zip":            "21.06",
+            "7Zip":            "21.07",
             "AndroidNDK":      "r23b",
             "AndroidSDKAPI":   "31",
             "AndroidSDKTools": "7583922",
