@@ -41,13 +41,13 @@ class VersionCheck:
             "OBS":             "27.1.3",
             "openjdk":         "8u312",
             "python":          "3.10.1",
-            "SDL2":            "2.0.18",
+            "SDL2":            "2.0.20",
             "SDL2_image":      "2.0.5",
             "SDL2_mixer":      "2.0.4",
-            "SDL2_ttf":        "2.0.15",
+            "SDL2_ttf":        "2.0.18",
             "SFML":            "2.5.1",
             "TortoiseGit":     "2.12.0",
-            "VS2019":          "16.11.8",
+            "VS2019":          "16.11.9",
             "VS2022":          "17.0.4",
             "WinSCP":          "5.19.5",
             "Xcode":           "13.2.1",
@@ -396,13 +396,10 @@ class VersionCheck:
 
 
     def get_latest_version_SDL2_ttf(self):
-        page = urlopen("https://www.libsdl.org/projects/SDL_ttf/")
+        page = urlopen("https://github.com/libsdl-org/SDL_ttf/releases")
         soup = BeautifulSoup(page, "html.parser")
 
-        version_text_raw = soup.find("a", attrs={"href": lambda L: L and L.startswith("release/SDL2_ttf-")}).text.strip()
-
-        version_items = re.findall(r"[\w']+", version_text_raw)
-        version_text = f"{version_items[1]}.{version_items[2]}.{version_items[3]}"
+        version_text = soup.find("a", attrs={"href": re.compile("^/libsdl-org/SDL_ttf/releases/tag/release-\d+\.\d+\.\d+$")}).text.lstrip("v")
 
         return version_text
 
