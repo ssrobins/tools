@@ -40,7 +40,7 @@ class VersionCheck:
             "NotepadPlusPlus": "8.2",
             "OBS":             "27.1.3",
             "openjdk":         "8u312",
-            "python":          "3.10.1",
+            "python":          "3.10.2",
             "SDL2":            "2.0.20",
             "SDL2_image":      "2.0.5",
             "SDL2_mixer":      "2.0.4",
