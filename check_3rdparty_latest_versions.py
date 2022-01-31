@@ -28,7 +28,7 @@ class VersionCheck:
             "gcc":             "11.2.0",
             "GIMP_mac":        "2.10.30",
             "GIMP_win":        "2.10.30",
-            "git":             "2.35.0",
+            "git":             "2.35.1",
             "glew":            "2.1.0",
             "googletest":      "1.11.0",
             "Gradle":          "7.3.3",
