@@ -46,7 +46,7 @@ class VersionCheck:
             "SDL2_mixer":      "2.0.4",
             "SDL2_ttf":        "2.0.18",
             "SFML":            "2.5.1",
-            "TortoiseGit":     "2.12.0",
+            "TortoiseGit":     "2.13.0",
             "VS2019":          "16.11.9",
             "VS2022":          "17.0.5",
             "WinSCP":          "5.19.5",
