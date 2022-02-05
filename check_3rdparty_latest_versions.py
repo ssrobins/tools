@@ -136,7 +136,7 @@ class VersionCheck:
 
         version_items = soup.find("div", attrs={"class": "dac-info-size"}).text.split()
 
-        return version_items[0]
+        return version_items[4]
 
 
     def get_latest_version_bzip2(self):
