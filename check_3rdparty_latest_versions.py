@@ -17,7 +17,7 @@ class VersionCheck:
         self.versions = {
             "7Zip":            "21.07",
             "AndroidNDK":      "r23b",
-            "AndroidSDKAPI":   "31",
+            "AndroidSDKAPI":   "32",
             "AndroidSDKTools": "8092744",
             "AndroidStudio":   "2021.1.1",
             "bzip2":           "1.0.8",
@@ -31,7 +31,7 @@ class VersionCheck:
             "git":             "2.35.1",
             "glew":            "2.1.0",
             "googletest":      "1.11.0",
-            "Gradle":          "7.3.3",
+            "Gradle":          "7.4",
             "grepWin":         "2.0.9",
             "KeePassXC":       "2.6.6",
             "libpng":          "1.6.37",
