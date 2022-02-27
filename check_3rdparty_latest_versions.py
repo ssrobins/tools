@@ -49,7 +49,6 @@ class VersionCheck:
             "TortoiseGit":     "2.13.0",
             "VS2019":          "16.11.10",
             "VS2022":          "17.1.0",
-            "WinSCP":          "5.19.5",
             "Xcode":           "13.2.1",
             "zlib":            "1.2.11",
         }
@@ -451,15 +450,6 @@ class VersionCheck:
                 version_text = result.group()
                 break
 
-        return version_text
-
-
-    def get_latest_version_WinSCP(self):
-        page = urlopen("https://sourceforge.net/projects/winscp/files/WinSCP/")
-        soup = BeautifulSoup(page, "html.parser")
-
-        version_text = soup.find("a", attrs={"href": re.compile("^/projects/winscp/files/WinSCP/\d+\.\d+[\.\d+]*/$")}).text.strip()
-        
         return version_text
 
 
