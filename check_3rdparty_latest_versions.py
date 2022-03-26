@@ -23,7 +23,6 @@ class VersionCheck:
             "bzip2":           "1.0.8",
             "cmake":           "3.23.0-rc5",
             "conan":           "1.46.2",
-            "DockerDesktop":   "4.6.0",
             "freetype":        "2.11.1",
             "gcc":             "11.2.0",
             "GIMP_mac":        "2.10.30",
@@ -174,15 +173,6 @@ class VersionCheck:
         #version_text = soup.find("span", attrs={"class": "dl-version"}).text.strip()
 
         return version_text
-
-
-    def get_latest_version_DockerDesktop(self):
-        page = urlopen("https://docs.docker.com/desktop/windows/release-notes/")
-        soup = BeautifulSoup(page, "html.parser")
-
-        version_items = soup.find("h2", attrs={"id": lambda L: L and L.startswith("docker-desktop-")}).text.split()
-
-        return version_items[2]
 
 
     def get_latest_version_freetype(self):
