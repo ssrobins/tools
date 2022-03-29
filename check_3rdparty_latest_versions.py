@@ -49,7 +49,7 @@ class VersionCheck:
             "VS2019":          "16.11.11",
             "VS2022":          "17.1.2",
             "Xcode":           "13.3",
-            "zlib":            "1.2.11",
+            "zlib":            "1.2.12",
         }
 
         self.debug = debug
