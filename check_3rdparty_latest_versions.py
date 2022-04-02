@@ -38,6 +38,7 @@ class VersionCheck:
             "ninja":           "1.10.2",
             "NotepadPlusPlus": "8.3.3",
             "OBS":             "27.2.4",
+            "ogg":             "1.3.5",
             "openjdk":         "8u322",
             "python":          "3.10.4",
             "SDL2":            "2.0.20",
@@ -46,6 +47,7 @@ class VersionCheck:
             "SDL2_ttf":        "2.0.18",
             "SFML":            "2.5.1",
             "TortoiseGit":     "2.13.0",
+            "vorbis":          "1.3.7",
             "VS2019":          "16.11.11",
             "VS2022":          "17.1.3",
             "Xcode":           "13.3",
@@ -298,6 +300,23 @@ class VersionCheck:
         return version_items[1]
 
 
+    def get_latest_version_ogg(self):
+        page = urlopen("https://xiph.org/downloads/")
+        soup = BeautifulSoup(page, "html.parser")
+
+        td_tag_contents = soup.findAll("td")
+        version_text = None
+        ogg_version_found = False
+        for td_tag_content in td_tag_contents:
+            if ogg_version_found:
+                version_text = td_tag_content.text
+                break
+            if "libogg" in td_tag_content.text:
+                ogg_version_found = True
+
+        return version_text
+
+
     def get_latest_version_MuseScore(self):
         page = urlopen("https://musescore.org/en")
         soup = BeautifulSoup(page, "html.parser")
@@ -409,6 +428,23 @@ class VersionCheck:
         version_items = soup.find("strong").text.strip().split()
         
         return version_items[-1]
+
+
+    def get_latest_version_vorbis(self):
+        page = urlopen("https://xiph.org/downloads/")
+        soup = BeautifulSoup(page, "html.parser")
+
+        td_tag_contents = soup.findAll("td")
+        version_text = None
+        vorbis_version_found = False
+        for td_tag_content in td_tag_contents:
+            if vorbis_version_found:
+                version_text = td_tag_content.text
+                break
+            if "libvorbis" in td_tag_content.text:
+                vorbis_version_found = True
+
+        return version_text
 
 
     def get_latest_version_VS2019(self):
