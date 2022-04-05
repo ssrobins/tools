@@ -243,7 +243,7 @@ class VersionCheck:
         page = urlopen("https://github.com/google/googletest/releases")
         soup = BeautifulSoup(page, "html.parser")
 
-        version_text = soup.find("a", attrs={"href": re.compile("^/google/googletest/releases/tag/release-\d+\.\d+\.\d+$")}).text.lstrip("v")
+        version_text = soup.find("a", attrs={"href": re.compile("^/google/googletest/releases/tag/release-\d+\.\d+\.\d+$")}).text.strip().lstrip("v")
 
         return version_text
 
@@ -407,7 +407,7 @@ class VersionCheck:
         page = urlopen("https://github.com/libsdl-org/SDL_ttf/releases")
         soup = BeautifulSoup(page, "html.parser")
 
-        version_text = soup.find("a", attrs={"href": re.compile("^/libsdl-org/SDL_ttf/releases/tag/release-\d+\.\d+\.\d+$")}).text.lstrip("v")
+        version_text = soup.find("a", attrs={"href": re.compile("^/libsdl-org/SDL_ttf/releases/tag/release-\d+\.\d+\.\d+$")}).text.strip().lstrip("v")
 
         return version_text
 
