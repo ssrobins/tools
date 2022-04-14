@@ -48,7 +48,6 @@ class VersionCheck:
             "SFML":            "2.5.1",
             "TortoiseGit":     "2.13.0",
             "vorbis":          "1.3.7",
-            "VS2019":          "16.11.11",
             "VS2022":          "17.1.4",
             "Xcode":           "13.3.1",
             "zlib":            "1.2.12",
@@ -443,22 +442,6 @@ class VersionCheck:
                 break
             if "libvorbis" in td_tag_content.text:
                 vorbis_version_found = True
-
-        return version_text
-
-
-    def get_latest_version_VS2019(self):
-        page = urlopen("https://docs.microsoft.com/en-us/visualstudio/releases/2019/release-notes")
-        soup = BeautifulSoup(page, "html.parser")
-
-        version_items = soup.find("a", attrs={"href": re.compile("^#(\d+\.){1,2}(\d+)$")}).text.strip().split()
-
-        version_text = ""
-        for word in version_items:
-            result = re.match("^(\d+\.){1,2}(\d+)$", word)
-            if result:
-                version_text = result.group()
-                break
 
         return version_text
 
