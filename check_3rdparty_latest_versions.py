@@ -27,7 +27,7 @@ class VersionCheck:
             "gcc":             "11.2.0",
             "GIMP_mac":        "2.10.30",
             "GIMP_win":        "2.10.30",
-            "git":             "2.35.3",
+            "git":             "2.36.0",
             "glew":            "2.1.0",
             "googletest":      "1.11.0",
             "Gradle":          "7.4.2",
@@ -48,7 +48,7 @@ class VersionCheck:
             "SFML":            "2.5.1",
             "TortoiseGit":     "2.13.0",
             "vorbis":          "1.3.7",
-            "VS2022":          "17.1.4",
+            "VS2022":          "17.1.5",
             "Xcode":           "13.3.1",
             "zlib":            "1.2.12",
         }
