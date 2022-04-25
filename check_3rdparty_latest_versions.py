@@ -24,7 +24,6 @@ class VersionCheck:
             "cmake":           "3.23.1",
             "conan":           "1.47.0",
             "freetype":        "2.12.0",
-            "gcc":             "11.2.0",
             "GIMP_mac":        "2.10.30",
             "GIMP_win":        "2.10.30",
             "git":             "2.36.0",
@@ -39,7 +38,6 @@ class VersionCheck:
             "NotepadPlusPlus": "8.3.3",
             "OBS":             "27.2.4",
             "ogg":             "1.3.5",
-            "openjdk":         "8u322",
             "python":          "3.10.4",
             "SDL2":            "2.0.20",
             "SDL2_image":      "2.0.5",
@@ -185,22 +183,6 @@ class VersionCheck:
         return str(version_text)
 
 
-    def get_latest_version_gcc(self):
-        page = urlopen("https://registry.hub.docker.com/v1/repositories/gcc/tags")
-        soup = BeautifulSoup(page, "html.parser")
-
-        data = json.loads(soup.get_text())
-
-        version_text_list = list()
-        for item in data:
-            docker_version = re.sub("[^\d\.]", "", item.get("name"))
-            if docker_version:
-                version_text_list.append(docker_version)
-        version_text_list.sort(key=lambda s: list(map(int, s.split('.'))))
-
-        return version_text_list[-1]
-
-
     def get_latest_version_GIMP_mac(self):
         page = urlopen("https://www.gimp.org/downloads/")
         soup = BeautifulSoup(page, "html.parser")
@@ -342,22 +324,6 @@ class VersionCheck:
         version_items = soup.find("a", attrs={"href": lambda L: L and L.startswith("/downloads/")}).text.split()
 
         return version_items[2]
-
-
-    def get_latest_version_openjdk(self):
-        page = urlopen("https://registry.hub.docker.com/v1/repositories/amd64/openjdk/tags")
-        soup = BeautifulSoup(page, "html.parser")
-
-        data = json.loads(soup.get_text())
-
-        version_text_list = list()
-        for item in data:
-            docker_tag = item.get("name")
-            if "jdk-slim" in docker_tag and "8u" in docker_tag:
-                version_text_list.append(re.match("^\d+u\d+", docker_tag).group())
-        version_text_list.sort()
-
-        return version_text_list[-1]
 
 
     def get_latest_version_python(self):
