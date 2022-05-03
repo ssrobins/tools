@@ -23,7 +23,7 @@ class VersionCheck:
             "bzip2":           "1.0.8",
             "cmake":           "3.23.1",
             "conan":           "1.47.0",
-            "freetype":        "2.12.0",
+            "freetype":        "2.12.1",
             "GIMP_mac":        "2.10.30",
             "GIMP_win":        "2.10.30",
             "git":             "2.36.0",
