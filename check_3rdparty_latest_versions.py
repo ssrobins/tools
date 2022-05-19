@@ -18,7 +18,6 @@ class VersionCheck:
             "7Zip":            "21.07",
             "AndroidNDK":      "r23b",
             "AndroidSDKAPI":   "32",
-            "AndroidSDKTools": "8092744",
             "AndroidStudio":   "2021.2.1",
             "bzip2":           "1.0.8",
             "cmake":           "3.23.1",
@@ -111,17 +110,6 @@ class VersionCheck:
         version_text = soup.find("a", attrs={"href": re.compile("^/sdk/api_diff/\d+/changes$")}).text
 
         return version_text
-
-
-    def get_latest_version_AndroidSDKTools(self):
-        page = urlopen("https://developer.android.com/studio/")
-        soup = BeautifulSoup(page, "html.parser")
-
-        version_items = soup.find("button", attrs={"data-modal-dialog-id": "sdk_linux_download"}).text.replace("_", "-").split("-")
-
-        version_subitems = version_items[2].split(".")
-
-        return version_subitems[0]
 
 
     def get_latest_version_AndroidStudio(self):
