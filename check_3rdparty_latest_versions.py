@@ -22,7 +22,7 @@ class VersionCheck:
             "AndroidStudio":   "2021.2.1",
             "bzip2":           "1.0.8",
             "cmake":           "3.23.1",
-            "conan":           "1.48.0",
+            "conan":           "1.48.1",
             "freetype":        "2.12.1",
             "GIMP_mac":        "2.10.30",
             "GIMP_win":        "2.10.30",
@@ -34,7 +34,7 @@ class VersionCheck:
             "KeePassXC":       "2.7.1",
             "libpng":          "1.6.37",
             "MuseScore":       "3.6.2",
-            "ninja":           "1.10.2",
+            "ninja":           "1.11.0",
             "NotepadPlusPlus": "8.4.1",
             "OBS":             "27.2.4",
             "ogg":             "1.3.5",
@@ -46,8 +46,8 @@ class VersionCheck:
             "SFML":            "2.5.1",
             "TortoiseGit":     "2.13.0",
             "vorbis":          "1.3.7",
-            "VS2022":          "17.1.6",
-            "Xcode":           "13.3.1",
+            "VS2022":          "17.2.1",
+            "Xcode":           "13.4",
             "zlib":            "1.2.12",
         }
 
