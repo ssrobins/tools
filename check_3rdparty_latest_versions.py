@@ -20,7 +20,7 @@ class VersionCheck:
             "AndroidSDKAPI":   "32",
             "AndroidStudio":   "2021.2.1",
             "bzip2":           "1.0.8",
-            "cmake":           "3.23.1",
+            "cmake":           "3.23.2",
             "conan":           "1.48.1",
             "freetype":        "2.12.1",
             "GIMP_mac":        "2.10.30",
