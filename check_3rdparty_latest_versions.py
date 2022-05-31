@@ -16,7 +16,7 @@ class VersionCheck:
     def __init__(self, debug):
         self.versions = {
             "7Zip":            "21.07",
-            "AndroidNDK":      "r23b",
+            "AndroidNDK":      "r23c",
             "AndroidSDKAPI":   "32",
             "AndroidStudio":   "2021.2.1",
             "bzip2":           "1.0.8",
