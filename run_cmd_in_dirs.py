@@ -15,7 +15,8 @@ def main():
 
     conan_singleplat = [
         "conan-android_sdl2",
-        "conan-cmake_utils"
+        "conan-cmake_utils",
+        "conan-stackblox_assets"
     ]
 
     conan_multiplat = [
@@ -25,12 +26,14 @@ def main():
         "conan-glew",
         "conan-gtest",
         "conan-libpng",
+        "conan-ogg",
         "conan-sdl2",
         "conan-sdl2_image",
         "conan-sdl2_mixer",
         "conan-sdl2_ttf",
         "conan-sfml",
         "conan-ssrobins_engine",
+        "conan-vorbis",
         "conan-zlib"
     ]
 
