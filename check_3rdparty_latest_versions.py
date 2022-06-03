@@ -21,7 +21,7 @@ class VersionCheck:
             "AndroidStudio":   "2021.2.1",
             "bzip2":           "1.0.8",
             "cmake":           "3.23.2",
-            "conan":           "1.48.1",
+            "conan":           "1.49.0",
             "freetype":        "2.12.1",
             "GIMP_mac":        "2.10.30",
             "GIMP_win":        "2.10.30",
@@ -46,7 +46,7 @@ class VersionCheck:
             "TortoiseGit":     "2.13.0",
             "vorbis":          "1.3.7",
             "VS2022":          "17.2.1",
-            "Xcode":           "13.4",
+            "Xcode":           "13.4.1",
             "zlib":            "1.2.12",
         }
 
