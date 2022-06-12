@@ -30,26 +30,20 @@ def main():
             }
             packages.append(package)
 
-        base_gitlab_url = "https://api.github.com/repos/ssrobins"
+        gitlab_url = "https://api.github.com/repos/ssrobins/conan-recipes"
+
+        commit = requests.get(f"{gitlab_url}/commits/HEAD")
+        commit.raise_for_status()
+        latest_sha = commit.json()["sha"]
 
         for package in packages:
-            commit = requests.get(
-                f"{base_gitlab_url}/conan-{package['name']}/commits/HEAD")
-            commit.raise_for_status()
-            package["latest_sha"] = commit.json()["sha"]
-        
-            conanfile = requests.get(
-                f"{base_gitlab_url}/conan-{package['name']}/contents/conanfile.py").json()
-            content_list = base64.b64decode(conanfile["content"]).decode("utf-8").splitlines()
+            conan_inspect_output = subprocess.run("conan inspect . --raw version",
+                cwd=f"conan-recipes/recipes/{package['name']}",
+                shell=True, check=True, stdout=subprocess.PIPE)
+            package["latest_version"] = conan_inspect_output.stdout.decode("utf-8")
 
-            for line in content_list:
-                if "version" in line:
-                    latest_version = line.split("=")[1].strip().replace('"', '')
-                    package["latest_version"] = latest_version
-                    break
-            
             old_package = f"{package['name']}/{package['version']}#{package['sha']}"
-            new_package = f"{package['name']}/{package['latest_version']}#{package['latest_sha']}"
+            new_package = f"{package['name']}/{package['latest_version']}#{latest_sha}"
             
             if old_package != new_package and old_package in conan_file_content:
                 conan_file_content = conan_file_content.replace(old_package, new_package)
@@ -58,7 +52,7 @@ def main():
                 print(f"  {old_package}")
                 print("With:")
                 print(f"  {new_package}")
-                print(f"https://github.com/ssrobins/conan-{package['name']}/compare/{package['sha']}...{package['latest_sha']}")
+                print(f"https://github.com/ssrobins/conan-recipes/compare/{package['sha']}...{latest_sha}")
                 print()
 
     with open(os.path.join(fullpath, "conanfile.py"), "w", newline="") as conan_file:
