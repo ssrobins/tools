@@ -14,45 +14,38 @@ def main():
     ]
 
     conan_singleplat = [
-        "conan-android_sdl2",
-        "conan-cmake_utils",
-        "conan-stackblox_assets"
+        "conan-recipes/recipes/android_sdl",
+        "conan-recipes/recipes/cmake_utils"
     ]
 
     conan_multiplat = [
-        "conan-box2d",
-        "conan-bzip2",
-        "conan-freetype",
-        "conan-glew",
-        "conan-gtest",
-        "conan-libpng",
-        "conan-ogg",
-        "conan-sdl2",
-        "conan-sdl2_image",
-        "conan-sdl2_mixer",
-        "conan-sdl2_ttf",
-        "conan-sfml",
-        "conan-ssrobins_engine",
-        "conan-vorbis",
-        "conan-zlib"
+        "conan-recipes/recipes/box2d",
+        "conan-recipes/recipes/bzip2",
+        "conan-recipes/recipes/freetype",
+        "conan-recipes/recipes/glew",
+        "conan-recipes/recipes/gtest",
+        "conan-recipes/recipes/libpng",
+        "conan-recipes/recipes/ogg",
+        "conan-recipes/recipes/sdl",
+        "conan-recipes/recipes/sdl_image",
+        "conan-recipes/recipes/sdl_mixer",
+        "conan-recipes/recipes/sdl_ttf",
+        "conan-recipes/recipes/sfml",
+        "conan-recipes/recipes/ssrobins_engine",
+        "conan-recipes/recipes/vorbis",
+        "conan-recipes/recipes/zlib"
     ]
 
     conan = conan_singleplat + conan_multiplat
 
-    docker = [
-        "docker-android-build",
-        "docker-linux-build"
-    ]
-
-    all = apps + conan + docker
+    all = apps + conan
 
     scope = {
         "all": all,
         "apps": apps,
         "conan": conan,
         "conan-singleplat": conan_singleplat,
-        "conan-multiplat": conan_multiplat,
-        "docker": docker
+        "conan-multiplat": conan_multiplat
     }
     
     parser = argparse.ArgumentParser()
