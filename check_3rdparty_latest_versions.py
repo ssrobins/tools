@@ -25,7 +25,7 @@ class VersionCheck:
             "freetype":        "2.12.1",
             "GIMP_mac":        "2.10.32",
             "GIMP_win":        "2.10.32",
-            "git":             "2.36.1",
+            "git":             "2.37.0",
             "glew":            "2.1.0",
             "googletest":      "1.12.0",
             "Gradle":          "7.4.2",
