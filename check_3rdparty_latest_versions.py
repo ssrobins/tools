@@ -27,7 +27,7 @@ class VersionCheck:
             "GIMP_win":        "2.10.32",
             "git":             "2.37.0",
             "glew":            "2.1.0",
-            "googletest":      "1.12.0",
+            "googletest":      "1.12.1",
             "Gradle":          "7.4.2",
             "grepWin":         "2.0.10",
             "KeePassXC":       "2.7.1",
