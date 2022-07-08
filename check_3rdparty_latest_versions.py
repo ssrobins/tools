@@ -20,7 +20,7 @@ class VersionCheck:
             "AndroidSDKAPI":   "33",
             "AndroidStudio":   "2021.2.1",
             "bzip2":           "1.0.8",
-            "cmake":           "3.24.0-rc2",
+            "cmake":           "3.24.0-rc3",
             "conan":           "1.50.0",
             "freetype":        "2.12.1",
             "GIMP_mac":        "2.10.32",
@@ -34,14 +34,14 @@ class VersionCheck:
             "libpng":          "1.6.37",
             "MuseScore":       "3.6.2",
             "ninja":           "1.11.0",
-            "NotepadPlusPlus": "8.4.2",
+            "NotepadPlusPlus": "8.4.3",
             "OBS":             "27.2.4",
             "ogg":             "1.3.5",
             "python":          "3.10.5",
             "SDL2":            "2.0.22",
             "SDL2_image":      "2.0.5",
             "SDL2_mixer":      "2.0.4",
-            "SDL2_ttf":        "2.0.18",
+            "SDL2_ttf":        "2.20.0",
             "SFML":            "2.5.1",
             "TortoiseGit":     "2.13.0",
             "vorbis":          "1.3.7",
@@ -333,25 +333,19 @@ class VersionCheck:
 
 
     def get_latest_version_SDL2_image(self):
-        page = urlopen("https://www.libsdl.org/projects/SDL_image/")
+        page = urlopen("https://github.com/libsdl-org/SDL_image/releases")
         soup = BeautifulSoup(page, "html.parser")
 
-        version_text_raw = soup.find("a", attrs={"href": lambda L: L and L.startswith("release/SDL2_image-")}).text.strip()
-
-        version_items = re.findall(r"[\w']+", version_text_raw)
-        version_text = f"{version_items[1]}.{version_items[2]}.{version_items[3]}"
+        version_text = soup.find("a", attrs={"href": re.compile("^/libsdl-org/SDL_image/releases/tag/release-\d+\.\d+\.\d+$")}).text.strip()
 
         return version_text
 
 
     def get_latest_version_SDL2_mixer(self):
-        page = urlopen("https://www.libsdl.org/projects/SDL_mixer/")
+        page = urlopen("https://github.com/libsdl-org/SDL_mixer/releases")
         soup = BeautifulSoup(page, "html.parser")
 
-        version_text_raw = soup.find("a", attrs={"href": lambda L: L and L.startswith("release/SDL2_mixer-")}).text.strip()
-
-        version_items = re.findall(r"[\w']+", version_text_raw)
-        version_text = f"{version_items[1]}.{version_items[2]}.{version_items[3]}"
+        version_text = soup.find("a", attrs={"href": re.compile("^/libsdl-org/SDL_mixer/releases/tag/release-\d+\.\d+\.\d+$")}).text
 
         return version_text
 
@@ -360,7 +354,7 @@ class VersionCheck:
         page = urlopen("https://github.com/libsdl-org/SDL_ttf/releases")
         soup = BeautifulSoup(page, "html.parser")
 
-        version_text = soup.find("a", attrs={"href": re.compile("^/libsdl-org/SDL_ttf/releases/tag/release-\d+\.\d+\.\d+$")}).text.strip().lstrip("v")
+        version_text = soup.find("a", attrs={"href": re.compile("^/libsdl-org/SDL_ttf/releases/tag/release-\d+\.\d+\.\d+$")}).text.strip()
 
         return version_text
 
