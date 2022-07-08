@@ -38,10 +38,10 @@ class VersionCheck:
             "OBS":             "27.2.4",
             "ogg":             "1.3.5",
             "python":          "3.10.5",
-            "SDL2":            "2.0.22",
-            "SDL2_image":      "2.0.5",
-            "SDL2_mixer":      "2.0.4",
-            "SDL2_ttf":        "2.20.0",
+            "SDL":             "2.0.22",
+            "SDL_image":       "2.0.5",
+            "SDL_mixer":       "2.0.4",
+            "SDL_ttf":         "2.20.0",
             "SFML":            "2.5.1",
             "TortoiseGit":     "2.13.0",
             "vorbis":          "1.3.7",
@@ -323,7 +323,7 @@ class VersionCheck:
         return version_items[1]
 
 
-    def get_latest_version_SDL2(self):
+    def get_latest_version_SDL(self):
         page = urlopen("https://www.libsdl.org/download-2.0.php")
         soup = BeautifulSoup(page, "html.parser")
 
@@ -332,7 +332,7 @@ class VersionCheck:
         return version_items[2]
 
 
-    def get_latest_version_SDL2_image(self):
+    def get_latest_version_SDL_image(self):
         page = urlopen("https://github.com/libsdl-org/SDL_image/releases")
         soup = BeautifulSoup(page, "html.parser")
 
@@ -341,7 +341,7 @@ class VersionCheck:
         return version_text
 
 
-    def get_latest_version_SDL2_mixer(self):
+    def get_latest_version_SDL_mixer(self):
         page = urlopen("https://github.com/libsdl-org/SDL_mixer/releases")
         soup = BeautifulSoup(page, "html.parser")
 
@@ -350,7 +350,7 @@ class VersionCheck:
         return version_text
 
 
-    def get_latest_version_SDL2_ttf(self):
+    def get_latest_version_SDL_ttf(self):
         page = urlopen("https://github.com/libsdl-org/SDL_ttf/releases")
         soup = BeautifulSoup(page, "html.parser")
 
