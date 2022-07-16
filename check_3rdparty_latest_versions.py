@@ -15,8 +15,8 @@ import time
 class VersionCheck:
     def __init__(self, debug):
         self.versions = {
-            "7Zip":            "22.00",
-            "AndroidNDK":      "r23c",
+            "7Zip":            "22.01",
+            "AndroidNDK":      "r25",
             "AndroidSDKAPI":   "33",
             "AndroidStudio":   "2021.2.1",
             "bzip2":           "1.0.8",
@@ -28,13 +28,13 @@ class VersionCheck:
             "git":             "2.37.1",
             "glew":            "2.1.0",
             "googletest":      "1.12.1",
-            "Gradle":          "7.4.2",
+            "Gradle":          "7.5",
             "grepWin":         "2.0.10",
             "KeePassXC":       "2.7.1",
             "libpng":          "1.6.37",
             "MuseScore":       "3.6.2",
             "ninja":           "1.11.0",
-            "NotepadPlusPlus": "8.4.3",
+            "NotepadPlusPlus": "8.4.4",
             "OBS":             "27.2.4",
             "ogg":             "1.3.5",
             "python":          "3.10.5",
