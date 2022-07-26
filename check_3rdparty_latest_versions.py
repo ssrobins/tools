@@ -26,7 +26,7 @@ class VersionCheck:
             "GIMP_mac":        "2.10.32",
             "GIMP_win":        "2.10.32",
             "git":             "2.37.1",
-            "glew":            "2.1.0",
+            "glew":            "2.2.0",
             "googletest":      "1.12.1",
             "Gradle":          "7.5",
             "grepWin":         "2.0.10",
@@ -200,12 +200,12 @@ class VersionCheck:
 
 
     def get_latest_version_glew(self):
-        page = urlopen("http://glew.sourceforge.net/")
+        page = urlopen("https://github.com/nigels-com/glew/releases")
         soup = BeautifulSoup(page, "html.parser")
 
-        version_text = soup.find("a", attrs={"href": lambda L: L and L.startswith("https://sourceforge.net/projects/glew/files/glew/")}).text
+        version_items = soup.find("a", attrs={"href": re.compile("^/nigels-com/glew/releases/tag/glew-\d+\.\d+\.\d+$")}).text.split()
 
-        return str(version_text)
+        return version_items[1]
 
 
     def get_latest_version_googletest(self):
