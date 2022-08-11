@@ -21,14 +21,14 @@ class VersionCheck:
             "AndroidStudio":   "2021.2.1",
             "bzip2":           "1.0.8",
             "cmake":           "3.24.0",
-            "conan":           "1.51.0",
+            "conan":           "1.51.1",
             "freetype":        "2.12.1",
             "GIMP_mac":        "2.10.32",
             "GIMP_win":        "2.10.32",
             "git":             "2.37.1",
             "glew":            "2.2.0",
             "googletest":      "1.12.1",
-            "Gradle":          "7.5",
+            "Gradle":          "7.5.1",
             "grepWin":         "2.0.10",
             "KeePassXC":       "2.7.1",
             "libpng":          "1.6.37",
@@ -45,7 +45,7 @@ class VersionCheck:
             "SFML":            "2.5.1",
             "TortoiseGit":     "2.13.0",
             "vorbis":          "1.3.7",
-            "VS2022":          "17.2.6",
+            "VS2022":          "17.3",
             "Xcode":           "13.4.1",
             "zlib":            "1.2.12",
         }
@@ -398,7 +398,7 @@ class VersionCheck:
         page = urlopen("https://docs.microsoft.com/en-us/visualstudio/releases/2022/release-notes")
         soup = BeautifulSoup(page, "html.parser")
 
-        version_items = soup.find("a", attrs={"href": re.compile("^#(\d+\.){1,3}(\d+)$")}).text.strip().split()
+        version_items = soup.find("h2", attrs={"id": re.compile("^whats-new-in-visual-studio-2022-version-\d+$")}).text.strip().split()
 
         version_text = ""
         for word in version_items:
