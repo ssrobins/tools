@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 
+import argparse
+import re
+import sys
+import time
+from multiprocessing import Pool
 from urllib.request import build_opener, HTTPCookieProcessor, install_opener, Request, urlopen
 from urllib.error import HTTPError
 from urllib.error import URLError
 from bs4 import BeautifulSoup
-from multiprocessing import Pool
-import argparse
-import json
-import re
-import time
 
 
 
@@ -51,10 +51,10 @@ class VersionCheck:
         }
 
         self.debug = debug
-        
+
 
     def compare_latest_to_current(self, tool):
-        result = dict();
+        result = {}
         result["error"] = False
         result["uptodate"] = True
 
@@ -62,7 +62,7 @@ class VersionCheck:
             if self.debug:
                 start_time = time.time()
             latest_version = getattr(self, f"get_latest_version_{tool}")()
-            if(latest_version != self.versions[tool]):
+            if latest_version != self.versions[tool]:
                 print(f"{tool} {self.versions[tool]} can be upgraded to {latest_version}.")
                 result["uptodate"] = False
         except AttributeError as error:
@@ -107,7 +107,7 @@ class VersionCheck:
         page = urlopen("https://developer.android.com/guide/topics/manifest/uses-sdk-element")
         soup = BeautifulSoup(page, "html.parser")
 
-        version_text = soup.find("a", attrs={"href": re.compile("^/sdk/api_diff/\d+/changes$")}).text
+        version_text = soup.find("a", attrs={"href": re.compile(r"^/sdk/api_diff/\d+/changes$")}).text
 
         return version_text
 
@@ -146,9 +146,9 @@ class VersionCheck:
         soup = BeautifulSoup(page, "html.parser")
 
         version_items = soup.find("h3").text.strip().split()
-        
+
         version_text = version_items[2].strip("()")
-        
+
         return version_text
 
 
@@ -203,7 +203,7 @@ class VersionCheck:
         page = urlopen("https://github.com/nigels-com/glew/releases")
         soup = BeautifulSoup(page, "html.parser")
 
-        version_items = soup.find("a", attrs={"href": re.compile("^/nigels-com/glew/releases/tag/glew-\d+\.\d+\.\d+$")}).text.split()
+        version_items = soup.find("a", attrs={"href": re.compile(r"^/nigels-com/glew/releases/tag/glew-\d+\.\d+\.\d+$")}).text.split()
 
         return version_items[1]
 
@@ -212,7 +212,7 @@ class VersionCheck:
         page = urlopen("https://github.com/google/googletest/releases")
         soup = BeautifulSoup(page, "html.parser")
 
-        version_text = soup.find("a", attrs={"href": re.compile("^/google/googletest/releases/tag/release-\d+\.\d+\.\d+$")}).text.strip().lstrip("v")
+        version_text = soup.find("a", attrs={"href": re.compile(r"^/google/googletest/releases/tag/release-\d+\.\d+\.\d+$")}).text.strip().lstrip("v")
 
         return version_text
 
@@ -225,7 +225,7 @@ class VersionCheck:
 
         version_text = ""
         for word in version_items:
-            result = re.match("^(\d+\.){1,2}(\d+)", word)
+            result = re.match(r"^(\d+\.){1,2}(\d+)", word)
             if result:
                 version_text = result.group()
                 break
@@ -237,7 +237,7 @@ class VersionCheck:
         page = urlopen("https://github.com/stefankueng/grepWin/releases/")
         soup = BeautifulSoup(page, "html.parser")
 
-        version_items = soup.find("a", attrs={"href": re.compile("^/stefankueng/grepWin/releases/tag/\d+\.\d+\.\d+$")}).text.split()
+        version_items = soup.find("a", attrs={"href": re.compile(r"^/stefankueng/grepWin/releases/tag/\d+\.\d+\.\d+$")}).text.split()
 
         return version_items[1]
 
@@ -299,7 +299,7 @@ class VersionCheck:
         page = urlopen("https://github.com/ninja-build/ninja/releases/latest")
         soup = BeautifulSoup(page, "html.parser")
 
-        version_text = soup.find("a", attrs={"href": re.compile("^/ninja-build/ninja/releases/tag/v\d+\.\d+\.\d+$")}).text.strip().lstrip("v")
+        version_text = soup.find("a", attrs={"href": re.compile(r"^/ninja-build/ninja/releases/tag/v\d+\.\d+\.\d+$")}).text.strip().lstrip("v")
 
         return version_text
 
@@ -336,7 +336,7 @@ class VersionCheck:
         page = urlopen("https://github.com/libsdl-org/SDL_image/releases")
         soup = BeautifulSoup(page, "html.parser")
 
-        version_text = soup.find("a", attrs={"href": re.compile("^/libsdl-org/SDL_image/releases/tag/release-\d+\.\d+\.\d+$")}).text.strip()
+        version_text = soup.find("a", attrs={"href": re.compile(r"^/libsdl-org/SDL_image/releases/tag/release-\d+\.\d+\.\d+$")}).text.strip()
 
         return version_text
 
@@ -345,7 +345,7 @@ class VersionCheck:
         page = urlopen("https://github.com/libsdl-org/SDL_mixer/releases")
         soup = BeautifulSoup(page, "html.parser")
 
-        version_text = soup.find("a", attrs={"href": re.compile("^/libsdl-org/SDL_mixer/releases/tag/release-\d+\.\d+\.\d+$")}).text
+        version_text = soup.find("a", attrs={"href": re.compile(r"^/libsdl-org/SDL_mixer/releases/tag/release-\d+\.\d+\.\d+$")}).text
 
         return version_text
 
@@ -354,7 +354,7 @@ class VersionCheck:
         page = urlopen("https://github.com/libsdl-org/SDL_ttf/releases")
         soup = BeautifulSoup(page, "html.parser")
 
-        version_text = soup.find("a", attrs={"href": re.compile("^/libsdl-org/SDL_ttf/releases/tag/release-\d+\.\d+\.\d+$")}).text.strip()
+        version_text = soup.find("a", attrs={"href": re.compile(r"^/libsdl-org/SDL_ttf/releases/tag/release-\d+\.\d+\.\d+$")}).text.strip()
 
         return version_text
 
@@ -398,11 +398,11 @@ class VersionCheck:
         page = urlopen("https://docs.microsoft.com/en-us/visualstudio/releases/2022/release-notes")
         soup = BeautifulSoup(page, "html.parser")
 
-        version_items = soup.find("h2", attrs={"id": re.compile("^whats-new-in-visual-studio-2022-version-\d+$")}).text.strip().split()
+        version_items = soup.find("h2", attrs={"id": re.compile(r"^whats-new-in-visual-studio-2022-version-\d+$")}).text.strip().split()
 
         version_text = ""
         for word in version_items:
-            result = re.match("^(\d+\.){1,2}(\d+)$", word)
+            result = re.match(r"^(\d+\.){1,2}(\d+)$", word)
             if result:
                 version_text = result.group()
                 break
@@ -414,18 +414,17 @@ class VersionCheck:
         req = Request("https://apps.apple.com/us/app/xcode/id497799835", headers={"User-Agent": "Mozilla/72"})
         page = urlopen(req).read()
         soup = BeautifulSoup(page, "html.parser")
-
         version_items = soup.find("p", attrs={"class": "l-column small-6 medium-12 whats-new__latest__version"}).text.split()
 
         return version_items[1]
 
 
     def get_latest_version_zlib(self):
-        page = urlopen("https://zlib.net/")
-        soup = BeautifulSoup(page, "html.parser")
+        with urlopen("https://zlib.net/") as page:
+            soup = BeautifulSoup(page, "html.parser")
 
         version_items = soup.find("font", attrs={"size": "+2"}).text.strip().split()
-        
+
         return version_items[1]
 
 
@@ -451,8 +450,8 @@ def main():
 
     version_check = VersionCheck(args.debug)
 
-    error = list()
-    uptodate = list()
+    error = []
+    uptodate = []
 
     if args.tool:
         results = version_check.compare_latest_to_current(args.tool)
@@ -461,19 +460,19 @@ def main():
     else:
         with Pool(processes=len(version_check.versions)) as pool:
             results = pool.map(version_check.compare_latest_to_current, version_check.versions)
-        for index in range(len(results)):
-            error.append(results[index]["error"])
-            uptodate.append(results[index]["uptodate"])
+        for result in results:
+            error.append(result["error"])
+            uptodate.append(result["uptodate"])
 
     if False in uptodate:
         print("Do the upgrade(s) and update the latest version(s) at the top of this script.")
-        exit(1)
+        sys.exit(1)
     else:
         if True in error:
-            exit(1)
+            sys.exit(1)
         else:
             print("Everything is up-to-date!")
-            exit(0)
+            sys.exit(0)
 
 
 if __name__ == "__main__":
