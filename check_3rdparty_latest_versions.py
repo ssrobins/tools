@@ -20,8 +20,8 @@ class VersionCheck:
             "AndroidSDKAPI":   "33",
             "AndroidStudio":   "2021.2.1",
             "bzip2":           "1.0.8",
-            "cmake":           "3.24.0",
-            "conan":           "1.51.2",
+            "cmake":           "3.24.1",
+            "conan":           "1.51.3",
             "freetype":        "2.12.1",
             "GIMP_mac":        "2.10.32",
             "GIMP_win":        "2.10.32",
@@ -38,10 +38,10 @@ class VersionCheck:
             "OBS":             "27.2.4",
             "ogg":             "1.3.5",
             "python":          "3.10.6",
-            "SDL":             "2.0.22",
-            "SDL_image":       "2.6.1",
-            "SDL_mixer":       "2.6.1",
-            "SDL_ttf":         "2.20.0",
+            "SDL":             "2.24.0",
+            "SDL_image":       "2.6.2",
+            "SDL_mixer":       "2.6.2",
+            "SDL_ttf":         "2.20.1",
             "SFML":            "2.5.1",
             "TortoiseGit":     "2.13.0",
             "vorbis":          "1.3.7",
@@ -324,12 +324,12 @@ class VersionCheck:
 
 
     def get_latest_version_SDL(self):
-        page = urlopen("https://www.libsdl.org/download-2.0.php")
+        page = urlopen("https://github.com/libsdl-org/SDL/releases")
         soup = BeautifulSoup(page, "html.parser")
 
-        version_items = soup.find("h1").text.strip().split()
-            
-        return version_items[2]
+        version_text = soup.find("a", attrs={"href": re.compile("^/libsdl-org/SDL/releases/tag/release-\d+\.\d+\.\d+$")}).text.strip()
+
+        return version_text
 
 
     def get_latest_version_SDL_image(self):
