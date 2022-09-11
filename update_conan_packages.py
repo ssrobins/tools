@@ -36,7 +36,7 @@ def main():
 
         gitlab_url = "https://api.github.com/repos/ssrobins/conan-recipes"
 
-        commit = requests.get(f"{gitlab_url}/commits/HEAD")
+        commit = requests.get(f"{gitlab_url}/commits/HEAD", timeout=10)
         commit.raise_for_status()
         latest_sha = commit.json()["sha"]
 
