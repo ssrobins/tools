@@ -1,11 +1,15 @@
 #!/usr/bin/env python3
 
+"""Tool to run commands across multiple repos"""
+
 import argparse
 import os
 import subprocess
 
-
 def main():
+    """
+    Set the various scopes of repo dirs and then run the user's command
+    """
     apps = [
         "games",
         "sdl2-example",
@@ -38,30 +42,30 @@ def main():
 
     conan = conan_singleplat + conan_multiplat
 
-    all = apps + conan
+    all_dirs = apps + conan
 
     scope = {
-        "all": all,
+        "all": all_dirs,
         "apps": apps,
         "conan": conan,
         "conan-singleplat": conan_singleplat,
         "conan-multiplat": conan_multiplat
     }
-    
+
     parser = argparse.ArgumentParser()
     parser.add_argument("--cmd",
         help="Command you want to run in each dir", required=True)
     parser.add_argument("--scope",
         choices=list(scope.keys()),
         help="Define the group of dirs where the command should run", required=True)
-    command_args = parser.parse_args() 
+    command_args = parser.parse_args()
 
-    dirs = scope[command_args.scope]
+    repo_dirs = scope[command_args.scope]
 
     rootdir = os.getcwd()
     cmd = command_args.cmd
-    for dir in dirs:
-        fullpath = os.path.join(rootdir, dir)
+    for repo_dir in repo_dirs:
+        fullpath = os.path.join(rootdir, repo_dir)
         print(f"######## Running '{cmd}' in {dir}", flush=True)
         subprocess.run(cmd, cwd=fullpath, shell=True, check=True)
         print("###################################")

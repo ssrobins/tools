@@ -1,26 +1,30 @@
 #!/usr/bin/env python3
 
+"""Tool to update Conan dependencies to the latest"""
+
 import argparse
-import base64
 import os
 import re
-import requests
 import subprocess
+import requests
 
 
-def main():    
+def main():
+    """
+    Read Conan dependencies, look for updates, and update the conanfile.py with updates
+    """
     parser = argparse.ArgumentParser()
     parser.add_argument("--repo", help="Repo name of the package to update", required=True)
     command_args = parser.parse_args()
 
-    rootdir = os.getcwd()
-    fullpath = os.path.join(rootdir, command_args.repo)
+    fullpath = os.path.join(os.getcwd(), command_args.repo)
 
-    with open(os.path.join(fullpath, "conanfile.py"), "r", newline="") as conan_file:
+    with open(os.path.join(fullpath, "conanfile.py"),
+        "r", encoding="utf-8", newline="") as conan_file:
         conan_file_content = conan_file.read()
 
-        packages = list()
-        package_strings = re.findall('requires\("(.*?)/(.*?)#(.*?)"', conan_file_content)
+        packages = []
+        package_strings = re.findall(r'requires\("(.*?)/(.*?)#(.*?)"', conan_file_content)
 
         for package_string in package_strings:
             package = {
@@ -32,7 +36,7 @@ def main():
 
         gitlab_url = "https://api.github.com/repos/ssrobins/conan-recipes"
 
-        commit = requests.get(f"{gitlab_url}/commits/HEAD")
+        commit = requests.get(f"{gitlab_url}/commits/HEAD", timeout=10)
         commit.raise_for_status()
         latest_sha = commit.json()["sha"]
 
@@ -44,20 +48,22 @@ def main():
 
             old_package = f"{package['name']}/{package['version']}#{package['sha']}"
             new_package = f"{package['name']}/{package['latest_version']}#{latest_sha}"
-            
+
             if old_package != new_package and old_package in conan_file_content:
                 conan_file_content = conan_file_content.replace(old_package, new_package)
-                
+
                 print("Replace:")
                 print(f"  {old_package}")
                 print("With:")
                 print(f"  {new_package}")
-                print(f"https://github.com/ssrobins/conan-recipes/compare/{package['sha']}...{latest_sha}")
+                print("https://github.com/ssrobins/conan-recipes/compare/"
+                      f"{package['sha']}...{latest_sha}")
                 print()
 
-    with open(os.path.join(fullpath, "conanfile.py"), "w", newline="") as conan_file:
+    with open(os.path.join(fullpath, "conanfile.py"),
+        "w", encoding="utf-8", newline="") as conan_file:
         conan_file.write(conan_file_content)
-    
+
 
 if __name__ == "__main__":
     main()
