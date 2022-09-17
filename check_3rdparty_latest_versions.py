@@ -24,10 +24,10 @@ class VersionCheck:
             "7Zip":            "22.01",
             "AndroidNDK":      "r25b",
             "AndroidSDKAPI":   "33",
-            "AndroidStudio":   "2021.2.1",
+            "AndroidStudio":   "2021.3.1",
             "bzip2":           "1.0.8",
-            "cmake":           "3.24.1",
-            "conan":           "1.52.0",
+            "cmake":           "3.24.2",
+            "conan":           "2.0.0-beta3",
             "freetype":        "2.12.1",
             "GIMP_mac":        "2.10.32",
             "GIMP_win":        "2.10.32",
@@ -37,7 +37,7 @@ class VersionCheck:
             "Gradle":          "7.5.1",
             "grepWin":         "2.0.10",
             "KeePassXC":       "2.7.1",
-            "libpng":          "1.6.37",
+            "libpng":          "1.6.38",
             "MuseScore":       "3.6.2",
             "ninja":           "1.11.1",
             "NotepadPlusPlus": "8.4.5",
@@ -52,7 +52,7 @@ class VersionCheck:
             "TortoiseGit":     "2.13.0",
             "vorbis":          "1.3.7",
             "VS2022":          "17.3",
-            "Xcode":           "13.4.1",
+            "Xcode":           "14.0",
             "zlib":            "1.2.12",
         }
 
@@ -166,11 +166,12 @@ class VersionCheck:
 
 
     def get_latest_version_conan(self):
-        with urlopen("https://docs.conan.io/en/latest/") as page:
+        with urlopen("https://github.com/conan-io/conan/releases") as page:
             soup = BeautifulSoup(page, "html.parser")
 
         version_text = soup.find("a",
-            attrs={"href": lambda L: L and L.startswith("changelog.html#")}).text.split()[0]
+            attrs={"href":
+            re.compile(r"^/conan-io/conan/releases/tag")}).text.strip().split()[0]
 
         return version_text
 
