@@ -44,7 +44,7 @@ class VersionCheck:
             "OBS":             "28.0.3",
             "ogg":             "1.3.5",
             "python":          "3.10.7",
-            "SDL":             "2.24.0",
+            "SDL":             "2.24.1",
             "SDL_image":       "2.6.2",
             "SDL_mixer":       "2.6.2",
             "SDL_ttf":         "2.20.1",
@@ -169,9 +169,13 @@ class VersionCheck:
         with urlopen("https://github.com/conan-io/conan/releases") as page:
             soup = BeautifulSoup(page, "html.parser")
 
-        version_text = soup.find("a",
+        version_texts = soup.findAll("a",
             attrs={"href":
-            re.compile(r"^/conan-io/conan/releases/tag")}).text.strip().split()[0]
+            re.compile(r"^/conan-io/conan/releases/tag")})
+        for version_text_raw in version_texts:
+            version_text = version_text_raw.text.strip().split()[0]
+            if version_text.split(".")[0] == "2":
+                break
 
         return version_text
 
