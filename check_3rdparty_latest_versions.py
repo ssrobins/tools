@@ -51,7 +51,7 @@ class VersionCheck:
             "SFML":            "2.5.1",
             "TortoiseGit":     "2.13.0",
             "vorbis":          "1.3.7",
-            "VS2022":          "17.3",
+            "VS2022":          "17.3.6",
             "Xcode":           "14.0.1",
             "zlib":            "1.2.12",
         }
@@ -445,16 +445,9 @@ class VersionCheck:
             "https://docs.microsoft.com/en-us/visualstudio/releases/2022/release-notes") as page:
             soup = BeautifulSoup(page, "html.parser")
 
-        version_items = soup.find("h2",
-            attrs={"id": re.compile(
-                r"^whats-new-in-visual-studio-2022-version-\d+$")}).text.strip().split()
-
-        version_text = ""
-        for word in version_items:
-            result = re.match(r"^(\d+\.){1,2}(\d+)$", word)
-            if result:
-                version_text = result.group()
-                break
+        version_text = soup.find("a",
+            attrs={"href": re.compile(
+                r"^#\d+\.\d+\.\d+$")}).text.strip().split()[4]
 
         return version_text
 
