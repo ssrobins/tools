@@ -53,7 +53,7 @@ class VersionCheck:
             "vorbis":          "1.3.7",
             "VS2022":          "17.3.6",
             "Xcode":           "14.0.1",
-            "zlib":            "1.2.12",
+            "zlib":            "1.2.13",
         }
 
         self.debug = debug
