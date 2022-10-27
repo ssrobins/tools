@@ -124,13 +124,13 @@ class VersionCheck:
     def get_latest_version_AndroidStudio(self):
         opener = build_opener(HTTPCookieProcessor())
         install_opener(opener)
-        req = Request("https://developer.android.com/studio/",
+        req = Request("https://developer.android.com/studio/releases",
             headers={"User-Agent": "Mozilla/72 (X11; Linux i686)"})
         with urlopen(req) as response:
             page = response.read().decode('utf8', errors='ignore')
             soup = BeautifulSoup(page, "html.parser")
 
-        version_items = soup.find("div", attrs={"class": "dac-info-size"}).text.split()
+        version_items = soup.find("h1", attrs={"class": "devsite-page-title"}).text.split()
 
         return version_items[4]
 
