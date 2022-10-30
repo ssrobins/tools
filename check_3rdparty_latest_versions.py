@@ -36,7 +36,7 @@ class VersionCheck:
             "googletest":      "1.12.1",
             "Gradle":          "7.5.1",
             "grepWin":         "2.0.11",
-            "KeePassXC":       "2.7.3",
+            "KeePassXC":       "2.7.4",
             "libpng":          "1.6.38",
             "MuseScore":       "3.6.2",
             "ninja":           "1.11.1",
