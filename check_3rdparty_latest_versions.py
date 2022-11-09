@@ -26,7 +26,7 @@ class VersionCheck:
             "AndroidSDKAPI":   "33",
             "AndroidStudio":   "2021.3.1",
             "bzip2":           "1.0.8",
-            "cmake":           "3.25.0-rc3",
+            "cmake":           "3.25.0-rc4",
             "conan":           "2.0.0-beta4",
             "freetype":        "2.12.1",
             "GIMP_mac":        "2.10.32",
@@ -40,7 +40,7 @@ class VersionCheck:
             "libpng":          "1.6.38",
             "MuseScore":       "3.6.2",
             "ninja":           "1.11.1",
-            "NotepadPlusPlus": "8.4.6",
+            "NotepadPlusPlus": "8.4.7",
             "OBS":             "28.1.2",
             "ogg":             "1.3.5",
             "python":          "3.11.0",
@@ -51,7 +51,7 @@ class VersionCheck:
             "SFML":            "2.5.1",
             "TortoiseGit":     "2.13.0",
             "vorbis":          "1.3.7",
-            "VS2022":          "17.3.6",
+            "VS2022":          "17.4",
             "Xcode":           "14.1",
             "zlib":            "1.2.13",
         }
@@ -447,7 +447,7 @@ class VersionCheck:
 
         version_text = soup.find("a",
             attrs={"href": re.compile(
-                r"^#\d+\.\d+\.\d+$")}).text.strip().split()[4]
+                r"^https://devblogs.microsoft.com/visualstudio/visual-studio-2022-\d+-\d+/$")}).text.strip().split()[4]
 
         return version_text
 
