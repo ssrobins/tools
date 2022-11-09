@@ -447,7 +447,8 @@ class VersionCheck:
 
         version_text = soup.find("a",
             attrs={"href": re.compile(
-                r"^https://devblogs.microsoft.com/visualstudio/visual-studio-2022-\d+-\d+/$")}).text.strip().split()[4]
+                r"^https://devblogs.microsoft.com/visualstudio/"
+                r"visual-studio-2022-\d+-\d+/$")}).text.strip().split()[4]
 
         return version_text
 
