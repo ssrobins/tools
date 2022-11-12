@@ -27,7 +27,7 @@ class VersionCheck:
             "AndroidStudio":   "2021.3.1",
             "bzip2":           "1.0.8",
             "cmake":           "3.25.0-rc4",
-            "conan":           "2.0.0-beta4",
+            "conan":           "2.0.0-beta5",
             "freetype":        "2.12.1",
             "GIMP_mac":        "2.10.32",
             "GIMP_win":        "2.10.32",
