@@ -20,7 +20,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.cache/pip
-          key: pip-${{ runner.name }}
+          key: pip
 
       - name: Install dependencies
         run: pip install -r requirements.txt
