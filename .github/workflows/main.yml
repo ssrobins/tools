@@ -12,7 +12,6 @@ on:
 jobs:
   run:
     runs-on: ubuntu-latest
-    container: python:latest
 
     steps:
       - uses: actions/checkout@v3
