@@ -29,8 +29,7 @@ class VersionCheck:
             "cmake":           "3.25.1",
             "conan":           "2.0.0-beta6",
             "freetype":        "2.12.1",
-            "GIMP_mac":        "2.10.32",
-            "GIMP_win":        "2.10.32",
+            "GIMP":            "2.10.32",
             "git":             "2.38.1",
             "glew":            "2.2.0",
             "googletest":      "1.12.1",
@@ -191,23 +190,13 @@ class VersionCheck:
         return str(version_text)
 
 
-    def get_latest_version_GIMP_mac(self):
-        with urlopen("https://www.gimp.org/downloads/") as page:
+    def get_latest_version_GIMP(self):
+        with urlopen("https://www.gimp.org/") as page:
             soup = BeautifulSoup(page, "html.parser")
 
-        version_items = soup.find("a", attrs={"href": lambda L: "osx" in L}).text.strip().split()
+        version_text = soup.find("span", attrs={"id": "ver"}).text
 
-        return str(version_items[2])
-
-
-    def get_latest_version_GIMP_win(self):
-        with urlopen("https://www.gimp.org/downloads/") as page:
-            soup = BeautifulSoup(page, "html.parser")
-
-        version_items = soup.find("a",
-            attrs={"href": lambda L: "windows" in L}).text.strip().split()
-
-        return str(version_items[2])
+        return str(version_text)
 
 
     def get_latest_version_git(self):
