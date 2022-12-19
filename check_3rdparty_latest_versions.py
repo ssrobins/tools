@@ -51,7 +51,7 @@ class VersionCheck:
             "TortoiseGit":     "2.13.0",
             "vorbis":          "1.3.7",
             "VS2022":          "17.4",
-            "Xcode":           "14.1",
+            "Xcode":           "14.2",
             "zlib":            "1.2.13",
         }
 
