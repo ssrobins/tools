@@ -293,15 +293,14 @@ class VersionCheck:
         with urlopen("https://xiph.org/downloads/") as page:
             soup = BeautifulSoup(page, "html.parser")
 
-        td_tag_contents = soup.findAll("td")
-        version_text = None
-        ogg_version_found = False
-        for td_tag_content in td_tag_contents:
-            if ogg_version_found:
-                version_text = td_tag_content.text
-                break
-            if "libogg" in td_tag_content.text:
-                ogg_version_found = True
+        version_text_raw = soup.find("a",
+            attrs={"href": re.compile(
+                r"^https://downloads.xiph.org/releases/ogg/libogg-\d+\.\d+\.\d+\.tar.gz$")}).text
+
+        version_text = ""
+        result = re.match(r"^libogg-(\d+\.\d+\.\d+)\.tar\.gz$", version_text_raw)
+        if result:
+            version_text = result.group(1)
 
         return version_text
 
