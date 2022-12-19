@@ -37,7 +37,7 @@ class VersionCheck:
             "grepWin":         "2.0.11",
             "KeePassXC":       "2.7.4",
             "libpng":          "1.6.39",
-            "MuseScore":       "3.6.2",
+            "MuseScore":       "4.0",
             "ninja":           "1.11.1",
             "NotepadPlusPlus": "8.4.7",
             "OBS":             "28.1.2",
@@ -309,7 +309,7 @@ class VersionCheck:
         with urlopen("https://musescore.org/en") as page:
             soup = BeautifulSoup(page, "html.parser")
 
-        version_items = soup.find("span", attrs={"id": "download-version"}).text.split()
+        version_items = soup.find("span", attrs={"id": "download-version_text"}).text.split()
 
         return version_items[1]
 
