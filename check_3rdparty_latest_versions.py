@@ -24,7 +24,7 @@ class VersionCheck:
             "7Zip":            "22.01",
             "AndroidNDK":      "r25b",
             "AndroidSDKAPI":   "33",
-            "AndroidStudio":   "2021.3.1",
+            "AndroidStudio":   "2022.1.1",
             "bzip2":           "1.0.8",
             "cmake":           "3.25.1",
             "conan":           "2.0.0-beta8",
@@ -131,7 +131,7 @@ class VersionCheck:
 
         version_items = soup.find("h1", attrs={"class": "devsite-page-title"}).text.split()
 
-        return version_items[4]
+        return version_items[-1]
 
 
     def get_latest_version_bzip2(self):
