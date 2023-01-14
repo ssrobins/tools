@@ -37,7 +37,7 @@ class VersionCheck:
             "grepWin":         "2.0.12",
             "KeePassXC":       "2.7.4",
             "libpng":          "1.6.39",
-            "MuseScore":       "4.0",
+            "MuseScore":       "4.0.1",
             "ninja":           "1.11.1",
             "NotepadPlusPlus": "8.4.8",
             "OBS":             "29.0.0",
