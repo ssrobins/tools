@@ -22,12 +22,12 @@ class VersionCheck:
     def __init__(self, debug):
         self.versions = {
             "7Zip":            "22.01",
-            "AndroidNDK":      "r25b",
+            "AndroidNDK":      "r25c",
             "AndroidSDKAPI":   "33",
             "AndroidStudio":   "2022.1.1",
             "bzip2":           "1.0.8",
             "cmake":           "3.25.2",
-            "conan":           "2.0.0-beta8",
+            "conan":           "2.0.0-beta9",
             "freetype":        "2.12.1",
             "GIMP":            "2.10.32",
             "git":             "2.39.1",
@@ -39,7 +39,7 @@ class VersionCheck:
             "libpng":          "1.6.39",
             "MuseScore":       "4.0.1",
             "ninja":           "1.11.1",
-            "NotepadPlusPlus": "8.4.8",
+            "NotepadPlusPlus": "8.4.9",
             "OBS":             "29.0.0",
             "ogg":             "1.3.5",
             "python":          "3.11.1",
