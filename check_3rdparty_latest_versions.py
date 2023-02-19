@@ -48,7 +48,6 @@ class VersionCheck:
             "SDL_mixer":       "2.6.2",
             "SDL_ttf":         "2.20.1",
             "SFML":            "2.5.1",
-            "TortoiseGit":     "2.13.0",
             "vorbis":          "1.3.7",
             "VS2022":          "17.4",
             "Xcode":           "14.2",
@@ -398,15 +397,6 @@ class VersionCheck:
             soup = BeautifulSoup(page, "html.parser")
 
         version_items = soup.find("div", attrs={"class": "title"}).text.strip().split()
-
-        return version_items[-1]
-
-
-    def get_latest_version_TortoiseGit(self):
-        with urlopen("https://tortoisegit.org/download/") as page:
-            soup = BeautifulSoup(page, "html.parser")
-
-        version_items = soup.find("strong").text.strip().split()
 
         return version_items[-1]
 
