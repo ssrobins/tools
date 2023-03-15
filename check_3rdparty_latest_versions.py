@@ -26,7 +26,7 @@ class VersionCheck:
             "AndroidSDKAPI":   "33",
             "AndroidStudio":   "2022.1.1",
             "bzip2":           "1.0.8",
-            "cmake":           "3.26.0-rc6",
+            "cmake":           "3.26.0",
             "conan":           "2.0.1",
             "freetype":        "2.13.0",
             "GIMP":            "2.10.34",
