@@ -49,7 +49,7 @@ class VersionCheck:
             "SDL_ttf":         "2.20.2",
             "SFML":            "2.5.1",
             "vorbis":          "1.3.7",
-            "VS2022":          "17.5",
+            "VS2022":          "17.5.3",
             "Xcode":           "14.2",
             "zlib":            "1.2.13",
         }
@@ -423,9 +423,9 @@ class VersionCheck:
             "https://docs.microsoft.com/en-us/visualstudio/releases/2022/release-notes") as page:
             soup = BeautifulSoup(page, "html.parser")
 
-        version_text = soup.find("h3",
-            attrs={"id": re.compile(
-                r"visual-studio-2022-version-\d+-releases$")}).text.strip().split()[4]
+        version_text = soup.find("a",
+            attrs={"href": re.compile(
+                r"^#\d+\.\d+\.\d+$")}).text.strip().split()[4]
 
         return version_text
 
