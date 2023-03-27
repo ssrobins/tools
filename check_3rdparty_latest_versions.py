@@ -305,12 +305,14 @@ class VersionCheck:
 
 
     def get_latest_version_MuseScore(self):
-        with urlopen("https://musescore.org/en") as page:
+        with urlopen("https://github.com/musescore/MuseScore/releases") as page:
             soup = BeautifulSoup(page, "html.parser")
 
-        version_items = soup.find("span", attrs={"id": "download-version_text"}).text.split()
+        version_text = soup.find("a",
+            attrs={"href": re.compile(
+                r"^/musescore/MuseScore/tree/v\d+\.\d+\.\d+$")}).text.strip().lstrip("v")
 
-        return version_items[1]
+        return version_text
 
 
     def get_latest_version_ninja(self):
