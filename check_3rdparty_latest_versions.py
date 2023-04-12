@@ -266,7 +266,8 @@ class VersionCheck:
 
         version_text = soup.find("a",
             attrs={"href": re.compile(
-                r"^/keepassxreboot/keepassxc/releases/tag/\d+\.\d+\.\d+$")}).text.strip().lstrip("Release ")
+                r"^/keepassxreboot/keepassxc/releases/tag/\d+\.\d+\.\d+$")}
+                ).text.strip().lstrip("Release ")
 
         return version_text
 
