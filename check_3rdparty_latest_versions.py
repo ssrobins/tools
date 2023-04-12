@@ -27,7 +27,7 @@ class VersionCheck:
             "AndroidStudio":   "2022.1.1",
             "bzip2":           "1.0.8",
             "cmake":           "3.26.3",
-            "conan":           "2.0.3",
+            "conan":           "2.0.4",
             "freetype":        "2.13.0",
             "GIMP":            "2.10.34",
             "git":             "2.40.0",
@@ -49,7 +49,7 @@ class VersionCheck:
             "SDL_ttf":         "2.20.2",
             "SFML":            "2.5.1",
             "vorbis":          "1.3.7",
-            "VS2022":          "17.5.3",
+            "VS2022":          "17.5.4",
             "Xcode":           "14.3",
             "zlib":            "1.2.13",
         }
