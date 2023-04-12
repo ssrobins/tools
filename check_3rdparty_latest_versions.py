@@ -261,10 +261,12 @@ class VersionCheck:
 
 
     def get_latest_version_KeePassXC(self):
-        with urlopen("https://keepassxc.org/download/") as page:
+        with urlopen("https://github.com/keepassxreboot/keepassxc/releases") as page:
             soup = BeautifulSoup(page, "html.parser")
 
-        version_text = soup.find("span", attrs={"class": "label label-success"}).text.lstrip("v")
+        version_text = soup.find("a",
+            attrs={"href": re.compile(
+                r"^/keepassxreboot/keepassxc/releases/tag/\d+\.\d+\.\d+$")}).text.strip().lstrip("Release ")
 
         return version_text
 
