@@ -24,7 +24,7 @@ class VersionCheck:
             "7Zip":            "22.01",
             "AndroidNDK":      "r25c",
             "AndroidSDKAPI":   "33",
-            "AndroidStudio":   "2022.1.1",
+            "AndroidStudio":   "2022.2.1",
             "bzip2":           "1.0.8",
             "cmake":           "3.26.3",
             "conan":           "2.0.4",
