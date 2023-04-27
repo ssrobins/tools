@@ -30,7 +30,7 @@ class VersionCheck:
             "conan":           "2.0.4",
             "freetype":        "2.13.0",
             "GIMP":            "2.10.34",
-            "git":             "2.40.0",
+            "git":             "2.40.1",
             "glew":            "2.2.0",
             "googletest":      "1.12.1",
             "Gradle":          "8.1.1",
