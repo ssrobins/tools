@@ -39,7 +39,7 @@ class VersionCheck:
             "libpng":          "1.6.39",
             "MuseScore":       "4.0.2",
             "ninja":           "1.11.1",
-            "NotepadPlusPlus": "8.5.2",
+            "NotepadPlusPlus": "8.5.3",
             "OBS":             "29.1.1",
             "ogg":             "1.3.5",
             "python":          "3.11.3",
@@ -49,7 +49,7 @@ class VersionCheck:
             "SDL_ttf":         "2.20.2",
             "SFML":            "2.5.1",
             "vorbis":          "1.3.7",
-            "VS2022":          "17.5.5",
+            "VS2022":          "17.6",
             "Xcode":           "14.3",
             "zlib":            "1.2.13",
         }
@@ -428,9 +428,14 @@ class VersionCheck:
             "https://docs.microsoft.com/en-us/visualstudio/releases/2022/release-notes") as page:
             soup = BeautifulSoup(page, "html.parser")
 
-        version_text = soup.find("a",
-            attrs={"href": re.compile(
-                r"^#\d+\.\d+\.\d+$")}).text.strip().split()[4]
+        version_text_raw = soup.find("a",
+            attrs={"href": re.compile(r"^#\d+\.\d+\.\d+$")})
+        if version_text_raw:
+            version_text = version_text_raw.text.strip().split()[4]
+        else:
+            version_text = soup.find("h2",
+            attrs={"id": re.compile(
+                r"^\d+--visual-studio-\d+-version-\d+$")}).text.strip().split()[-1]
 
         return version_text
 
