@@ -330,16 +330,15 @@ class VersionCheck:
 
 
     def get_latest_version_NotepadPlusPlus(self):
-        req = Request("https://notepad-plus-plus.org/downloads",
-            headers={"User-Agent": "Mozilla/72"})
-        with urlopen(req) as response:
-            page = response.read()
+        with urlopen("https://github.com/notepad-plus-plus/notepad-plus-plus/releases") as page:
             soup = BeautifulSoup(page, "html.parser")
 
         version_items = soup.find("a",
-            attrs={"href": lambda L: L and L.startswith("/downloads/")}).text.split()
+            attrs={"href": re.compile(
+                r"^/notepad-plus-plus/notepad-plus-plus/releases/tag/v\d+\.\d+\.\d+$"
+                )}).text.split()
 
-        return version_items[2]
+        return version_items[-1]
 
 
     def get_latest_version_python(self):
