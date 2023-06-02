@@ -30,7 +30,7 @@ class VersionCheck:
             "conan":           "2.0.6",
             "freetype":        "2.13.0",
             "GIMP":            "2.10.34",
-            "git":             "2.40.1",
+            "git":             "2.41.0",
             "glew":            "2.2.0",
             "googletest":      "1.12.1",
             "Gradle":          "8.1.1",
@@ -50,7 +50,7 @@ class VersionCheck:
             "SFML":            "2.5.1",
             "vorbis":          "1.3.7",
             "VS2022":          "17.6.2",
-            "Xcode":           "14.3",
+            "Xcode":           "14.3.1",
             "zlib":            "1.2.13",
         }
 
