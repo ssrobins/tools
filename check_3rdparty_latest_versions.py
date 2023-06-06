@@ -33,7 +33,7 @@ class VersionCheck:
             "GIMP":            "2.10.34",
             "git":             "2.41.0",
             "glew":            "2.2.0",
-            "googletest":      "1.12.1",
+            "googletest":      "1.13.0",
             "Gradle":          "8.1.1",
             "grepWin":         "2.0.14",
             "KeePassXC":       "2.7.5",
@@ -239,7 +239,7 @@ class VersionCheck:
         version_text = soup.find("a",
             attrs={"href":
             re.compile(
-                r"^/google/googletest/releases/tag/release-\d+\.\d+\.\d+$")}
+                r"^/google/googletest/releases/tag/v\d+\.\d+\.\d+$")}
             ).text.strip().lstrip("v")
 
         return version_text
