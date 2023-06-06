@@ -25,6 +25,7 @@ class VersionCheck:
             "AndroidNDK":      "r25c",
             "AndroidSDKAPI":   "33",
             "AndroidStudio":   "2022.2.1",
+            "box2d":           "2.4.1",
             "bzip2":           "1.0.8",
             "cmake":           "3.26.4",
             "conan":           "2.0.6",
@@ -131,6 +132,17 @@ class VersionCheck:
         version_items = soup.find("h1", attrs={"class": "devsite-page-title"}).text.split()
 
         return version_items[-1]
+
+
+    def get_latest_version_box2d(self):
+        with urlopen("https://github.com/erincatto/box2d/releases") as page:
+            soup = BeautifulSoup(page, "html.parser")
+
+        version_text = soup.find("a",
+            attrs={"href": re.compile(
+                r"^/erincatto/box2d/releases/tag/v\d+\.\d+\.\d+$")}).text.strip().lstrip("v")
+
+        return version_text
 
 
     def get_latest_version_bzip2(self):
