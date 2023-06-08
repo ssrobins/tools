@@ -43,7 +43,7 @@ class VersionCheck:
             "NotepadPlusPlus": "8.5.3",
             "OBS":             "29.1.2",
             "ogg":             "1.3.5",
-            "python":          "3.11.3",
+            "python":          "3.11.4",
             "SDL":             "2.26.5",
             "SDL_image":       "2.6.3",
             "SDL_mixer":       "2.6.3",
