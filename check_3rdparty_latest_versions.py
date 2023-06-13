@@ -23,11 +23,11 @@ class VersionCheck:
         self.versions = {
             "7Zip":            "22.01",
             "AndroidNDK":      "r25c",
-            "AndroidSDKAPI":   "33",
+            "AndroidSDKAPI":   "34",
             "AndroidStudio":   "2022.2.1",
             "box2d":           "2.4.1",
             "bzip2":           "1.0.8",
-            "cmake":           "3.26.4",
+            "cmake":           "3.27.0-rc2",
             "conan":           "2.0.6",
             "freetype":        "2.13.0",
             "GIMP":            "2.10.34",
