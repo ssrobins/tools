@@ -21,14 +21,14 @@ from bs4 import BeautifulSoup
 class VersionCheck:
     def __init__(self, debug):
         self.versions = {
-            "7Zip":            "22.01",
+            "7Zip":            "23.01",
             "AndroidNDK":      "r25c",
             "AndroidSDKAPI":   "34",
             "AndroidStudio":   "2022.2.1",
             "box2d":           "2.4.1",
             "bzip2":           "1.0.8",
-            "cmake":           "3.27.0-rc2",
-            "conan":           "2.0.6",
+            "cmake":           "3.27.0-rc3",
+            "conan":           "2.0.7",
             "freetype":        "2.13.0",
             "GIMP":            "2.10.34",
             "git":             "2.41.0",
@@ -50,7 +50,7 @@ class VersionCheck:
             "SDL_ttf":         "2.20.2",
             "SFML":            "2.5.1",
             "vorbis":          "1.3.7",
-            "VS2022":          "17.6.3",
+            "VS2022":          "17.6.4",
             "Xcode":           "14.3.1",
             "zlib":            "1.2.13",
         }
