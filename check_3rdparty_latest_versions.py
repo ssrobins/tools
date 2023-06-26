@@ -29,7 +29,7 @@ class VersionCheck:
             "bzip2":           "1.0.8",
             "cmake":           "3.27.0-rc3",
             "conan":           "2.0.7",
-            "freetype":        "2.13.0",
+            "freetype":        "2.13.1",
             "GIMP":            "2.10.34",
             "git":             "2.41.0",
             "glew":            "2.2.0",
