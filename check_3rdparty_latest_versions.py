@@ -44,7 +44,7 @@ class VersionCheck:
             "OBS":             "29.1.3",
             "ogg":             "1.3.5",
             "python":          "3.11.4",
-            "SDL":             "2.28.0",
+            "SDL":             "2.28.1",
             "SDL_image":       "2.6.3",
             "SDL_mixer":       "2.6.3",
             "SDL_ttf":         "2.20.2",
