@@ -38,7 +38,7 @@ class VersionCheck:
             "grepWin":         "2.0.15",
             "KeePassXC":       "2.7.5",
             "libpng":          "1.6.40",
-            "MuseScore":       "4.0.2",
+            "MuseScore":       "4.1.0",
             "ninja":           "1.11.1",
             "NotepadPlusPlus": "8.5.4",
             "OBS":             "29.1.3",
@@ -50,7 +50,7 @@ class VersionCheck:
             "SDL_ttf":         "2.20.2",
             "SFML":            "2.6.0",
             "vorbis":          "1.3.7",
-            "VS2022":          "17.6.4",
+            "VS2022":          "17.6.5",
             "Xcode":           "14.3.1",
             "zlib":            "1.2.13",
         }
