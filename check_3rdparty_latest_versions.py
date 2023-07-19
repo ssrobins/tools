@@ -27,7 +27,7 @@ class VersionCheck:
             "AndroidStudio":   "2022.2.1",
             "box2d":           "2.4.1",
             "bzip2":           "1.0.8",
-            "cmake":           "3.27.0-rc5",
+            "cmake":           "3.27.0",
             "conan":           "2.0.8",
             "freetype":        "2.13.1",
             "GIMP":            "2.10.34",
