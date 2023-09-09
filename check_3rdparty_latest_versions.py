@@ -40,7 +40,7 @@ class VersionCheck:
             "libpng":          "1.6.40",
             "MuseScore":       "4.1.1",
             "ninja":           "1.11.1",
-            "NotepadPlusPlus": "8.5.6",
+            "NotepadPlusPlus": "8.5.7",
             "OBS":             "29.1.3",
             "ogg":             "1.3.5",
             "python":          "3.11.5",
