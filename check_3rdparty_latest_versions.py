@@ -168,7 +168,7 @@ class VersionCheck:
             page = response.read().decode('utf8', errors='ignore')
             soup = BeautifulSoup(page, "html.parser")
 
-        version_items = soup.find("h3").text.strip().split()
+        version_items = soup.find("h2", attrs={"id": "latest"}).text.strip().split()
 
         version_text = version_items[2].strip("()")
 
