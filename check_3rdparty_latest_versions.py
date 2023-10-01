@@ -28,7 +28,7 @@ class VersionCheck:
             "box2d":           "2.4.1",
             "bzip2":           "1.0.8",
             "cmake":           "3.27.6",
-            "conan":           "2.0.12",
+            "conan":           "2.0.13",
             "freetype":        "2.13.2",
             "GIMP":            "2.10.34",
             "git":             "2.42.0",
