@@ -22,12 +22,12 @@ class VersionCheck:
     def __init__(self, debug):
         self.versions = {
             "7Zip":            "23.01",
-            "AndroidNDK":      "r26",
+            "AndroidNDK":      "r26b",
             "AndroidSDKAPI":   "34",
             "AndroidStudio":   "2022.3.1",
             "box2d":           "2.4.1",
             "bzip2":           "1.0.8",
-            "cmake":           "3.27.7",
+            "cmake":           "3.28.0-rc1",
             "conan":           "2.0.13",
             "freetype":        "2.13.2",
             "GIMP":            "2.10.34",
@@ -50,7 +50,7 @@ class VersionCheck:
             "SDL_ttf":         "2.20.2",
             "SFML":            "2.6.0",
             "vorbis":          "1.3.7",
-            "VS2022":          "17.7.4",
+            "VS2022":          "17.7.5",
             "Xcode":           "15.0",
             "zlib":            "1.3",
         }
