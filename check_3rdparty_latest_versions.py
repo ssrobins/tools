@@ -30,7 +30,7 @@ class VersionCheck:
             "cmake":           "3.28.0-rc4",
             "conan":           "2.0.13",
             "freetype":        "2.13.2",
-            "GIMP":            "2.10.34",
+            "GIMP":            "2.10.36",
             "git":             "2.42.1",
             "glew":            "2.2.0",
             "googletest":      "1.14.0",
