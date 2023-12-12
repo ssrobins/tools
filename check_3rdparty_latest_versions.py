@@ -51,7 +51,7 @@ class VersionCheck:
             "SFML":            "2.6.1",
             "vorbis":          "1.3.7",
             "VS2022":          "17.8.3",
-            "Xcode":           "15.0.1",
+            "Xcode":           "15.1",
             "zlib":            "1.3",
         }
 
