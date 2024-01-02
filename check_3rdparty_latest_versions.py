@@ -45,7 +45,7 @@ class VersionCheck:
             "ogg":             "1.3.5",
             "python":          "3.12.1",
             "SDL":             "2.28.5",
-            "SDL_image":       "2.8.1",
+            "SDL_image":       "2.8.2",
             "SDL_mixer":       "2.6.3",
             "SDL_ttf":         "2.20.2",
             "SFML":            "2.6.1",
