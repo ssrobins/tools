@@ -28,7 +28,7 @@ class VersionCheck:
             "box2d":           "2.4.1",
             "bzip2":           "1.0.8",
             "cmake":           "3.28.1",
-            "conan":           "2.0.16",
+            "conan":           "2.0.17",
             "freetype":        "2.13.2",
             "GIMP":            "2.10.36",
             "git":             "2.43.0",
@@ -40,7 +40,7 @@ class VersionCheck:
             "libpng":          "1.6.40",
             "MuseScore":       "4.2.0",
             "ninja":           "1.11.1",
-            "NotepadPlusPlus": "8.6.1",
+            "NotepadPlusPlus": "8.6.2",
             "OBS":             "30.0.2",
             "ogg":             "1.3.5",
             "python":          "3.12.1",
@@ -50,8 +50,8 @@ class VersionCheck:
             "SDL_ttf":         "2.20.2",
             "SFML":            "2.6.1",
             "vorbis":          "1.3.7",
-            "VS2022":          "17.8.3",
-            "Xcode":           "15.1",
+            "VS2022":          "17.8.4",
+            "Xcode":           "15.2",
             "zlib":            "1.3",
         }
 
