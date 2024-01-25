@@ -38,7 +38,7 @@ class VersionCheck:
             "grepWin":         "2.0.15",
             "KeePassXC":       "2.7.6",
             "libpng":          "1.6.40",
-            "MuseScore":       "4.2.0",
+            "MuseScore":       "4.2.1",
             "ninja":           "1.11.1",
             "NotepadPlusPlus": "8.6.2",
             "OBS":             "30.0.2",
@@ -46,13 +46,13 @@ class VersionCheck:
             "python":          "3.12.1",
             "SDL":             "2.28.5",
             "SDL_image":       "2.8.2",
-            "SDL_mixer":       "2.6.3",
-            "SDL_ttf":         "2.20.2",
+            "SDL_mixer":       "2.8.0",
+            "SDL_ttf":         "2.22.0",
             "SFML":            "2.6.1",
             "vorbis":          "1.3.7",
-            "VS2022":          "17.8.4",
+            "VS2022":          "17.8.5",
             "Xcode":           "15.2",
-            "zlib":            "1.3",
+            "zlib":            "1.3.1",
         }
 
         self.debug = debug
