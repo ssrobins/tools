@@ -24,7 +24,7 @@ class VersionCheck:
             "7Zip":            "23.01",
             "AndroidNDK":      "r26c",
             "AndroidSDKAPI":   "34",
-            "AndroidStudio":   "2023.1.1",
+            "AndroidStudio":   "2023.2.1",
             "box2d":           "2.4.1",
             "bzip2":           "1.0.8",
             "cmake":           "3.28.3",
@@ -50,7 +50,7 @@ class VersionCheck:
             "SDL_ttf":         "2.22.0",
             "SFML":            "2.6.1",
             "vorbis":          "1.3.7",
-            "VS2022":          "17.9.1",
+            "VS2022":          "17.9.2",
             "Xcode":           "15.2",
             "zlib":            "1.3.1",
         }
