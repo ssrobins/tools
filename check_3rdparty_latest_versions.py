@@ -41,7 +41,7 @@ class VersionCheck:
             "MuseScore":       "4.2.1",
             "ninja":           "1.11.1",
             "NotepadPlusPlus": "8.6.4",
-            "OBS":             "30.0.2",
+            "OBS":             "30.1.0",
             "ogg":             "1.3.5",
             "python":          "3.12.2",
             "SDL":             "2.30.1",
@@ -50,7 +50,7 @@ class VersionCheck:
             "SDL_ttf":         "2.22.0",
             "SFML":            "2.6.1",
             "vorbis":          "1.3.7",
-            "VS2022":          "17.9.2",
+            "VS2022":          "17.9.3",
             "Xcode":           "15.3",
             "zlib":            "1.3.1",
         }
