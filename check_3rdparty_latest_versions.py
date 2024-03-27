@@ -50,7 +50,7 @@ class VersionCheck:
             "SDL_ttf":         "2.22.0",
             "SFML":            "2.6.1",
             "vorbis":          "1.3.7",
-            "VS2022":          "17.9.4",
+            "VS2022":          "17.9.5",
             "Xcode":           "15.3",
             "zlib":            "1.3.1",
         }
