@@ -41,7 +41,7 @@ class VersionCheck:
             "MuseScore":       "4.2.1",
             "ninja":           "1.11.1",
             "NotepadPlusPlus": "8.6.5",
-            "OBS":             "30.1.1",
+            "OBS":             "30.1.2",
             "ogg":             "1.3.5",
             "python":          "3.12.2",
             "SDL":             "2.30.2",
